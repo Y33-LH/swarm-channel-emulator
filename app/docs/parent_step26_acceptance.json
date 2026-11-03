@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "accepted": true,
+  "scope": "UI usability and operating workflow; real-board regression on unchanged FPGA/ARM",
+  "created": "2026-10-21T15:26:45.694145",
+  "manifest_sha256": "d9cdaf393554ed36f71a3cbe9ae6e3a2a818abe4e004590b007e1532b74a890c",
+  "artifacts_verified": 361,
+  "fpga_arm_unchanged": true,
+  "full_product_accepted": false,
+  "records": [
+    "causal_20261021_145547_11e059",
+    "link_20261021_145705_b01e35",
+    "network_20261021_145711_a22c3f",
+    "network_20261021_145731_ee41e4",
+    "causal_20261021_145803_801aac",
+    "causal_20261021_145946_a1a390"
+  ],
+  "checks": {
+    "layouts": [
+      {
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "width": 1366,
+        "height": 768
+      }
+    ],
+    "six_charts": true,
+    "history_read_only": true,
+    "cross_page_identity": true,
+    "late_context_response_isolated": true,
+    "degrade_and_restore": true,
+    "new_single_frame_run_delivered": 3,
+    "pause_stop_restart": true,
+    "assistant_and_command_readback": true,
+    "recomputation_matched_snapshots": 120,
+    "unit_tests": 30
+  },
+  "remaining": [
+    "Independent novice walkthrough: automated checks are not a usability user study",
+    "Final clean-source rebuild and three consecutive frozen full-system acceptance runs",
+    "Final report, video, AI records and submission package"
+  ],
+  "evidence_sha256": {
+    "results/usability_ui/layout.json": "2059a7442d4a1aa206df1c91a6ccea016fef2eb0763b85505707a57b3fd8d259",
+    "results/usability_ui/hardware.json": "b918b5a57cb9ab7d82a613b7f5d6d577bc79b13f40a4ff977b0162a38ba19ee3",
+    "results/workflow_ui/causal.json": "69ce69928aac42bde13872c4ed7f61f24dad2315d3a8e1f4149569ecbd1060b8",
+    "results/workflow_context_ui.json": "0d5e42adb8b8e5e470e567420dfa1ea2d00f3301db0504ce20edfd3ea1e25699",
+    "results/usability_unit.log": "c6da6f2dc4b87144d13c29fa3b33e304ce2fc9ce7e408625903335dabf995adb"
+  }
+}

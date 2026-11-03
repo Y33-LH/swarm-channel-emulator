@@ -1,0 +1,17 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6357EAD134758C76B26E9C76F68CEE4B6EFAFFEF43B58FF12DEB2A28AF8C8094",
+    "Path": "D:\\digitalcircuit\\swarm_minimal\\step19_product\\ready\\system_wrapper.bit"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "602DCC15473CD6E084DE29248BD59F0852798839B188E2BA7585DC6B03EB4A30",
+    "Path": "D:\\digitalcircuit\\swarm_minimal\\step19_product\\ready\\swarm_app.elf"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4A82D7B210472ECA6405ACAD5D2F52881BA18B1FFD6019FD3640709BC6BF6102",
+    "Path": "D:\\digitalcircuit\\swarm_minimal\\step19_product\\release.json"
+  }
+]

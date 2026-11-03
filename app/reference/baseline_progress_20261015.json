@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "scope": "single_board_product",
+  "physical_external_node": "deferred_by_user",
+  "pl_version": "000c0002",
+  "firmware_protocol": 16,
+  "baseline_verified": true,
+  "steps": [
+    {
+      "step": 1,
+      "status": "baseline_and_contract_verified"
+    },
+    {
+      "step": 2,
+      "status": "environment_weather_presets_board_verified"
+    },
+    {
+      "step": 3,
+      "status": "formations_and_geometry_board_verified"
+    },
+    {
+      "step": 4,
+      "status": "metrics_events_replay_comparison_verified"
+    },
+    {
+      "step": 5,
+      "status": "receiver_ranges_and_fair_comparison_published"
+    },
+    {
+      "step": 6,
+      "status": "single_board_gateway_verified_physical_endpoint_deferred"
+    },
+    {
+      "step": 7,
+      "status": "reverse_commands_and_dedup_board_verified"
+    },
+    {
+      "step": 8,
+      "status": "evidence_advice_and_recovery_verified"
+    },
+    {
+      "step": 9,
+      "status": "local_evidence_selection_and_fallback_verified"
+    },
+    {
+      "step": 10,
+      "status": "three_current_core_runs_and_noise_UI_acceptance_passed_historical_full_UI_tests_retained"
+    },
+    {
+      "step": 11,
+      "status": "UI_engineering_verified_human_usability_pending"
+    }
+  ],
+  "updated": "2026-10-15T00:58:24.434329",
+  "release": "NOISE_UPGRADE_AND_TARGETED_REGRESSION_ACCEPTED",
+  "deferred_by_user": [
+    "physical_second_board",
+    "formal_report",
+    "final_video"
+  ],
+  "human_acceptance_pending": [
+    "five_minute_novice_trial",
+    "three_minute_project_comprehension"
+  ],
+  "noise_gate": {
+    "version": "000c0002",
+    "trials": 200,
+    "delivered": 200,
+    "rate": 1.0,
+    "source": "results\\noise_acceptance_20261015_003937\\acceptance.json",
+    "ui_source": "results\\noise_ui_acceptance.json"
+  }
+}

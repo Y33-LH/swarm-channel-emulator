@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const O=require('../ui/observation.js');
+const s={run_id:1,config_id:7,round:20};
+const o={record_id:'r1',run_id:1,config_id:7,model_ms:1800,generation:60,link_id:3,waveform:'DATA'};
+assert.equal(O.select(o,s,3),o);
+for(const changed of [{run_id:2},{config_id:8},{model_ms:2100},{waveform:'ACK'},{link_id:4}])assert.equal(O.select({...o,...changed},s,3),null);
+assert.notEqual(O.identity(o),O.identity({...o,record_id:'r2'}));
+assert.notEqual(O.identity(o),O.identity({...o,link_id:4}));
+assert.equal(O.interval(0,0),null);
+const zero=O.interval(0,1000),half=O.interval(500,1000);
+assert(zero[0]<1e-14&&zero[1]>.003&&zero[1]<.004);
+assert(half[0]<.5&&half[1]>.5);
+console.log('OBSERVATION_UI_PASS identity, selection, interval boundaries');

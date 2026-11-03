@@ -1,0 +1,199 @@
+{
+  "pass_freeze": true,
+  "engineering_accepted": true,
+  "full_submission_complete": false,
+  "created": "2026-10-21T20:52:30.422178",
+  "tested_manifest_sha256": "e51fe44c0ef129771ade6a32776f909e38d0bde84659c6021d90e58671e552f5",
+  "images": {
+    "bit": "36e824366bd58e515c72cbd9d6530253fcc78541914f5425838261769ffad68b",
+    "elf": "89933dd0330993f327dc0259aa29b7690e894003447750a3f3a60a44cf5eb3d2",
+    "init": "411af429f71655e65ef1992cfa0c35ce9977f1db41fe2f8ee8790b1cb5d1b922"
+  },
+  "build": "D:\\digitalcircuit\\swarm_minimal\\step27_freeze\\results\\board_20261021_153541",
+  "runs": [
+    {
+      "index": 1,
+      "id": "network_20261021_182753_72a558",
+      "wall_seconds": 118.62640639999881,
+      "generated": 14708,
+      "delivered": 14708,
+      "timely": 14410,
+      "late": 298,
+      "memory": {
+        "ok": 1,
+        "type": "MEMORY",
+        "method": "stack_paint_conservative_bound_and_sbrk_peak",
+        "stack_reserved": 8192,
+        "stack_peak_bound": 6832,
+        "stack_guard_ok": 1,
+        "heap_reserved": 8192,
+        "heap_committed_peak": 2432,
+        "heap_committed_now": 2432,
+        "heap_failures": 0,
+        "cpu_mode": 31
+      },
+      "acceptance_sha256": "9a7bb3a0a43d97d52d3886e694c4a8b76286a3e781155f19d418b4a6b3b08985",
+      "snapshots_sha256": "12e6a7c5dc6cf41d328d1f5120254baf640ab4722afb5c5e0029ba13a57a4b66",
+      "uart_sha256": "5f6321e5db74bde98f42f04d460367ae14be7544849d0607d648e30d2a23995e"
+    },
+    {
+      "index": 2,
+      "id": "network_20261021_182956_4fe591",
+      "wall_seconds": 118.68908739998005,
+      "generated": 14708,
+      "delivered": 14708,
+      "timely": 14410,
+      "late": 298,
+      "memory": {
+        "ok": 1,
+        "type": "MEMORY",
+        "method": "stack_paint_conservative_bound_and_sbrk_peak",
+        "stack_reserved": 8192,
+        "stack_peak_bound": 6832,
+        "stack_guard_ok": 1,
+        "heap_reserved": 8192,
+        "heap_committed_peak": 2432,
+        "heap_committed_now": 2432,
+        "heap_failures": 0,
+        "cpu_mode": 31
+      },
+      "acceptance_sha256": "484720bf4ae7e138139f276798b7373875a52233057087bd30f9dcad2a451e62",
+      "snapshots_sha256": "8418f7204f71aa107db89b5a0a6e0da755c6366a56a579266f1f09fed79cf796",
+      "uart_sha256": "4ccab5fcd923bcdefb8609e91258c8b864fce50b2c86881b1928b90783eebf53"
+    },
+    {
+      "index": 3,
+      "id": "network_20261021_183159_44ee87",
+      "wall_seconds": 118.65563070005737,
+      "generated": 14708,
+      "delivered": 14708,
+      "timely": 14410,
+      "late": 298,
+      "memory": {
+        "ok": 1,
+        "type": "MEMORY",
+        "method": "stack_paint_conservative_bound_and_sbrk_peak",
+        "stack_reserved": 8192,
+        "stack_peak_bound": 6832,
+        "stack_guard_ok": 1,
+        "heap_reserved": 8192,
+        "heap_committed_peak": 2432,
+        "heap_committed_now": 2432,
+        "heap_failures": 0,
+        "cpu_mode": 31
+      },
+      "acceptance_sha256": "7de5fd206891a785820038b8246d5bbe4be5ff117be31f5c161b3a8c4632bd4e",
+      "snapshots_sha256": "e2b2b7f9191b9da297c6502113af909eef1dd15fe3a6489c1cc948cfc4aa9570",
+      "uart_sha256": "7e0b3904dfcd35efebced891b6304df5e8f46995365a25ef2e2375068783cba8"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/product_build.json",
+      "sha256": "2f3c1722a1985e54f9f713ae12516862647070efabe91f7772bf2d22d5a23077"
+    },
+    {
+      "path": "results/clean_build_console.log",
+      "sha256": "3117c3a7925c22ad7e3526194f7863262b960d75d77433c3980931bd0e9fed43"
+    },
+    {
+      "path": "results/sdk_rebuild_20261021_160828_196_utf8.log",
+      "sha256": "4141d673e4de0e0a92c4e9e675087973084106312cda27093a14c87360aa7438"
+    },
+    {
+      "path": "results/firmware_20261021_181713_9e127a/acceptance.json",
+      "sha256": "79a837cb5588b8c16c5667e83bb3c23385e8331e5cff506e2a7447f17f1123fd"
+    },
+    {
+      "path": "results/firmware_20261021_181713_9e127a/program.log",
+      "sha256": "43e49788453c5c1dba52f6b5f2438c9b9473729f0b7e42b94c957534e34b355d"
+    },
+    {
+      "path": "results/frozen_manifests/a3466779d6aaf57c8678cf29c68944293b857a2cf549090cd90124025deed8e3.json",
+      "sha256": "a3466779d6aaf57c8678cf29c68944293b857a2cf549090cd90124025deed8e3"
+    },
+    {
+      "path": "results/freeze_qualification_20261021_161135/receipt.json",
+      "sha256": "e3c2323541f03ca4d79b9155ae6963cc3dea2b4691aaab6e5ed8c1629fcbcef1"
+    },
+    {
+      "path": "results/channel_reference_20261021_153946/acceptance.json",
+      "sha256": "42adaa9f8e47de66b37b8e98fa625a6a93bcc8616889aa539865e9e56896db62"
+    },
+    {
+      "path": "results/freeze_unit_receipt.json",
+      "sha256": "ef46172f5632b0c349c2d8c34333e074c4df1f7e522c80485898bb57f6002854"
+    },
+    {
+      "path": "results/workflow_ui/causal.json",
+      "sha256": "4ce98c98acfaeec005af6fcaad8867df6892bf3b75e0887d955f206bb1ef6c94"
+    },
+    {
+      "path": "results/workflow_ui/comparison.json",
+      "sha256": "6ffcf97c3624b4f97f0222bdae0c12ee2a87d574426535ca39b43fdb31fcdace"
+    },
+    {
+      "path": "results/workflow_ui/height.json",
+      "sha256": "d509ac8913f2d91b809fa78ba9a26df816c5a0ba985500398098c78b33177fd9"
+    },
+    {
+      "path": "results/usability_ui/layout.json",
+      "sha256": "c07efd4b75688b48eb72159dd27b69653f4a16080f359021fb868483de2d1e06"
+    },
+    {
+      "path": "results/usability_ui/hardware.json",
+      "sha256": "097eb9ca28f49386547176f18b51eebdf767c6375644a7a8da1946f50145643c"
+    },
+    {
+      "path": "results/workflow_context_ui.json",
+      "sha256": "c24d8da31da25252ef9db47f6aec17cb29b028d9f96bb8d565bab778009e6810"
+    },
+    {
+      "path": "results/freeze_stability_ui_20261021102749022/acceptance.json",
+      "sha256": "acfbe96bf81467fe01ab4061b9a992ac755061bb14c609ce6776ee8aef08f34e"
+    },
+    {
+      "path": "results/network_20261021_182753_72a558/acceptance.json",
+      "sha256": "9a7bb3a0a43d97d52d3886e694c4a8b76286a3e781155f19d418b4a6b3b08985"
+    },
+    {
+      "path": "results/network_20261021_182956_4fe591/acceptance.json",
+      "sha256": "484720bf4ae7e138139f276798b7373875a52233057087bd30f9dcad2a451e62"
+    },
+    {
+      "path": "results/network_20261021_183159_44ee87/acceptance.json",
+      "sha256": "7de5fd206891a785820038b8246d5bbe4be5ff117be31f5c161b3a8c4632bd4e"
+    },
+    {
+      "path": "results/freeze_export.json",
+      "sha256": "294dbbd9e893782039e8c42a6899cb1427606601ba300eead487b8b5573e764a"
+    },
+    {
+      "path": "results/noise_acceptance_20261021_161205/acceptance.json",
+      "sha256": "6d60f74e36036a51c5da8eb4ea930e66590907110d148c4d5c1e457acd6b1297"
+    },
+    {
+      "path": "results/receiver_study_20261021_161314/acceptance.json",
+      "sha256": "6c1fd3b04b03341e8d6e177ee5ad7e4f74b08396f59bdfcf59141ae01f97535a"
+    },
+    {
+      "path": "results/capacity_20261021_161603/acceptance.json",
+      "sha256": "eb99577279b03ec7c11b269a00e85d406b3ce909c4b031e44917601816f165c9"
+    },
+    {
+      "path": "results/resources.json",
+      "sha256": "50ee711e234d1d4d57c65dd504f9bf6eae14babc3926e11ce23599c052b29772"
+    }
+  ],
+  "remaining_human_and_submission": [
+    "ABC novice walkthrough and mentor comprehension",
+    "Official project report, video, AI records and submission review"
+  ],
+  "limits": [
+    "板内硬件端点不代表外接飞机或第二块板。",
+    "场景/天气为受控参数组，卫星地图不参与地形传播计算。",
+    "最终送达率、及时送达率及实际计算耗时分别报告；不保证任意恶劣参数达到99%。",
+    "模型采样率不等于实际射频吞吐。",
+    "音视频为实际收发的短校准文件。"
+  ]
+}

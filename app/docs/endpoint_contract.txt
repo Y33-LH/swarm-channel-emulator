@@ -1,0 +1,37 @@
+历史接口说明：以下版本号、端口、采样策略和能力描述仅对应原发布版本。当前开发版以 docs/current_system_contract.txt、tools/firmware_contract.py 与 release.json 为准。
+
+External gateway extension only. For accepted board-internal hardware node architecture use delivery_contract.txt.
+
+Endpoint protocol v1 -- single-board scope, 2026-10-13
+
+This product currently validates one physical Zynq board and 16 logical UAV nodes.
+An EXTINJECT source is a SOFTWARE PROTOCOL TEST unless a separate physical device
+has been connected, registered and independently tested. Do not label a simulated
+node as a second physical node. Physical endpoint acceptance is deferred by the user.
+
+IDs: ground=0; UAV=1..16; relay=4,8,12,16. One external endpoint replaces one UAV.
+Register with HELLO {v:1,type:HELLO,node,identity,capabilities}. See endpoint_gateway.py.
+The gateway binds that identity to node and run_id. It rejects old/duplicate sequence,
+wrong identity/run, unsupported payload, out-of-bounds coordinate and wrong model time.
+SYNC is issued only at an ARM batch boundary. It gives model_ms, not computer time.
+DATA kinds 1=heartbeat,2=alarm,5=bytes. Payload is 1..64 bytes lowercase hex.
+Heartbeat is 16 bytes: signed little-endian x_mm,y_mm,z_mm,model_round.
+The full 10km x 10km x 1km scene uses endpoint z=50..900m for this interface.
+
+Validated DATA is translated into EXTINJECT, which enters the ARM source queue.
+It is NOT delivered by this translation. Every hop must pass the physical FPGA
+modem/channel/receiver. EXTRX exposes the full actually received ground frame.
+The frame header marks injected ingress separately from default generated traffic.
+Disconnecting the gateway must stop new injection; it cannot synthesize heartbeats.
+
+Ground business commands to a logical endpoint already traverse the reverse PL path.
+For a future second board, add a real endpoint-command event/response transport and
+replace local simulated execution with that board's returned execution result. This
+physical execution adapter is deliberately not claimed as tested in single-board mode.
+Do not reuse the primary board bitstream on another 7020 carrier without its PS/MIO,
+DDR and pin constraints. The future second board may initially run an ARM-only endpoint.
+
+Future hardware gate: arbitrary bytes originate on board 2, pass each primary PL hop,
+arrive unchanged at ground; downlink reaches board 2 before execution acknowledgement;
+unplug/replug shows stale/recovered position; other 15 UAVs continue. Measure its
+separate wall-time budget. Do not reuse single-board speed evidence for that mode.

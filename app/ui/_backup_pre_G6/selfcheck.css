@@ -1,0 +1,27 @@
+/* 自检面板：与仪表盘同源的深色仪器风格 */
+#selfcheckDialog{min-width:min(760px,92vw)}
+#selfcheckDialog h2{margin:.1em 0 .6em}
+.scsec{margin:.5em 0 1em}
+.scsec>.eyebrow{display:block;margin-bottom:.45em;letter-spacing:.14em}
+.scrow{display:grid;grid-template-columns:4.6em 9.5em 1fr;gap:.6em;align-items:baseline;
+  padding:.42em .55em;border-radius:6px;border:1px solid transparent;margin-bottom:.3em;
+  background:rgba(255,255,255,.03)}
+.scrow+.scrow{margin-top:.3em}
+.scrow .scv{font-family:var(--mono,ui-monospace,Consolas,monospace);font-size:.82em;letter-spacing:.04em}
+.scrow .scn{font-size:.86em;opacity:.9}
+.scrow .scd{font-size:.83em;opacity:.78;line-height:1.45}
+.scrow.ok{background:rgba(60,200,140,.09);border-color:rgba(60,200,140,.28)}
+.scrow.ok .scv{color:#4fd6a0}
+.scrow.bad{background:rgba(255,96,96,.10);border-color:rgba(255,96,96,.32)}
+.scrow.bad .scv{color:#ff8b8b}
+.scrow.warn{background:rgba(255,186,80,.10);border-color:rgba(255,186,80,.30)}
+.scrow.warn .scv{color:#ffc266}
+.sctable{margin-top:.7em;display:grid;gap:.35em}
+.sctable>div{display:flex;gap:.6em;align-items:baseline;padding:.45em .6em;border-radius:6px;
+  background:rgba(255,255,255,.035);font-size:.84em}
+.sctable>div span{opacity:.72;min-width:7.5em}
+.sctable>div b{font-family:var(--mono,ui-monospace,Consolas,monospace);color:var(--cyan,#4fd6e8)}
+#scStatic:empty,#scLive:empty{display:none}
+#selfcheckDialog .hint{margin:.5em 0 0;font-size:.82em;opacity:.72;line-height:1.6}
+#selfcheckDialog code{font-family:var(--mono,ui-monospace,Consolas,monospace);
+  background:rgba(255,255,255,.08);padding:.1em .35em;border-radius:4px}

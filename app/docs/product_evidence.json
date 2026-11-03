@@ -1,0 +1,89 @@
+{
+  "updated": "2026-11-01T16:23:21.769484",
+  "version": "000d0005",
+  "protocol": 22,
+  "arm_build": "20261101-sceneclock1",
+  "accepted": false,
+  "image_hashes": {
+    "bit": "f5c2033df3cabe61a62a9406d1d3d988d9f411e52c0862f5a11de4f4d78b36cc",
+    "elf": "c0d541ceb20ff1e6d77948574307c01cb7c5a4bc73fab181dfaa04ade5f74bfa",
+    "init": "411af429f71655e65ef1992cfa0c35ce9977f1db41fe2f8ee8790b1cb5d1b922"
+  },
+  "ui_runs": [],
+  "evidence": {
+    "endpoint_count_feasibility": {
+      "path": "results/endpoint_count_study_20261101/study.json",
+      "sha256": "155240a7e70d725d70dd665bff640196bf6480956a1ab25969fe8c6b144d183e"
+    },
+    "fpga_build": {
+      "path": "docs/product_build.json",
+      "sha256": "b1ac78ec2f92e324cb8eb50e2b9a518f679c744712e7627fbfe83b6484225b1f"
+    }
+  },
+  "pending": [
+    "eight_board_gates",
+    "joint_receiver",
+    "three_complete_runs",
+    "extended_suite",
+    "clean_sdk",
+    "paired_payload_energy",
+    "browser_driven_story",
+    "physical_recomputation",
+    "serial_session_recovery",
+    "final_ui_workflow"
+  ],
+  "performance_gate_deferred_by_user": true,
+  "architecture": {
+    "boards": 1,
+    "logical_uav": 16,
+    "hardware_endpoints": [
+      9,
+      13
+    ],
+    "ARM_virtual_nodes": 14,
+    "ground_stations": 1,
+    "physical_cores": 1,
+    "channel_classes": 2,
+    "directional_contexts": 32
+  },
+  "boundaries": [
+    "单板数字基带实验；无真实无人机、GPS或RF。2个PL端点+14个ARM虚拟节点，非32路并行硬件。",
+    "场景含程序DEM单障碍近似、P.838雨衰及公开经验参数，非真实地形/气象标定。",
+    "8/16 MSa/s是模型采样率；不等于实际处理吞吐或射频采样设备。",
+    "参考采样SNR由用户设置；深衰落及强长多径可以导致接收失败。",
+    "送达率、按时率、逐跳ACK率及接收BER采用不同分母，不能混用。",
+    "连续音视频为真实多跳传送的重复校准素材，不是现场摄像头直播。",
+    "无MIMO/独立相位噪声谱/IQ失衡模型；不能把未实现项目标作已实现。"
+  ],
+  "deferred": [
+    "外部多板/无人机",
+    "真实气象地形标定",
+    "自由航点/自动选路",
+    "正式文稿与视频"
+  ],
+  "note": "当前镜像的专项与UI主流程测量汇总；accepted=false，不等于竞赛最终提交验收或任意参数组合保证。",
+  "endpoint_count_feasibility": {
+    "study_complete": true,
+    "candidate_implemented": false,
+    "candidate_programmed": false,
+    "baseline_endpoints": [
+      9,
+      13
+    ],
+    "candidate_endpoints": [
+      9,
+      13,
+      1
+    ],
+    "candidate_failure": {
+      "phase": "detail placement",
+      "code": "Place 30-487",
+      "device_slices": 13300,
+      "remaining_slices": 6523,
+      "unplaced_required_slices": 7210,
+      "packing_deficit": 687
+    },
+    "decision": "Retain current 2 hardware endpoints + 14 ARM virtual nodes; all per-hop PHY work still uses FPGA.",
+    "qualification": "This particular three-endpoint implementation does not fit. It does not prove a mathematical maximum; queue/BRAM architecture changes or other implementation strategies may change the result."
+  }
+}

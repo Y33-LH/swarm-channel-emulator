@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "started": "2026-10-18",
+  "state": "single_board_engineering_accepted",
+  "baseline": "../step19_product",
+  "candidate_pl_version": "000d0003",
+  "hardware_nodes": [
+    9,
+    13
+  ],
+  "virtual_nodes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    14,
+    15,
+    16
+  ],
+  "milestones": [
+    {
+      "id": "mixed_nodes",
+      "state": "current_image_passed",
+      "acceptance": "Independent PL generation, RX-only commands and ACK/retry, reset isolation, mixed network",
+      "evidence": "results/qualification_20261018_024311/receipt.json"
+    },
+    {
+      "id": "channel_reference",
+      "state": "current_image_passed",
+      "acceptance": "Noise statistics, complex multipath, motion/Doppler, frequency selectivity, context isolation",
+      "evidence": "results/channel_reference_20261018_020201/acceptance.json"
+    },
+    {
+      "id": "receiver_extension",
+      "state": "current_image_passed",
+      "acceptance": "Current receiver range, fair comparison, working compatible extension example",
+      "evidence": "results/qualification_20261018_024311/receipt.json"
+    },
+    {
+      "id": "channel_first_ui",
+      "state": "current_image_passed",
+      "acceptance": "Three coherent pages, applied vs estimated channel snapshots, actual commands/media/replay",
+      "evidence": "results/product_ui_hardware_1792263629080/acceptance.json"
+    },
+    {
+      "id": "runtime_advice_ai",
+      "state": "current_image_passed",
+      "acceptance": "Timestamped live context, nonblocking AI, specific advice and verified action feedback",
+      "evidence": "results/assistant_ui_1792263586239/acceptance.json"
+    },
+    {
+      "id": "presentation",
+      "state": "current_image_passed",
+      "acceptance": "Offline mapped scene, readable visual hierarchy, optional animation/audio, user walkthrough",
+      "evidence": "results/product_ui_hardware_1792263629080/acceptance.json"
+    },
+    {
+      "id": "final_regression",
+      "state": "current_image_passed",
+      "acceptance": "Clean rebuild, three full runs <=120s, specified final delivery >=99%, recovery, resource/timing/memory",
+      "evidence": "results/product_acceptance.json"
+    }
+  ],
+  "latest_full_run": {
+    "version": "000d0003",
+    "total_seconds": 118.60444939997979,
+    "delivery": 1.0,
+    "accepted": true,
+    "reason": "Three distinct current-image browser/board runs passed; human usability remains separate."
+  },
+  "updated": "2026-10-18T03:09:38.959654"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 4,
+  "updated": "2026-10-21T09:07:52.361997",
+  "state": "SCOPED_ACTION_CONTEXT_IMPLEMENTED",
+  "scope": "Node measures over real multi-hop FPGA paths; received execution acknowledgements; bounded before/after observations; coherent three-page live/history context; deterministic replay including commands",
+  "baseline": "../step23_network_intervention",
+  "fpga_changed": false,
+  "firmware_changed": false,
+  "pl_version": "000d0003",
+  "arm_build": "20261021-edge1",
+  "current_entry": "D:/digitalcircuit/启动当前验收版.cmd",
+  "http_port": 8883,
+  "acceptance": "results/action_release_acceptance.json is authoritative only with matching current release SHA256",
+  "specialty_audit": "results/specialty_summary.json",
+  "remaining": [
+    "Final product clean rebuild and three consecutive complete-system stability runs on the frozen artifacts",
+    "Simulated altitude changes retain the separate whole-network task; this controlled task locks geometry",
+    "Further novice/mentor usability review and presentation polish",
+    "Formal report, video and submission package; no final-product freeze or broad performance superiority asserted"
+  ]
+}

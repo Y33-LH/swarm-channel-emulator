@@ -1,0 +1,221 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": 0,
+      "kind": "data",
+      "offset_samples": 128,
+      "phase_radians": 0.0,
+      "sigma": 0,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 1,
+      "kind": "data",
+      "offset_samples": 159,
+      "phase_radians": 0.317,
+      "sigma": 150,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 2,
+      "kind": "data",
+      "offset_samples": 190,
+      "phase_radians": 0.634,
+      "sigma": 300,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 3,
+      "kind": "data",
+      "offset_samples": 221,
+      "phase_radians": 0.9510000000000001,
+      "sigma": 450,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 4,
+      "kind": "data",
+      "offset_samples": 252,
+      "phase_radians": 1.268,
+      "sigma": 0,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 5,
+      "kind": "data",
+      "offset_samples": 283,
+      "phase_radians": 1.585,
+      "sigma": 150,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 6,
+      "kind": "data",
+      "offset_samples": 314,
+      "phase_radians": 1.9020000000000001,
+      "sigma": 300,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 7,
+      "kind": "data",
+      "offset_samples": 345,
+      "phase_radians": 2.219,
+      "sigma": 450,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 8,
+      "kind": "data",
+      "offset_samples": 376,
+      "phase_radians": 2.536,
+      "sigma": 0,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 9,
+      "kind": "data",
+      "offset_samples": 407,
+      "phase_radians": 2.853,
+      "sigma": 150,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 10,
+      "kind": "data",
+      "offset_samples": 438,
+      "phase_radians": 3.17,
+      "sigma": 300,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 11,
+      "kind": "data",
+      "offset_samples": 469,
+      "phase_radians": 3.487,
+      "sigma": 450,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 12,
+      "kind": "data",
+      "offset_samples": 500,
+      "phase_radians": 3.8040000000000003,
+      "sigma": 0,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 13,
+      "kind": "data",
+      "offset_samples": 531,
+      "phase_radians": 4.121,
+      "sigma": 150,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 14,
+      "kind": "data",
+      "offset_samples": 562,
+      "phase_radians": 4.438,
+      "sigma": 300,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 15,
+      "kind": "data",
+      "offset_samples": 593,
+      "phase_radians": 4.755,
+      "sigma": 450,
+      "captured": true,
+      "matched": true
+    },
+    {
+      "case": 16,
+      "kind": "noise",
+      "offset_samples": 624,
+      "phase_radians": 5.072,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 17,
+      "kind": "noise",
+      "offset_samples": 655,
+      "phase_radians": 5.389,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 18,
+      "kind": "noise",
+      "offset_samples": 686,
+      "phase_radians": 5.706,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 19,
+      "kind": "noise",
+      "offset_samples": 717,
+      "phase_radians": 6.023,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 20,
+      "kind": "bad_sfd",
+      "offset_samples": 748,
+      "phase_radians": 6.34,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 21,
+      "kind": "bad_sfd",
+      "offset_samples": 779,
+      "phase_radians": 6.657,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 22,
+      "kind": "bad_pn",
+      "offset_samples": 810,
+      "phase_radians": 6.974,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    },
+    {
+      "case": 23,
+      "kind": "bad_pn",
+      "offset_samples": 841,
+      "phase_radians": 7.291,
+      "sigma": 1024,
+      "captured": false,
+      "matched": false
+    }
+  ]
+}

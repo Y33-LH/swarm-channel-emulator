@@ -1,0 +1,44 @@
+/* Channel work is the primary workspace; only its rail scrolls. */
+.p1-desk{grid-template-columns:390px minmax(0,1fr) 260px!important}
+#evidence .param-rail:not(.right){overflow-y:auto!important;overflow-x:hidden!important;padding-right:5px;scrollbar-width:thin;scrollbar-color:#3499aa #10202f}
+#evidence .param-rail:not(.right)>.panel{margin-top:0;flex-shrink:0}
+#evidence .channel-primary .rail-input{height:auto;min-height:28px}
+#evidence .expanded-choice{display:block!important;margin:9px 0!important}
+#evidence .expanded-choice>span{display:block;margin-bottom:4px}
+.channel-choice-grid{display:flex;flex-wrap:wrap;gap:4px}
+.channel-choice-grid button{flex:1 0 auto;min-height:29px;white-space:normal;border:1px solid #315064;background:#102431;color:#a8cbd8}
+.channel-choice-grid button[aria-pressed=true]{background:#15505c;border-color:#41d6cf;color:#b5fff6;box-shadow:inset 0 -2px #46e6d8}
+#evidence [hidden]{display:none!important}
+.channel-advanced-grid{grid-template-columns:1fr!important;gap:5px}
+.channel-section .rail-input{padding:3px 0;border-bottom:1px solid #233849}
+.channel-section input{width:110px!important;max-width:none}
+#evidence .tap-row{grid-template-columns:22px repeat(2,minmax(0,1fr));gap:5px;padding:9px 0;border-bottom:1px solid #345164}
+.tap-row>b{grid-row:span 2;color:#5de6d1}.tap-row .rail-input{display:block!important}.tap-row input{width:100%!important}
+.scene-primary .option-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.scene-primary .option-card{height:69px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:4px;white-space:normal}
+.scene-primary .option-card svg{width:47px;height:35px;flex-shrink:0}.scene-primary h4{color:#7ee0de;margin:12px 0 5px}
+.scene-primary .hint{white-space:normal!important}.minimap-block{grid-template-columns:1fr!important}.minimap,#evidence .minimap{height:210px!important;background:#061722;border:1px solid #244252;border-radius:5px}
+#channelDraftStatus{display:block!important;white-space:normal!important}#railAppliedTaps{overflow-wrap:anywhere;font:11px/1.6 Consolas;color:#acd8df}
+.channel-section table{width:100%;border-collapse:collapse;font-size:11px}.channel-section td,.channel-section th{padding:5px 3px;text-align:right;border-bottom:1px solid #29414e}
+@media(max-width:1450px){.p1-desk{grid-template-columns:340px minmax(0,1fr) 220px!important}.scene-primary .option-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.channel-choice-grid button[data-value]{flex:0 1 auto;padding:5px 9px}
+#evidence .channel-primary .expanded-choice:has(#ch_tap_count) .channel-choice-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+#evidence .channel-primary .expanded-choice:has(#ch_tap_count) button:first-child{grid-column:span 4}
+
+.orbit-movie-controls{display:flex;gap:6px;flex-shrink:0;padding:3px 8px}.orbit-movie-controls button{font-size:11px;padding:4px 8px}.mapheading>div:first-child{min-width:120px}.mapoptions{flex-wrap:wrap!important;justify-content:flex-end}.mapheading{flex-wrap:wrap}.mapPanel .mapwrap{min-height:180px}
+
+/* Receiver details remain visible in the independent right-hand scroll rail. */
+#evidence .param-rail.right{overflow-y:auto!important;overflow-x:hidden!important;min-height:0;padding-right:5px;scrollbar-width:thin;scrollbar-color:#3499aa #10202f}
+#evidence .param-rail.right>.panel{flex-shrink:0}
+#evidence .param-rail.right .metric-pairs{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+#evidence .param-rail.right .metric-pairs>div,#evidence .param-rail.right .prow{display:flex;justify-content:space-between;gap:8px;padding:4px 0;font-size:11px;line-height:1.4;border-bottom:1px dotted #29414e}
+#evidence .param-rail.right .metric-pairs b,#evidence .param-rail.right .prow b{min-width:0;overflow-wrap:anywhere;text-align:right}
+
+#evidence .compact-taps .tap-head,#evidence .compact-taps .tap-row{display:grid;grid-template-columns:24px repeat(4,minmax(0,1fr));gap:4px;align-items:center;margin:0;padding:3px 0}
+#evidence .compact-taps .tap-head{font-size:10px;color:#93bbc9}
+#evidence .compact-taps .tap-row>b{grid-row:auto;font-size:11px}
+#evidence .compact-taps .tap-row .rail-input{font-size:0!important;margin:0!important;padding:0;border:0;min-width:0;line-height:0}
+#evidence .compact-taps .tap-row input{box-sizing:border-box;min-width:0;width:100%!important;height:26px!important;margin:0!important;padding:2px 3px!important;font-size:11px!important;line-height:20px;border-radius:3px}
+
+#evidence .compact-taps .tap-row .rail-input>span{display:none!important}

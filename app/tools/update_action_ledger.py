@@ -1,0 +1,51 @@
+from pathlib import Path
+import json,datetime
+R=Path(__file__).resolve().parents[1]
+scope='Node measures over real multi-hop FPGA paths; received execution acknowledgements; bounded before/after observations; coherent three-page live/history context; deterministic replay including commands'
+pending=['Final product clean rebuild and three consecutive complete-system stability runs on the frozen artifacts',
+ 'Simulated altitude changes retain the separate whole-network task; this controlled task locks geometry',
+ 'Further novice/mentor usability review and presentation polish',
+ 'Formal report, video and submission package; no final-product freeze or broad performance superiority asserted']
+d=dict(schema=4,updated=datetime.datetime.now().isoformat(),state='SCOPED_ACTION_CONTEXT_IMPLEMENTED',scope=scope,
+ baseline='../step23_network_intervention',fpga_changed=False,firmware_changed=False,pl_version='000d0003',arm_build='20261021-edge1',
+ current_entry='D:/digitalcircuit/启动当前验收版.cmd',http_port=8883,
+ acceptance='results/action_release_acceptance.json is authoritative only with matching current release SHA256',
+ specialty_audit='results/specialty_summary.json',remaining=pending)
+for name in ('development_status.json','progress.json'):(R/'docs'/name).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf-8')
+(R/'docs/节点措施与观测接口.txt').write_text('''节点措施与实验观测接口 v2
+
+单板架构与固件不变：PL 0x000d0003，ARM 20261021-edge1，UART协议17。
+PC通过UART提交GCOMMAND；命令与执行回执均通过原FPGA逐跳物理链路。地面入队不等于执行。
+本专项支持状态查询、心跳周期、媒体暂停/恢复、媒体速率。媒体源仅为1与5，拒绝对无媒体节点的无效设置。
+固定几何条件下的信道因果实验不接受高度变更；原整机任务仍保留高度指令。
+
+POST /api/causal/action 增加kind=command：
+ id：本次实验记录编号；observed_round：用户所见快照轮次；window_s：1–60；
+ command：target、opcode、value、ttl_ms，整数，与已有GCOMMAND字段一致。
+ 仅在该任务观测暂停、非重算、非历史时提交。过期观测、另一实验、重复排队和非法参数均被拒绝。
+ HOST_QUEUED_NOT_APPLIED仅表示电脑入队；ARM的QUEUED_NOT_EXECUTED仅表示地面发送队列接纳。
+
+每轮保存CMDSTATUS与有界CMDTRACE。
+ CMDSTATUS的成功/拒绝/过期状态来自地面实际收到的执行回执。
+ CMDTRACE的目标接收诊断时间是相应物理事务发送槽起点，不能当作精密接收时间或地面确认。
+ 超过有效期但没有返回回执：未确认，既不宣称成功也不武断宣称没执行。
+
+效果窗口：操作前5秒，与收到回执后首个完整5秒窗口。
+ 窗口固定后不会被后续操作覆盖；下一次干预过早则标注缺少独立窗口。
+ 分别显示源端生成速率、地面接收速率、心跳更新次数、位置年龄、网络积压。
+ 正常链路限速后心跳可能没有改善；已生成全部媒体后调整速率可能无效果。
+ 前后窗口随模型时间变化，不冒充严格受控对照；另有相同条件的实板业务对照研究。
+
+GET /api/causal/context [?id=记录&index=快照索引]
+ 返回context(record_id,run_id,index,model_ms,link,mode,config_sha256,frame_generation,frame_ms)，
+ 以及同一快照的地图/业务、实际应用系数、同帧IQ、命令与建议。
+ 当前任务所监测DATA帧的系数覆盖该链路最后一次ACK系数，避免把ACK参数与DATA采样混合。
+ 模型快照时刻与最新实际DATA采样时刻分开标注，不捏造每个时刻都有新采样。
+ 历史时刻不借用最终媒体文件、未来回执或未来操作作为当时已发生的事实。
+
+重现：除原有观测摘要，还校验操作种类/参数/有效轮次的时间轴摘要。
+ 对比包含command_results与command_trace；仅排除墙钟、绝对FPGA帧代次和端点累计诊断值。
+ 缺少新摘要的旧候选记录可读取，但不作为当前版实板重算基准。
+ 所有证据以当前release文件摘要和实际镜像摘要绑定；专项通过不代表最终整机冻结。
+''',encoding='utf-8-sig')
+print('Action ledger and interface updated')

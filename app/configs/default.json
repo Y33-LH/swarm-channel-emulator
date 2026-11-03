@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "environment": 0,
+  "weather": 0,
+  "formation": 0,
+  "spacing_m": 300,
+  "altitude_m": 400,
+  "center_x_m": 5000,
+  "center_y_m": 5000,
+  "speed_mmps": 12000,
+  "heading_deg": 0,
+  "reference_snr_cdb": 3400,
+  "faults": 1,
+  "jitter_percent": 100,
+  "carrier_mhz": 2400,
+  "external_node": 0,
+  "reserved": 0
+}

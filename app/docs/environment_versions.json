@@ -1,0 +1,19 @@
+{
+  "python": "3.14.6 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:29:05) [MSC v.1942 64 bit (AMD64)]",
+  "os": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.4.6",
+    "opencv-python": "5.0.0.93"
+  },
+  "opencv_module": "5.0.0",
+  "vendored_pyserial": "3.5",
+  "node": "v24.19.0",
+  "playwright": "1.62.1",
+  "toolchain": "Vivado and SDK 2018.3",
+  "purpose": "Versions observed in this acceptance environment; no software installed by this snapshot. Node/Playwright used only for automated browser checks. Runtime launcher uses the existing D:/miniconda/python.exe.",
+  "plotting_packages": {
+    "matplotlib": "3.11.2",
+    "path": "D:/digitalcircuit/tools/plot_deps",
+    "purpose": "Only regenerating receiver-study figures; the running UI serves the already generated PNG/CSV."
+  }
+}

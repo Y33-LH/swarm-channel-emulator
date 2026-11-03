@@ -1,0 +1,183 @@
+{
+  "schema": 2,
+  "pass": true,
+  "status": "FOUR_GATES_ACCEPTED",
+  "version": "000b0001",
+  "accepted": "2026-10-12T17:30:18",
+  "images": {
+    "bit": "add5b5a1f255b33e54ab739f9219e6668102857ac058324e74ecf96b12665a0e",
+    "elf": "e784bb1edd2c71051cba3f39cfbc47dcb1fce01add070207b94c7cc47be59133",
+    "init": "411af429f71655e65ef1992cfa0c35ce9977f1db41fe2f8ee8790b1cb5d1b922"
+  },
+  "resources": {
+    "LUT": {
+      "used": 34846.0,
+      "available": 53200.0
+    },
+    "FF": {
+      "used": 11878.0,
+      "available": 106400.0
+    },
+    "DSP48": {
+      "used": 62.0,
+      "available": 220.0
+    },
+    "BRAM36": {
+      "used": 45.0,
+      "available": 140.0
+    },
+    "Slice": {
+      "used": 10126.0,
+      "available": 13300.0
+    },
+    "WNS_ns": 0.377,
+    "WHS_ns": 0.061,
+    "pl_hz": 62500000,
+    "ARM_ELF_text_bytes": 107656,
+    "ARM_ELF_data_bytes": 2604,
+    "ARM_ELF_bss_bytes": 653072,
+    "arm_runtime": {
+      "stack_peak_bound": 4328,
+      "stack_reserved": 8192,
+      "heap_committed_peak": 0,
+      "heap_reserved": 8192,
+      "guard_ok": true,
+      "measured_runs": 7
+    }
+  },
+  "gates": {
+    "performance": true,
+    "fault_delivery_and_stability": true,
+    "receiver_and_scenario_study": true,
+    "runtime_memory_and_evidence": true
+  },
+  "network": {
+    "model_seconds": 900,
+    "wall_total_seconds": [
+      114.13754770020023,
+      114.02295830007643,
+      113.98546470003203
+    ],
+    "ui_total_seconds": 114.22001769999042,
+    "ui_click_to_complete_seconds": 114.504,
+    "generated": 14708,
+    "delivered": 14708,
+    "delivery": 1.0,
+    "max_model_delay_seconds": 40.45767875,
+    "mean_model_delay_ms": 614.0159120036715,
+    "queue_peak": 159,
+    "queue_capacity_per_node": 192,
+    "slot_misses": 0,
+    "alarms": 4,
+    "media": {
+      "received_audio.wav": {
+        "bytes": 6678,
+        "sha256": "58c3ff5417aa7a3adce6160a7518e3674f21c86e8102975e801698c57f224643",
+        "source": "FPGA RX -> ARM hop queues -> ground reassembly -> UART"
+      },
+      "received_video.webm": {
+        "bytes": 15292,
+        "sha256": "1cbb975a1e53f3dc2251f50140b391a455153de1771292d91bb01b1261fa792a",
+        "source": "FPGA RX -> ARM hop queues -> ground reassembly -> UART"
+      }
+    }
+  },
+  "receiver": {
+    "frames": 720,
+    "configurations": 35,
+    "equal_energy_gain_demonstrated": false,
+    "limitation": "Strong-noise PN acquisition remains the limiting stage; finite tested boundaries are conditional, not simultaneous guarantees."
+  },
+  "capacity": {
+    "measured_sustainable_payload_bps": 12288.0,
+    "scope": "固定四条4跳路径、16节点1Hz心跳、理想物理链路、满FEC、TDMA下的附加业务可持续容量；非射频容量或所有场景通用上限"
+  },
+  "boundaries": [
+    "All delivery percentages refer to the specified default seeded fault scenario, not arbitrary noise or traffic.",
+    "Store-and-forward raises eventual delivery; observed longest delay is about 40.46 model seconds.",
+    "One FPGA physical processing core, two channel classes, 32 directional DATA/ACK contexts.",
+    "Clock registers verify 62.5 MHz using the nominal board crystal; this is not an oscilloscope frequency measurement.",
+    "Stack paint reports a conservative application SYS-stack high-water bound; other exception stacks are reserved, not exercised. Heap peak means sbrk committed bytes.",
+    "Capacity scan is a separate 7-load experiment; its measured record may be shown with a historical label in the video.",
+    "Formal competition report and edited video remain the next presentation deliverables."
+  ],
+  "evidence": {
+    "stability": {
+      "path": "results/release_stability_20261012_165945/acceptance.json",
+      "sha256": "70388428f5750bed9764c6247c7ffc7486b2ccd89cdbc4f926bff8d26ee819a9"
+    },
+    "receiver": {
+      "path": "results/receiver_study_20261012_170803/acceptance.json",
+      "sha256": "44f286b5bb84d20b1fd578c968836586b9b4577b257080e2e4ed22c42ebd3f66"
+    },
+    "ui": {
+      "path": "results/ui_release_1791796252802/acceptance.json",
+      "sha256": "7c2d30b678d25cf8a48971321fe62cb2949f5381037e6581e85f5b220559a4a2"
+    },
+    "ui_final": {
+      "path": "results/ui_final_1791796996769/acceptance.json",
+      "sha256": "eb77c8575e85dcea33c2f5cda1c8d1d972e47fe8f64337ab11c26781cdcb31bd"
+    },
+    "phy": {
+      "path": "results/full_phy_20261012_170622/acceptance.json",
+      "sha256": "d001cb29bea89099dfde79d03e4c3a96e5d09611c70a5b326cf192be2e2576bb"
+    },
+    "ack": {
+      "path": "results/ack_deadline_20261012_170628/acceptance.json",
+      "sha256": "2922eb3baae563442dc123a474c3e4dc3f835173de2830dabcd40dbca52fc4ed"
+    },
+    "payload": {
+      "path": "results/hardware_20261012_170755/acceptance.json",
+      "sha256": "6517b7947f2b35ea69650a51ebbede2b960ce83f2f481cde97e844b88b7cd2c5"
+    },
+    "ui_history": {
+      "path": "results/ui_history_labels/acceptance.json",
+      "sha256": "dc14c4a7bce80ce247ecf07c96540381b930a501a7523506f6b7efdc7802b527"
+    },
+    "network": {
+      "path": "results/network_20261012_171115_adcb2c/acceptance.json",
+      "sha256": "f69e1076a4cb995fa43dd0fbe22976939a1a01818d983e58e465c6c55a0b227d"
+    },
+    "capacity": {
+      "path": "results/capacity_20261012_171312_31a15f/acceptance.json",
+      "sha256": "67415f3c8037aab23fedc118d74449b84b616930a81ff7e18a077562584d479a"
+    },
+    "results/fec_vectors/simulation.log": {
+      "path": "results/fec_vectors/simulation.log",
+      "sha256": "09389ee3f2ca985e847fce52f24c59c59a559d69655bfa9c7951bef2b78be8a1"
+    },
+    "results/phy_vectors/simulation.log": {
+      "path": "results/phy_vectors/simulation.log",
+      "sha256": "ba2b3dabefcc3e76f1f448cd8caed47403e4ac150aca010723a5f25d00c05dfa"
+    },
+    "results/city_vectors/simulation.log": {
+      "path": "results/city_vectors/simulation.log",
+      "sha256": "f1ca2249af71db268748932b61d74291c23925f57dbe043ef7e3326f55b4e16d"
+    },
+    "results/sim_20261012_162312/simulation.log": {
+      "path": "results/sim_20261012_162312/simulation.log",
+      "sha256": "04c92182d40c0d90cb77f947e95f0579a4a2d83ba36387f92c1e2844e0dac444"
+    },
+    "results/sim_20261012_162312/independent_simulation.log": {
+      "path": "results/sim_20261012_162312/independent_simulation.log",
+      "sha256": "b1f67ff254b9437e2e7e4efef92d43013372ff033bfe9004fe4b002adf55e8b3"
+    },
+    "results/clock_evidence.log": {
+      "path": "results/clock_evidence.log",
+      "sha256": "0704c4c8612ac289493b705b896efd588cb8dbe7953658e1453069f38df52a55"
+    },
+    "results/serial_final.log": {
+      "path": "results/serial_final.log",
+      "sha256": "b3572b845a92e12fef24c6f5c1582becb6c4d64579b7be265492e5e7946ebe68"
+    },
+    "scenario": {
+      "path": "reference/data/scenario_reference_validation.json",
+      "sha256": "9843e9a16dc5c8af7509234c529fecc06e0cec28b91d56beb12d34f6c35a7216"
+    },
+    "export": {
+      "path": "exports/network_20261012_171115_adcb2c.zip",
+      "sha256": "9bf0f0f480bfaad367735ff3c981078e3ef07a7b62e5b9e14ea88cefedf2e06f"
+    }
+  },
+  "release_sha256": "67a434d7b7357af1586fe7ea36358c7392a542bfe3037cb549f7a2eddfad96e3"
+}

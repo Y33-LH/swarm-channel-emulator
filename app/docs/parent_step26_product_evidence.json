@@ -1,0 +1,426 @@
+{
+  "updated": "2026-10-21T09:07:03.635128",
+  "version": "000d0003",
+  "protocol": 17,
+  "accepted": false,
+  "image_hashes": {
+    "bit": "94544174f8bf3ad538dcadcc862f577ef17de04a4634f0975ceade7a4100deec",
+    "elf": "40a3df579124fa800403603bdfc9cc444bd22f5dd253d6e2d52a9ffaf28e7da0",
+    "init": "411af429f71655e65ef1992cfa0c35ce9977f1db41fe2f8ee8790b1cb5d1b922"
+  },
+  "receiver": {
+    "frames": 1020,
+    "configurations": 45,
+    "source": "D:\\digitalcircuit\\swarm_minimal\\step24_action_context\\results\\receiver_study_20261021_090405\\acceptance.json",
+    "equal_energy_coding_gain_demonstrated": false,
+    "evidence_origin": "Current physical-board rerun; finite sweep including failures"
+  },
+  "noise_qualification": {
+    "version": "000d0003",
+    "trials": 200,
+    "delivered": 200,
+    "rate": 1.0,
+    "scope": "Single-attempt full-FEC frames at gain 0.6, sigma 2800 per I/Q, phase 25 deg, CFO 400 Hz. Not all SNRs or uncoded frames.",
+    "confidence95_wilson": [
+      0.9811539940816791,
+      1.0
+    ],
+    "evidence_origin": "Historical unchanged-PL baseline; not rerun as part of this new ARM qualification"
+  },
+  "capacity": {
+    "payload_bps": 12288.0,
+    "scope": "固定四条4跳路径、16节点1Hz心跳、理想物理链路、满FEC、TDMA下的附加业务可持续容量；非射频容量或所有场景通用上限",
+    "source": "D:\\digitalcircuit\\swarm_minimal\\step24_action_context\\results\\capacity_20261021_090156\\acceptance.json",
+    "evidence_origin": "Current physical-board rerun"
+  },
+  "architecture": {
+    "boards": 1,
+    "logical_uav": 16,
+    "hardware_endpoints": [
+      9,
+      13
+    ],
+    "ARM_virtual_nodes": 14,
+    "ground_stations": 1,
+    "physical_cores": 1,
+    "channel_classes": 2,
+    "directional_contexts": 32
+  },
+  "channel_reference": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\channel_reference_20261018_020201\\acceptance.json",
+  "clean_sdk": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\sdk_clean_20261018_d3\\acceptance.json",
+  "simulations": [
+    {
+      "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\mixed_sim_20261018_015550\\simulation.log",
+      "sha256": "67647085e0edc5504832ce741d9d2de8dcdc3135bd944a2226dec10fe54700bd",
+      "marker": "MIXED_NODES_PHY_PASS"
+    },
+    {
+      "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\sim_20261018_015803\\simulation.log",
+      "sha256": "d9ba89ad78b0f263648a3b8567c23076827c706c192255520ed61be82602d7c0",
+      "marker": "PAYLOAD_AXI_PASS"
+    },
+    {
+      "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\sim_20261018_015803\\independent_simulation.log",
+      "sha256": "657d7d3b70024a29fcc9f22efb05d7109bf6074f18c9aefe8f515a20348d04b1",
+      "marker": "INDEPENDENT_RX_PASS"
+    },
+    {
+      "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\phy_vectors\\simulation.log",
+      "sha256": "a932e3770881f3f2b8018ee07c0bbfd7fd019f01c90c08a02e482636e2aa9619",
+      "marker": "PHY_ALL_PASS"
+    }
+  ],
+  "qualification": {
+    "acceptance.py": {
+      "test": "acceptance.py",
+      "test_sha256": "f6154eaebb26d75d04516b2e06a6de1dc13d2d6e693ab670261af4ecdef36546",
+      "exit_code": 0,
+      "wall_seconds": 8.826935529708862,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\hardware_20261018_024311\\acceptance.json",
+          "sha256": "d252b5e1997ed7e2ab2b868448ed30e5ebb7724b611517c30768f9f0efd0616b"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "mixed_node_acceptance.py": {
+      "test": "mixed_node_acceptance.py",
+      "test_sha256": "c27a48da8f433f88fc56b5716a5c2594c1531866c7fa904b8661344b89b1fd20",
+      "exit_code": 0,
+      "wall_seconds": 5.45591926574707,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\mixed_nodes_20261018_024320\\acceptance.json",
+          "sha256": "afe2526efa23ae05535d5b3fac51245529fd2acf38e1c15466f251cccdff2bd8"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "ack_deadline_acceptance.py": {
+      "test": "ack_deadline_acceptance.py",
+      "test_sha256": "546535ea124cddc749172874a5c2f815a1b3140eed11f63167568443ce119222",
+      "exit_code": 0,
+      "wall_seconds": 0.8053460121154785,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\ack_deadline_20261018_024325\\acceptance.json",
+          "sha256": "004337cbe814f5ff018ec47c3f4f1cede0e5d21744a97c761f4a2688d15de945"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "modem_extension_acceptance.py": {
+      "test": "modem_extension_acceptance.py",
+      "test_sha256": "c21d510fb798176c3cbf96e6c855abdbb28414f75b927b04c82e6b412f71c63d",
+      "exit_code": 0,
+      "wall_seconds": 8.41803503036499,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\modem_extension_20261018_024326\\acceptance.json",
+          "sha256": "d97b0c152c12bf627013c6e4b83e09b7860cf41f26b5640ddcb7ca96747c2ff7"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "full_phy_acceptance.py": {
+      "test": "full_phy_acceptance.py",
+      "test_sha256": "6917c693bc78cbfb3b14cd72c2c1b3d67a03fcff8c7e49e0eff5a3425401bff4",
+      "exit_code": 0,
+      "wall_seconds": 6.709437370300293,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\full_phy_20261018_024335\\acceptance.json",
+          "sha256": "89adffea371ad8a35088e07f0d36772be14e23f4794cd7a0e98f0504c02acb7c"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "noise_acceptance.py": {
+      "test": "noise_acceptance.py",
+      "test_sha256": "07072f494464c7a5413fa68bdd5aaf4fa0116358f29b6902c906b76dd85ae8ed",
+      "exit_code": 0,
+      "wall_seconds": 17.582569122314453,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\noise_acceptance_20261018_024341\\acceptance.json",
+          "sha256": "0c73f98c9bade6de39ceab8157eef73519081bc1695321f51dba62f9a4b78e9a"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "product_scene_acceptance.py": {
+      "test": "product_scene_acceptance.py",
+      "test_sha256": "4acfe61fc25f5b41ca23c0170b3feb4c6f9908d882c99a4127ef4f3899464e7d",
+      "exit_code": 0,
+      "wall_seconds": 4.0325706005096436,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step24_action_context\\results\\product_scene_acceptance.json",
+          "sha256": "d07cfce2a93065c59c981aba76838a468dbdf3e1b5cff38bc5b2d73b63bffae8"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "product_preset_acceptance.py": {
+      "test": "product_preset_acceptance.py",
+      "test_sha256": "7462d41058d69be976ecc7927507440362e76bad2c6e9248f1d97dae468cfee8",
+      "exit_code": 0,
+      "wall_seconds": 38.8583619594574,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\presets_20261018_024403\\acceptance.json",
+          "sha256": "9037445cc9b6b2e821f3de31bf24422b6b1633b617609040d4e1d0728097a837"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "product_control_acceptance.py": {
+      "test": "product_control_acceptance.py",
+      "test_sha256": "a16f415682f01c893129f79a632c20dbba268f2e088cedb2f530cdcc1adf3308",
+      "exit_code": 0,
+      "wall_seconds": 6.575865030288696,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\controls_20261018_024442\\acceptance.json",
+          "sha256": "41f1737a46b29712def89fa92e75db03ac3a5f91894f416678f7ed962f1b962d"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "product_serial_interrupt.py": {
+      "test": "product_serial_interrupt.py",
+      "test_sha256": "a056109024a6b908168825b7d057b818eb2d01ad0fa8ff80bf40669d3d0f6854",
+      "exit_code": 0,
+      "wall_seconds": 1.9397344589233398,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\serial_interrupt_20261018_024448\\acceptance.json",
+          "sha256": "88e20be86faf2bf71c699fc0d8e011ce349982d3839eab6c944dad56f10c17c4"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "receiver_study.py": {
+      "test": "receiver_study.py",
+      "test_sha256": "738d50f53d5c5cb7db6a192878f4698fde28302904a1b44a8fe4e1d3298bb35b",
+      "exit_code": 0,
+      "wall_seconds": 169.11369013786316,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\receiver_study_20261018_024450\\acceptance.json",
+          "sha256": "5dbd8feb21e915c2d938a28b5d67064e6da37d016df8d2baf34b4eed4afdd0e7"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "capacity_acceptance.py": {
+      "test": "capacity_acceptance.py",
+      "test_sha256": "7188ed11913c50764dc65e7e3fffdf805efef84b373a57a163d222ca09d68b4f",
+      "exit_code": 0,
+      "wall_seconds": 129.08346962928772,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\capacity_20261018_024740\\acceptance.json",
+          "sha256": "65cf2785b3049a3778c0e4ea5f8ebf7768a8700dfec3c341aca42e201b621ecd"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "operation_comparison.py": {
+      "test": "operation_comparison.py",
+      "test_sha256": "56052aa3bc65c1d519697630db8441ed82eb99cf21f66f5636f3bae53e50e29c",
+      "exit_code": 0,
+      "wall_seconds": 67.08296465873718,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\operation_comparison_20261018_024949\\acceptance.json",
+          "sha256": "a36965bcb427fef3b86b80cf4c81f1bbf773dee93ad143fccfdf155aa02ad481"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    },
+    "product_scenarios.py": {
+      "test": "product_scenarios.py",
+      "test_sha256": "9fc1f53d1a7e05dc6dd7883da6e59280b8f9846bba384623a255dac69213df78",
+      "exit_code": 0,
+      "wall_seconds": 187.34256219863892,
+      "evidence": [
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step23_network_intervention\\results\\product_scenarios_acceptance.json",
+          "sha256": "bfe84872405759e362b30cfb76a5890b15d9d2defe79f33a10d4ff5c2e7fce5b"
+        },
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\network_20261018_025056_a8ca09\\acceptance.json",
+          "sha256": "cd7ce1e19ee36e51cbdc6732e9eeca4fb59083db8bbef4397c60dd2eb60f3ff5"
+        },
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\network_20261018_025117_685d73\\acceptance.json",
+          "sha256": "b4071805c904b8e4d585ac747ebe8c8328f221b407687074e3f64b9d79485379"
+        },
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\network_20261018_025138_770ba3\\acceptance.json",
+          "sha256": "137d52f767087d8e86d35ccdd5e1a30d1cabf52eb289e1fe03824df38e323860"
+        },
+        {
+          "path": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\network_20261018_025335_08e8e7\\acceptance.json",
+          "sha256": "af32c620d2284b63e61923c3206d281b32f35cecacb2374306740af2a9148883"
+        }
+      ],
+      "receipt": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\qualification_20261018_024311\\receipt.json"
+    }
+  },
+  "scenes": [
+    {
+      "id": "network_20261018_025056_a8ca09",
+      "name": "open_clear",
+      "wall": 21.193396500020754,
+      "gates": {
+        "complete_within_120s": true,
+        "delivery_above_99pct": true
+      },
+      "media_complete": true
+    },
+    {
+      "id": "network_20261018_025117_685d73",
+      "name": "open_rain",
+      "wall": 21.00595380004961,
+      "gates": {
+        "complete_within_120s": true,
+        "delivery_above_99pct": true
+      },
+      "media_complete": true
+    },
+    {
+      "id": "network_20261018_025138_770ba3",
+      "name": "city_diamond_rain",
+      "wall": 117.24095609999495,
+      "gates": {
+        "complete_within_120s": true,
+        "delivery_above_99pct": true
+      },
+      "media_complete": true
+    },
+    {
+      "id": "network_20261018_025335_08e8e7",
+      "name": "weak_channel",
+      "wall": 27.518224200000986,
+      "gates": {
+        "complete_within_120s": true,
+        "delivery_above_99pct": false
+      },
+      "media_complete": false
+    }
+  ],
+  "model_bandwidth": {
+    "source": "independent_reference_not_RF_or_ADC_measurement",
+    "sample_rate_hz": 8000000,
+    "symbol_rate_hz": 2000000,
+    "pulse": "rectangular_4_samples",
+    "mainlobe_null_to_null_hz": 4000000,
+    "occupied_bandwidth_hz": {
+      "90": 2863281.25,
+      "95": 5566406.25,
+      "99": 6789062.5
+    },
+    "window": "Hann 4096-point Welch segments",
+    "n_symbols": 131072,
+    "sample_stream_hardware_realtime_claim": false,
+    "two_path_frequency_selectivity": [
+      {
+        "echo_delay_us": 0.0,
+        "relative_to_symbol_time": 0.0,
+        "ripple_mainlobe_db": 0.0
+      },
+      {
+        "echo_delay_us": 0.5,
+        "relative_to_symbol_time": 1.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 1.0,
+        "relative_to_symbol_time": 2.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 1.5,
+        "relative_to_symbol_time": 3.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 2.0,
+        "relative_to_symbol_time": 4.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 2.5,
+        "relative_to_symbol_time": 5.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 3.0,
+        "relative_to_symbol_time": 6.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 3.5,
+        "relative_to_symbol_time": 7.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      },
+      {
+        "echo_delay_us": 4.0,
+        "relative_to_symbol_time": 8.0,
+        "ripple_mainlobe_db": 7.359535705891888
+      }
+    ]
+  },
+  "boundaries": [
+    "板内硬件端点不代表外接飞机或第二块板。",
+    "场景/天气为受控参数组，卫星地图不参与地形传播计算。",
+    "最终送达率、及时送达率及实际计算耗时分别报告；不保证任意恶劣参数达到99%。",
+    "模型采样率不等于实际射频吞吐。",
+    "音视频为实际收发的短校准文件。"
+  ],
+  "deferred": [
+    "外部第二板",
+    "自由航点与自动选路",
+    "真实气象/地形标定",
+    "连续摄像头直播",
+    "正式报告和视频"
+  ],
+  "ui_runs": [],
+  "ui_acceptance": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\product_ui_hardware_1792263629080\\acceptance.json",
+  "assistant_acceptance": "D:\\digitalcircuit\\swarm_minimal\\step20_delivery\\results\\assistant_ui_1792263586239\\acceptance.json",
+  "timely_delivery": [
+    0.9797389175958662,
+    0.9797389175958662,
+    0.9797389175958662
+  ],
+  "maximum_model_delay_seconds": [
+    40.21767825,
+    40.21767825,
+    40.21767825
+  ],
+  "current_scope": "One real directed edge: user change -> applied readback -> same-frame reception -> received business impact -> restoration -> deterministic recomputation",
+  "historical_basis": "docs/parent_step22_product_evidence.json",
+  "note": "Prior whole-product three-run evidence belongs to the older ARM image. Current directed-edge validation is reported separately.",
+  "intervention": {
+    "evidence": [
+      "D:\\digitalcircuit\\swarm_minimal\\step23_network_intervention\\results\\intervention_qualification_20261021_002643\\acceptance.json",
+      "D:\\digitalcircuit\\swarm_minimal\\step23_network_intervention\\results\\intervention_edges_20261021_004211\\acceptance.json",
+      "D:\\digitalcircuit\\swarm_minimal\\step23_network_intervention\\results\\intervention_abort\\acceptance.json",
+      "D:\\digitalcircuit\\swarm_minimal\\step23_network_intervention\\results\\intervention_ui\\acceptance.json"
+    ],
+    "heartbeat_and_voice_disruption": true,
+    "restoration": true,
+    "exact_recomputed_snapshots": 90,
+    "coverage": [
+      "ARM source uplink",
+      "air-ground relay",
+      "FPGA endpoint uplink",
+      "mild interference without fabricated outage"
+    ]
+  },
+  "action_specialty_audit": "D:\\digitalcircuit\\swarm_minimal\\step24_action_context\\results\\specialty_summary.json",
+  "current_workflow_scope": "Runtime/history assistant and comparisons are qualified separately by results/workflow_release_acceptance.json. Inherited physical evidence retains its original source and test scope."
+}

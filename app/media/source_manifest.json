@@ -1,0 +1,15 @@
+{
+  "audio": {
+    "file": "source_audio.wav",
+    "bytes": 8034,
+    "sha256": "1fcb97666ef08bb5d5654725325794cb40909ac6ade38155561933bcbf30e881",
+    "source": "SAPI-synthesized Chinese speech \"链路验证通过\" (tone fallback)"
+  },
+  "video": {
+    "file": "source_video.webm",
+    "bytes": 19199,
+    "sha256": "7d8af941a0a0957d72a4bb9162722e38efc166d6962649601766783b9a5ebb17",
+    "frames": 20,
+    "source": "generated 4-hop packet animation matching the node 1 chain, not camera footage"
+  }
+}

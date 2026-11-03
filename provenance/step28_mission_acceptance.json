@@ -1,0 +1,63 @@
+{
+  "pass_mission": true,
+  "scope": "Unified mission, received-data motion, procedural terrain and environment interaction",
+  "tested_manifest_sha256": "38fc78b5c7e408b425f7eb873033118808362d524dea6de3db62d6a36085a398",
+  "created": "2026-10-23T00:23:57.537020",
+  "story_record": "causal_20261023_001122_9c072b",
+  "same_time_recomputed": {
+    "exact_match": true,
+    "compared_snapshots": 180,
+    "original_snapshots": 180,
+    "current_snapshots": 180,
+    "mismatches": [],
+    "media_hashes_equal": true,
+    "exclusions": [
+      "wall_ms",
+      "absolute FPGA generation",
+      "hardware endpoint diagnostics"
+    ],
+    "original_id": "causal_20261023_001122_9c072b"
+  },
+  "final": {
+    "generated": 3228,
+    "delivered": 3228,
+    "timely_delivered": 2998,
+    "late_delivered": 230,
+    "pending": 0
+  },
+  "continuous_observation": {
+    "id": "causal_20261023_001518_f9e4a1",
+    "held_round": 300
+  },
+  "unit_tests": 56,
+  "environment_unit_tests": 3,
+  "full_scene_record": "network_20261023_001934_f302fa",
+  "full_scene_wall_seconds": 118.45564849999937,
+  "firmware_unchanged_from": "step27_freeze",
+  "technical_baseline": "D:\\digitalcircuit\\swarm_minimal\\step27_freeze\\results\\freeze_acceptance.json",
+  "evidence": [
+    {
+      "path": "results/mission_story_1792685479813/acceptance.json",
+      "sha256": "b7431391490729a69e658684cefd404dc3bf980cde7160e30f1053c78089df7a"
+    },
+    {
+      "path": "results/terrain_visual/acceptance.json",
+      "sha256": "a9d3c209d4e06e3cc78b6ed3b6230703209cb17ecd6e29853b16042aa247a20f"
+    },
+    {
+      "path": "results/freeze_unit_receipt.json",
+      "sha256": "4bb52599025fce1e7dbcd8ae00396a5cf2e385f2df7e3f74118794e72402d630"
+    },
+    {
+      "path": "results/workflow_ui/full.json",
+      "sha256": "ec519aa89d2e90ae3d57b2a13c4dc72b113bfa24648f4740fd833cbecebfd2f4"
+    }
+  ],
+  "limits": [
+    "Weather/terrain brief is scenario-based, not onboard weather sensing.",
+    "Procedural terrain does not affect propagation or collision avoidance.",
+    "Map smoothing stays between received positions, with no loss-of-link extrapolation.",
+    "Three-run final freeze belongs to step27; this UI revision adds one full 900s regression.",
+    "Formal report, video and independent human usability review remain outstanding."
+  ]
+}

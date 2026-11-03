@@ -1,0 +1,8 @@
+{
+  "port": "COM10",
+  "xsct": "D:\\Xilinx\\SDK\\2018.3\\bin\\xsct.bat",
+  "board_profile": "wildfire7020",
+  "http_port": 18878,
+  "ai_port": 18882,
+  "ai_enabled": true
+}

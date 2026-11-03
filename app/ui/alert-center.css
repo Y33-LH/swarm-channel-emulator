@@ -1,0 +1,30 @@
+/* 态势播报条 + 事件卡片 */
+.alert-center{margin:6px 22px 0;border:1px solid #1e3a5a;border-radius:10px;background:linear-gradient(120deg,#0b1a30ee,#0d1526ee);overflow:hidden}
+.alert-center .ac-head{display:flex;align-items:center;gap:10px;padding:7px 14px;font-size:14px}
+.alert-center .ac-head b{font-size:14px;color:#cfe6f2;letter-spacing:2px}
+.alert-center .ac-head span#acSummary{color:#8fb0c8;font-size:14px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.alert-center .ac-head button{padding:3px 12px;font-size:14px;background:transparent;border-color:#2a4a6a}
+.ac-beacon{width:9px;height:9px;border-radius:50%;background:#5a7a8c;flex-shrink:0}
+.ac-beacon.ok{background:#2df5c6;box-shadow:0 0 8px #2df5c680}
+.ac-beacon.warn{background:#ffb02e;box-shadow:0 0 8px #ffb02e80}
+.ac-beacon.bad{background:#ff4d6a;box-shadow:0 0 10px #ff4d6a;animation:acPulse 1.1s ease-in-out infinite}
+@keyframes acPulse{50%{box-shadow:0 0 18px #ff4d6a;transform:scale(1.35)}}
+.ac-body{border-top:1px solid #1a3350;padding:6px 12px;max-height:190px;overflow-y:auto;scrollbar-width:thin}
+#acCards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px}
+.ac-card{border:1px solid #2a4a6a;border-left-width:3px;border-radius:6px;padding:5px 9px;background:#0c1930;animation:acIn .3s ease-out}
+@keyframes acIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.ac-card.fault{border-left-color:#ff4d6a;background:linear-gradient(120deg,#3a1220aa,#0c1930)}
+.ac-card.warn{border-left-color:#ffb02e;background:linear-gradient(120deg,#33240faa,#0c1930)}
+.ac-card.ok{border-left-color:#2df5c6;background:linear-gradient(120deg,#0d2f28aa,#0c1930)}
+.ac-card-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ac-card-head b{font-size:14px;color:#eef6fb}
+.ac-card.fault .ac-card-head b{color:#ffd4db}
+.ac-card.ok .ac-card-head b{color:#b8f8e6}
+.ac-card-head time{font:14px Consolas,monospace;color:#7d9cb5;white-space:nowrap}
+.ac-card p{font-size:14px;color:#a9c2d4;line-height:1.45;margin:3px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ac-card .ac-actions{display:flex;gap:5px;flex-wrap:wrap}
+.ac-card .ac-actions button{font-size:14px;padding:2px 8px;border-radius:5px}
+.ac-card .ac-actions .ac-fix{background:linear-gradient(120deg,#1779ce,#1756c7);border-color:#449efa;font-weight:600}
+.ac-card .ac-cmd{display:block;margin-top:3px;font-size:14px;color:#7fe3c0}
+.ac-note{font-size:14px;color:#5f7f95;margin:5px 0 0}
+@media(max-width:960px){.alert-center{margin:6px 10px 0}}

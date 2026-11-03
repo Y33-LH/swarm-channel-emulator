@@ -1,0 +1,23 @@
+const {chromium}=require('C:/Users/yirui/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'results','ui_c2_'+Date.now());fs.mkdirSync(out,{recursive:true});
+const base='http://127.0.0.1:8876';
+(async()=>{
+ const context=await chromium.launchPersistentContext(path.join(out,'profile'),{executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,viewport:{width:1920,height:1080}});
+ const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(String(e)));
+ const get=async p=>(await page.request.get(base+p)).json();
+ async function waitTask(name,timeout=40000){const end=Date.now()+timeout;let last=-1;while(Date.now()<end){const s=await get('/api/state');if(s.status==='error')throw Error(s.error);if(s.task===name&&!s.busy&&s.status==='complete')return s;const t=s.snapshot?.round||0;if(name==='network'&&t>=last+1000){last=t;console.log('UI_NETWORK_PROGRESS '+t/10)}if(name==='capacity'&&s.capacity?.rows?.length!==last){last=s.capacity?.rows?.length;console.log('UI_CAPACITY_PROGRESS '+last)}await page.waitForTimeout(600)}throw Error('Timeout '+name)}
+ async function shot(name){await page.waitForTimeout(800);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Page overflow '+name);await page.screenshot({path:path.join(out,name+'.png'),fullPage:true})}
+ await page.goto(base,{waitUntil:'networkidle'});await page.locator('#connect').click();await waitTask('connect');
+ await page.locator('[data-tab="channel"]').click();await page.locator('#message').fill('同步纠错与真实数据验证');await page.locator('#send').click();const ideal=await waitTask('lab');if(!ideal.lab.match||ideal.lab.phy.turbo_iterations!==2||ideal.lab.payload_evm_percent!==0)throw Error('Ideal lab failed');
+ await page.locator('#lab_cfo').fill('5000');await page.locator('#lab_phase').fill('110');await page.locator('#lab_gain').fill('0.7');await page.locator('#send').click();const dsp=await waitTask('lab');if(!dsp.lab.match||Math.abs(dsp.lab.estimated_cfo_hz-5000)>50||dsp.lab.iq.received.length!==512)throw Error('DSP/IQ lab failed');
+ await page.locator('[data-tab="measurements"]').click();await shot('receiver');if(!(await page.locator('#phyStats').innerText()).includes('Turbo'))throw Error('PHY view missing');
+ await page.locator('#preset').selectOption('900');await page.locator('#start').click();const network=await waitTask('network',1000000);if(!network.report?.pass||network.report.video_decoded_frames!==20)throw Error('Network media failed');
+ for(const tab of ['overview','channel','network']){await page.locator(`[data-tab="${tab}"]`).click();await shot(tab)}
+ for(const id of ['audio','video']){await page.locator('#'+id).evaluate(async el=>{el.load();await new Promise((ok,bad)=>{el.onloadedmetadata=ok;el.onerror=()=>bad(Error('media decode'));setTimeout(()=>bad(Error('media timeout')),12000)})});}
+ const media=await page.evaluate(()=>({audio:document.getElementById('audio').duration,video:document.getElementById('video').duration}));if(!(media.audio>0&&media.video>0))throw Error('Empty media');
+ await page.locator('[data-tab="measurements"]').click();await page.locator('#capacity').click();const capacity=await waitTask('capacity',1000000);if(!capacity.capacity?.pass||capacity.capacity.rows.length!==7)throw Error('Capacity missing');await shot('capacity');
+ await page.locator('[data-tab="records"]').click();await page.waitForTimeout(1000);await page.locator('#recordSelect').selectOption(network.record_id);await page.locator('#loadReplay').click();await page.locator('#replaySeek').fill('34');await page.locator('#replaySeek').dispatchEvent('input');await shot('history_fault');if(!(await page.locator('#sourceBadge').innerText()).includes('历史'))throw Error('Replay label missing');await page.locator('#exitReplay').click();
+ await page.locator('[data-tab="records"]').click();await page.locator('#recordSelect').selectOption(capacity.capacity.id);await page.locator('#exportZip').click();await page.waitForTimeout(1000);if(!(await page.locator('#exportInfo').innerText()).includes('.zip'))throw Error('Export failed');await shot('records');
+ if(errors.length)throw Error(errors.join('\n'));fs.writeFileSync(path.join(out,'acceptance.json'),JSON.stringify({pass:true,errors,media,ideal:ideal.lab.id,dsp:dsp.lab.id,network:network.record_id,capacity:capacity.capacity.id},null,2));await context.close();console.log('UI_C2_HARDWARE_PASS '+out);
+})().catch(e=>{console.error(e);process.exit(1)});

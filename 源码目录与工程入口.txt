@@ -1,0 +1,15 @@
+﻿面向蜂群自组网的无线信道模拟器  |  2026-11-03 源码提交版
+平台：单板 Zynq-7020。当前 release.json 标注的 PL 版本、ARM 构建号及原始发布哈希位于 app/release.json。
+app/rtl：FPGA 数字基带、收发、信道和纠错逻辑及初始化表。
+app/hw：板级配置、硬件构建 Tcl、LCD Verilog、引脚约束和屏幕字模。
+app/sw：ARM 主程序、网络调度、信道和地形计算、收发接口。
+app/sdk_workspace_product：SDK 工程源码、BSP 源文件和工程设置；重新构建时 app/build_sdk.tcl 从 app/sw 取源。
+app/ui：三页显控网页。app/tools：上位机后端、串口、实验、分析与验证工具。
+app/reference、app/tests、validation：参考模型、对照向量、自动化测试与验证脚本。
+app/configs、app/media、app/docs：配置、业务样本与接口说明。
+app/ready：对应参考固件、硬件交接文件与 PS 初始化代码。app/openocd：项目使用的加载脚本与相关发布资源。
+根目录 launcher.py、portable_server.py、demo_update.py、make_demo_release.py 等：启动、离线服务、更新与交付。
+licenses、app/THIRD_PARTY_NOTICES.txt、assistant：第三方许可和本地问答模型来源。
+构建环境：Windows + Vivado/SDK 2018.3。按本机路径设置 dev_settings.ps1，入口 BUILD.cmd、app/build_release.ps1。完整构建脚本还调用 runtime/python/python.exe。
+本包面向源码审阅。Python 运行库、外部模型权重和推理引擎、第三方烧录工具安装程序及运行历史不作为作品源码打包。直接演示请使用对应完整离线展示包及页面更新；不要用源码包覆盖展示机。录入的配置可能需要调整串口或 SDK 路径。
+SOURCE_SHA256.json 为逐文件 SHA-256 校验清单。

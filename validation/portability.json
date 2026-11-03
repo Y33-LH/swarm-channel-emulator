@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "scope": "isolated bundled runtime; independent package root; HTTP and mission/terrain assets; no board execution",
+  "root": "D:\\digitalcircuit\\deliveries\\Swarm_20261023_step29",
+  "python": "D:\\digitalcircuit\\deliveries\\Swarm_20261023_step29\\runtime\\python\\python.exe",
+  "software_tests": 59
+}

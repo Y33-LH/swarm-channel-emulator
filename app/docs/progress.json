@@ -1,0 +1,18 @@
+{
+  "schema": 6,
+  "updated": "2026-10-21T15:45:00.489372",
+  "state": "FROZEN_SOURCE_CANDIDATE_PENDING_ACCEPTANCE",
+  "baseline": "../step26_usability",
+  "http_port": 8886,
+  "pl_version": "000d0003",
+  "arm_build": "20261021-edge1",
+  "fpga_rebuilt_from_source": true,
+  "arm_rebuilt_from_source": true,
+  "acceptance": "results/freeze_acceptance.json",
+  "current_entry": "D:/digitalcircuit/启动当前验收版.cmd",
+  "remaining": [
+    "Fresh-image physical/UI acceptance and three consecutive 900-second runs",
+    "Independent ABC novice walkthrough and mentor comprehension check",
+    "Official report, video, AI records and submission package"
+  ]
+}

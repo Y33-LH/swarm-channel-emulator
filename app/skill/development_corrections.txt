@@ -1,0 +1,65 @@
+AI-assisted development record, 2026-10-13
+
+User requirement (faithful excerpt): "注意现在先全部单板完成全部任务，多版未来几天再去实践。"
+User required all 11 planned steps, compliance and evidence, with UI optimization last.
+
+Observed failures and the actual corrections:
+1. UART 921600 and 460800 gave no valid responses with this CH340 setup.
+   Restored measured 230400 across firmware, host, tests and contract.
+2. A full-telemetry 900-second experiment took 138.03 computer seconds.
+   Retained every 0.1-second communication round; reduced only transfer of large
+   diagnostic register arrays. NETFAST still returns all node and link counters.
+   Three subsequent full experiments took 117.22,117.11,117.08 seconds.
+3. Single-frame samples at equal complex-sample SNR favored coding in a selected
+   region, but equal total frame energy did not demonstrate gain. Both curves and
+   failed captures are retained; no equal-energy improvement is claimed.
+4. An extremely weak experiment received no media fragments. The old exporter
+   incorrectly attempted full media reads and aborted. The corrected exporter
+   reads only verified received fragments and records missing ranges explicitly.
+   It never repairs a received file using the known transmit file.
+5. The local Qwen small model produced false health and execution claims during
+   free-prose tests. That interface was rejected. The model now selects known
+   evidence IDs with a schema. Displayed statements are assembled from measured
+   data and deterministic rules; no model-generated action executes.
+6. A UI test initially expected a query during a 40-second node outage to succeed
+   with a 10-second TTL. The actual board correctly reported expiration. The
+   corrected test expects expiration, then reissues after recovery and requires
+   the independently received success response. The timeout was not removed.
+7. A noise-challenge UI test initially asserted every frame should succeed.
+   The corrected criterion distinguishes clean/echo success from an honest noise
+   failure with no delivered receive bytes. No test-result denominator is changed.
+
+Evidence files: results/assistant_acceptance.log (rejected original prose),
+results/assistant_acceptance.json (constrained model),
+results/product_scenarios_latest.log, results/product_scenarios_acceptance.json,
+results/release_stability_20261013_030046/acceptance.json,
+results/product_ui_hardware_latest.log and associated timestamped directories.
+
+These notes are a curated record, not a fabricated full transcript. The original
+chat remains the source for verbatim model prompts/responses; export the relevant
+conversation separately when preparing the official submission.
+
+2026-10-18 mixed-node/channel-first development:
+- The user explicitly accepted board-internal PL endpoints. Two independent PL
+  endpoints (9/13) were implemented; the other 14 UAVs remain ARM contexts. This
+  does not retroactively turn old external-protocol injection into PL endpoint proof.
+- A d1 900-second experiment exceeded 120 wall seconds. d2 improved to about119
+  seconds, but was not released. d3 additionally compresses telemetry losslessly;
+  it does not skip rounds, packets or unsuccessful receives.
+- BRAM asynchronous-control DRC warnings prompted synchronous resets throughout
+  the internal RTL. Simulations were rerun; the first resulting implementation
+  failed setup at -0.076ns and was rejected. Post-route physical optimization
+  retains the clock/constraints; only timing-passing artifacts may be adopted.
+- Reproducibility tests initially compared monotonic transaction identifiers as
+  though they were channel outputs. Only wall time and documented transaction
+  identity fields were excluded; samples and receiver/counter values remain exact.
+- A serial-session recovery test inherited a prior external-node configuration.
+  The test now applies explicit baseline configuration before measuring recovery.
+- Current-image receipts bind images, test files and raw results. Old finalizers
+  are disabled so historical successes cannot mark this larger release accepted.
+- UI callbacks distinguish single-frame measured parameters from retained network
+  results. Asynchronous local-model answers use timestamped received snapshots,
+  do not own the UART, and require user confirmation before a real command.
+- Offline EOX maps are visual context, not evidence of terrain-aware propagation.
+  Controlled business-action comparison uses an ideal channel to avoid changing
+  traffic causing unmatched random-noise draws; any benefit and cost are measured.

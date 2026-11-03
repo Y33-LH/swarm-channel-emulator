@@ -1,0 +1,479 @@
+{
+  "schema": 1,
+  "step": "20_delivery",
+  "version": "000d0003",
+  "base": "0x43C00000",
+  "clock_hz": 62500000,
+  "axi": "AXI4-Lite, 32bit data, 12bit offset, aligned access",
+  "endianness": "little endian 32bit register byte lanes; wire bytes MSB first",
+  "frame": {
+    "header_bytes": 32,
+    "padded_payload_bytes": 64,
+    "body_bytes": 96,
+    "wire_crc_bytes": 2,
+    "data_frame_bits": 784,
+    "valid_payload_min": 1,
+    "valid_payload_max": 64,
+    "length_header_offset": 28,
+    "crc": "CRC-16/CCITT-FALSE; poly1021 initFFFF; no reflection/final XOR; high byte first",
+    "data_coded_bits": 4752,
+    "ack_frame_bits": 112,
+    "ack_coded_bits": 720
+  },
+  "registers": [
+    {
+      "name": "CONTROL",
+      "offset": "0x000",
+      "access": "WO",
+      "meaning": "0=no-op, 1=START, 4=RELEASE, 8=ABORT, 16=CLEAR_ERROR; one command at a time"
+    },
+    {
+      "name": "TX_LEN",
+      "offset": "0x004",
+      "access": "RW",
+      "meaning": "valid payload bytes, 1..64"
+    },
+    {
+      "name": "TAG",
+      "offset": "0x008",
+      "access": "RW",
+      "meaning": "request tag"
+    },
+    {
+      "name": "FLAGS",
+      "offset": "0x00c",
+      "access": "RW",
+      "meaning": "bit0 deliberately corrupts final CRC bit for negative testing"
+    },
+    {
+      "name": "STATUS",
+      "offset": "0x010",
+      "access": "RO",
+      "meaning": "bit0 busy; bit1 done; bit2 rx_valid; bit3 crc_good; bit4 aborted; bit5 terminal_error; bit6 api_error; bit7 all_tx_bytes_written"
+    },
+    {
+      "name": "RESULT_CODE",
+      "offset": "0x014",
+      "access": "RO",
+      "meaning": "0 OK; 1 CRC; 2 FORMAT; 3 ABORTED; 4 TIMEOUT; meaningful when DONE"
+    },
+    {
+      "name": "RX_LEN",
+      "offset": "0x018",
+      "access": "RO",
+      "meaning": "valid received payload length or zero"
+    },
+    {
+      "name": "RX_FRAME_BYTES",
+      "offset": "0x01c",
+      "access": "RO",
+      "meaning": "96 on valid receive else zero"
+    },
+    {
+      "name": "TX_BITS",
+      "offset": "0x020",
+      "access": "RO",
+      "meaning": "accepted body+CRC bits, excludes pilot symbols"
+    },
+    {
+      "name": "RX_BITS",
+      "offset": "0x024",
+      "access": "RO",
+      "meaning": "received body+CRC bits, excludes pilot symbols"
+    },
+    {
+      "name": "CYCLES",
+      "offset": "0x028",
+      "access": "RO",
+      "meaning": "elapsed 62.5 MHz core clocks including protocol overhead"
+    },
+    {
+      "name": "GENERATION",
+      "offset": "0x02c",
+      "access": "RO",
+      "meaning": "accepted START count modulo 2^32"
+    },
+    {
+      "name": "TIMEOUT_CYCLES",
+      "offset": "0x030",
+      "access": "RW",
+      "meaning": "1..100000000, default 5000000"
+    },
+    {
+      "name": "LAST_ERROR",
+      "offset": "0x034",
+      "access": "RO",
+      "meaning": "sticky API error; clear by command 16"
+    },
+    {
+      "name": "RESULT_TAG",
+      "offset": "0x038",
+      "access": "RO",
+      "meaning": "tag latched at accepted START"
+    },
+    {
+      "name": "VERSION",
+      "offset": "0x03c",
+      "access": "RO",
+      "meaning": "0x00070001"
+    },
+    {
+      "name": "GAIN_Q15",
+      "offset": "0x040",
+      "access": "RW",
+      "meaning": "legacy channel gain; ideal value32768"
+    },
+    {
+      "name": "SIGMA",
+      "offset": "0x044",
+      "access": "RW",
+      "meaning": "legacy noise control; ideal value0"
+    },
+    {
+      "name": "HOLD_RX",
+      "offset": "0x048",
+      "access": "RW",
+      "meaning": "0/1 diagnostic receive backpressure; may change while BUSY"
+    },
+    {
+      "name": "CRC_PAIR",
+      "offset": "0x04c",
+      "access": "RO",
+      "meaning": "received CRC in bits31:16; calculated in15:0"
+    },
+    {
+      "name": "START_DELAY",
+      "offset": "0x050",
+      "access": "RW",
+      "meaning": "start_delay"
+    },
+    {
+      "name": "CHANNEL_PHASE",
+      "offset": "0x054",
+      "access": "RW",
+      "meaning": "channel_phase"
+    },
+    {
+      "name": "NOISE_SEED",
+      "offset": "0x058",
+      "access": "RW",
+      "meaning": "noise_seed"
+    },
+    {
+      "name": "CHANNEL_STEP",
+      "offset": "0x05c",
+      "access": "RW",
+      "meaning": "channel_step"
+    },
+    {
+      "name": "SUPPRESS",
+      "offset": "0x060",
+      "access": "RW",
+      "meaning": "suppress"
+    },
+    {
+      "name": "CAPTURES",
+      "offset": "0x064",
+      "access": "RO",
+      "meaning": "captures"
+    },
+    {
+      "name": "RX_SAMPLES",
+      "offset": "0x068",
+      "access": "RO",
+      "meaning": "rx_samples"
+    },
+    {
+      "name": "SYNC_ERRORS",
+      "offset": "0x06c",
+      "access": "RO",
+      "meaning": "sync_errors"
+    },
+    {
+      "name": "GEOMETRIC_DELAY",
+      "offset": "0x070",
+      "access": "RW",
+      "meaning": "geometric_delay"
+    },
+    {
+      "name": "FRAME_CLASS",
+      "offset": "0x074",
+      "access": "RW",
+      "meaning": "frame_class"
+    },
+    {
+      "name": "ECHO_GAIN",
+      "offset": "0x078",
+      "access": "RW",
+      "meaning": "echo_gain"
+    },
+    {
+      "name": "ECHO_DELAY",
+      "offset": "0x07c",
+      "access": "RW",
+      "meaning": "echo_delay"
+    },
+    {
+      "name": "ECHO_PHASE",
+      "offset": "0x080",
+      "access": "RW",
+      "meaning": "echo_phase"
+    },
+    {
+      "name": "ECHO_STEP",
+      "offset": "0x084",
+      "access": "RW",
+      "meaning": "echo_step"
+    },
+    {
+      "name": "GAIN_DELTA",
+      "offset": "0x088",
+      "access": "RW",
+      "meaning": "gain_delta"
+    },
+    {
+      "name": "ECHO_GAIN_DELTA",
+      "offset": "0x08c",
+      "access": "RW",
+      "meaning": "echo_gain_delta"
+    },
+    {
+      "name": "FINAL_RNG",
+      "offset": "0x090",
+      "access": "RO",
+      "meaning": "final_rng"
+    },
+    {
+      "name": "FINAL_PHASE",
+      "offset": "0x094",
+      "access": "RO",
+      "meaning": "final_phase"
+    },
+    {
+      "name": "FINAL_ECHO_PHASE",
+      "offset": "0x098",
+      "access": "RO",
+      "meaning": "final_echo_phase"
+    },
+    {
+      "name": "CLIPPING",
+      "offset": "0x09c",
+      "access": "RO",
+      "meaning": "clipping"
+    },
+    {
+      "name": "BIT_ERRORS",
+      "offset": "0x0a0",
+      "access": "RO",
+      "meaning": "bit_errors"
+    },
+    {
+      "name": "MONITOR_INDEX<MONITOR_BODY_BITS?MONITOR_INDEX:MONITOR_BODY_BITS",
+      "offset": "0x0a4",
+      "access": "RO",
+      "meaning": "monitor_index<monitor_body_bits?monitor_index:monitor_body_bits"
+    },
+    {
+      "name": "TRAINING_I",
+      "offset": "0x0a8",
+      "access": "RO",
+      "meaning": "training_i"
+    },
+    {
+      "name": "TRAINING_Q",
+      "offset": "0x0ac",
+      "access": "RO",
+      "meaning": "training_q"
+    },
+    {
+      "name": "TRAINING_ENERGY[31:0]",
+      "offset": "0x0b0",
+      "access": "RO",
+      "meaning": "training_energy[31:0]"
+    },
+    {
+      "name": "TRAINING_ENERGY[63:32]",
+      "offset": "0x0b4",
+      "access": "RO",
+      "meaning": "training_energy[63:32]"
+    },
+    {
+      "name": "TRAINING_COUNT",
+      "offset": "0x0b8",
+      "access": "RO",
+      "meaning": "training_count"
+    },
+    {
+      "name": "FEC_MODE",
+      "offset": "0x0c0",
+      "access": "RW",
+      "meaning": "0 raw DBPSK, 1 PN9/interleaver/K7/Turbo two iterations"
+    },
+    {
+      "name": "CFO_ESTIMATE",
+      "offset": "0x0c4",
+      "access": "RO",
+      "meaning": "signed estimated phase increment per sample; Hz=value*8e6/2^32"
+    },
+    {
+      "name": "ESTIMATED_I",
+      "offset": "0x0c8",
+      "access": "RO",
+      "meaning": "estimated_i"
+    },
+    {
+      "name": "ESTIMATED_Q",
+      "offset": "0x0cc",
+      "access": "RO",
+      "meaning": "estimated_q"
+    },
+    {
+      "name": "TIMING_OMEGA",
+      "offset": "0x0d0",
+      "access": "RO",
+      "meaning": "estimated symbol period, Q16 sample units"
+    },
+    {
+      "name": "TIMING_UPDATES",
+      "offset": "0x0d4",
+      "access": "RO",
+      "meaning": "timing_updates"
+    },
+    {
+      "name": "PRE_ERRORS",
+      "offset": "0x0d8",
+      "access": "RO",
+      "meaning": "coded hard decision errors BEFORE FEC"
+    },
+    {
+      "name": "PRE_COUNT",
+      "offset": "0x0dc",
+      "access": "RO",
+      "meaning": "coded decisions compared"
+    },
+    {
+      "name": "DECODE_CYCLES",
+      "offset": "0x0e0",
+      "access": "RO",
+      "meaning": "decoder elapsed PL clock cycles"
+    },
+    {
+      "name": "{29'D0,ITERATIONS}",
+      "offset": "0x0e4",
+      "access": "RO",
+      "meaning": "completed full Turbo iterations, expected2 in FEC mode"
+    },
+    {
+      "name": "EVM_SUM[31:0]",
+      "offset": "0x0e8",
+      "access": "RO",
+      "meaning": "business EVM summed squared complex error low32"
+    },
+    {
+      "name": "EVM_SUM[63:32]",
+      "offset": "0x0ec",
+      "access": "RO",
+      "meaning": "business EVM summed squared complex error high32"
+    },
+    {
+      "name": "EVM_COUNT",
+      "offset": "0x0f0",
+      "access": "RO",
+      "meaning": "business EVM symbols; reference magnitude8192"
+    },
+    {
+      "name": "TRACE_ADDRESS",
+      "offset": "0x0f4",
+      "access": "RW",
+      "meaning": "IQ sample index0..511; usable in DONE"
+    },
+    {
+      "name": "TRACE_BANK",
+      "offset": "0x0f8",
+      "access": "RW",
+      "meaning": "IQ bank0 received,1 equalized; usable in DONE"
+    },
+    {
+      "name": "TRACE_DATA",
+      "offset": "0x0fc",
+      "access": "RO",
+      "meaning": "actual sample RAM packed signed Q16:I16"
+    },
+    {
+      "name": "TRACE_COUNT",
+      "offset": "0x300",
+      "access": "RO",
+      "meaning": "valid IQ sample count0..512"
+    },
+    {
+      "name": "TX_SOURCE",
+      "offset": "0x304",
+      "access": "RW when idle/no pending result",
+      "meaning": "0 ARM buffer; 1/2 PL9/PL13 data; 3/4 PL9/PL13 ACK"
+    },
+    {
+      "name": "MODEM_PROFILE",
+      "offset": "0x308",
+      "access": "RW when idle/no pending result",
+      "meaning": "0 soft differential DBPSK metric; 1 hard differential metric; other values PARAM_RANGE"
+    }
+  ],
+  "buffers": {
+    "tx": {
+      "offset": "0x100",
+      "bytes": 96,
+      "access": "RW only in IDLE"
+    },
+    "rx": {
+      "offset": "0x200",
+      "bytes": 96,
+      "access": "RO only when RX_VALID; invalid reads zero and set error9"
+    },
+    "iq": {
+      "samples": 512,
+      "banks": [
+        "received",
+        "equalized"
+      ],
+      "format": "packed signed Q16:I16, Q14",
+      "select_offset": "0x0f4",
+      "bank_offset": "0x0f8",
+      "data_offset": "0x0fc",
+      "count_offset": "0x300"
+    }
+  },
+  "errors": {
+    "0": "OK",
+    "1": "BUSY",
+    "2": "RESULT_PENDING",
+    "3": "LENGTH",
+    "4": "TX_INCOMPLETE",
+    "5": "HEADER",
+    "6": "BAD_COMMAND",
+    "7": "READ_ONLY",
+    "8": "ADDRESS",
+    "9": "NO_RESULT",
+    "10": "PARAM_RANGE"
+  },
+  "scope": "Sample-only DBPSK acquisition, estimated DSP, complete FPGA concatenated iterative FEC, measured IQ/EVM",
+  "firmware_protocol": 17,
+  "pl_hz": 62500000,
+  "uart_baud": 230400,
+  "runtime_memory_command": "MEMORY: stack reserved/high-water upper bound, guard, sbrk committed heap peak and allocation failures",
+  "reset": "All fabric state resets synchronously on its processing clock; PS peripheral reset is synchronized by proc_sys_reset.",
+  "hardware_nodes": {
+    "node_ids": [
+      9,
+      13
+    ],
+    "base_offsets": [
+      "0x400",
+      "0x800"
+    ],
+    "shared_contract": "docs/delivery_contract.txt sections 3 and 4",
+    "slot_count": 128,
+    "body_bytes": 96,
+    "independent": true,
+    "received_command_source": "CRC-valid FPGA RX only"
+  }
+}

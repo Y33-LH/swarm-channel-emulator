@@ -1,0 +1,12 @@
+header.topbar nav{display:flex;gap:6px;align-items:center}
+body header.topbar nav[aria-label] button.tab{font-size:clamp(16px,1.15vw,21px)!important}
+header.topbar nav button.tab{line-height:1.2;font-weight:750;letter-spacing:.02em;padding:8px clamp(6px,.75vw,14px);border:1px solid var(--nav-ink);color:var(--nav-ink);border-radius:7px;background:#0a192c;white-space:nowrap}
+header.topbar nav .tab:nth-child(1){--nav-ink:#5ae6ff}header.topbar nav .tab:nth-child(2){--nav-ink:#ffcd65}header.topbar nav .tab:nth-child(3){--nav-ink:#bfadff}
+header.topbar nav button.tab.active{background:var(--nav-ink);color:#09182a;box-shadow:0 0 10px color-mix(in srgb,var(--nav-ink) 35%,transparent)}
+#answer:empty,#recoveryPlan:empty,#recoveryReceipt:empty{display:none}
+.p2-right .workspace-pane .eventsPanel,.p2-right #events.eventlist{height:auto;max-height:none;overflow:visible;display:block}
+.journal-times,.journal-pages{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:4px 0;color:#a9c8db}.journal-times b,.journal-row time{font:600 12px monospace;color:#d5eaf5}
+.journal-row{display:grid;grid-template-columns:auto auto 1fr;align-items:baseline;gap:6px;padding:6px 0;border-top:1px solid #24384d;font-size:13px;line-height:1.35;overflow-wrap:anywhere;white-space:normal}
+.journal-row strong{color:#93cce8}.j-fault strong{color:#ff8187}.j-recover strong{color:#54e9aa}.journal-pages button{padding:2px 8px}
+.return-topology .node-motion{width:100%;height:auto;display:block;background:#061722;border-radius:7px}
+.return-topology .monitor-caption{color:#a5c5d7;font-size:12px;margin:4px 0}

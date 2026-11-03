@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "link_row": ["attempts", "captured", "crc_good", "data_acked", "data_retries", "receive_failed", "duplicates", "post_bits_tested", "post_errors", "clipped_samples", "pl_cycles", "evm_frame_count", "mean_frame_reference_evm_ppm", "coded_bits_tested", "coded_errors", "fec_frames", "ack_failures", "newly_accepted_payload_bytes", "upper_layer_rejected", "data_attempts", "ack_attempts"],
+  "delivery": "Unique packets received at their intended end destination / generated packets; pending and rejected packets remain in the denominator.",
+  "timely_delivery": "Unique packets received before the specified model-time deadline / all generated packets. Heartbeat 2000ms, alarm 1000ms, ordinary/control 5000ms.",
+  "command_success": "A successful return status received at ground; command enqueue or link ACK alone is not execution success.",
+  "p95": "Upper edge of the 10ms histogram bin containing the 95th percentile, across delivered packets; overflow is explicitly bounded separately from maximum delay.",
+  "ber": "Compared errors / tested bits in captured/decoded frames. Uncaptured frames have no BER sample; they remain failures in capture and delivery rates.",
+  "hop_success": "DATA confirmed by ACK / DATA attempts, separately from physical direction and ACK waveform attempts.",
+  "capture_failure": "Attempts minus captures.",
+  "crc_failure": "Captures minus CRC-valid receive frames.",
+  "ack_failures": "DATA decoded but a valid affirmative ACK was not received, including receiver rejection responses.",
+  "goodput": "Unique end-delivered application payload bits / model elapsed seconds, not UART bandwidth or radio throughput.",
+  "capacity": "Measured sustainable offered application load under explicitly fixed topology, frame size, TDMA, FEC and channel conditions; not Shannon capacity or a universal device limit.",
+  "evm": "Frame-averaged reference RMS error after receiver processing; known TX symbols feed only a separate measurement monitor, never receiver decisions.",
+  "scene_reference": "Geometry and controlled channel parameters; not measurements of the real atmosphere.",
+  "hardware_endpoint": "Nodes 9 and 13 own independent FPGA source queues, heartbeat/sequence state, decoded command execution, acknowledgements and isolated reset. Fourteen other UAV nodes are ARM software contexts. Every waveform uses one shared FPGA PHY core. Board-internal endpoints are the user-approved single-board scope, not two external aircraft or boards.",
+  "external_endpoint": "No physical external-node connection is claimed. External second-board integration is deferred by user instruction."
+}

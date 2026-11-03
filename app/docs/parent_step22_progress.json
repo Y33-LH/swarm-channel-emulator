@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "scope": "single_board_mixed_PL_ARM_endpoints",
+  "pl_version": "000d0003",
+  "firmware_protocol": 17,
+  "state": "SINGLE_BOARD_ENGINEERING_ACCEPTED",
+  "node_architecture": "2 independent PL hardware endpoints + 14 ARM virtual nodes + ground",
+  "current_ledger": "docs/development_status.json",
+  "baseline_ledger": "reference/baseline_progress_20261015.json",
+  "pending": [],
+  "deferred_by_user": [
+    "external_second_board",
+    "formal_report",
+    "final_video"
+  ],
+  "updated": "2026-10-18T03:09:38.959654",
+  "human_acceptance_pending": [
+    "novice_user_trial",
+    "judge_comprehension"
+  ],
+  "evidence": "results/product_acceptance.json"
+}

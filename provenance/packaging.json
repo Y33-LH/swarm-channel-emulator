@@ -1,0 +1,15 @@
+{
+  "source_release": "D:\\digitalcircuit\\swarm_minimal\\step29_live",
+  "original_manifest_sha256": "a1925d23ad072c34a7d37ea71f1f8b91907a32c506eb00f8c456bff1c6c6743a",
+  "host_changes": [
+    "tools/server.py",
+    "tools/product_assistant.py",
+    "start.ps1",
+    "launch.cmd",
+    "tools/start_assistant.ps1"
+  ],
+  "images_unchanged": true,
+  "runtime_source": "D:\\miniconda",
+  "runtime_isolation": "python314._pth + local native DLL directories",
+  "historical_evidence": "app/results records dated 20261018 or earlier are original-machine evidence, not destination-machine tests"
+}

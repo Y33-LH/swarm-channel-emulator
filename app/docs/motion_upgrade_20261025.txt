@@ -1,0 +1,27 @@
+蜂群公转运动升级 / 2026-10-25
+状态：源码与参考已改，【待重建固件 + 重新实板验收】后生效。
+
+改动：
+1. sw/scene_product.c scene_position()：蜂群整体绕场景中心公转的轨道半径
+   由写死 250 m 改为 orbit = max(0, 0.9*available − formation_radius)，
+   available = min(cx, 10000−cx, cy, 10000−cy)，formation_radius 与
+   scene_configure 校验口径一致（max|formation_xy|*spacing + 400）。
+   角速度 = 线速度 / 轨道半径（线速度不变，多普勒特性不变）。
+   速度为 0 时无公转（orbit=0），与旧行为一致。
+   菱形@600m 默认演示：轨道 2777 m，编队可达范围覆盖地图宽度 72%–82%。
+2. reference/product_scene.py position()：逐式镜像同一公式（验收容差 ±1 mm）。
+
+生效条件：
+- 本机无 Xilinx SDK 2018.3，swarm_app.elf 未重建；在装有 SDK 的机器上执行
+  根目录 BUILD.cmd（或 tools/rebuild_product.ps1）重建并重灌固件。
+- 重建后必须重跑 tests/network_acceptance.py 等实板验收（空地链路距离范围
+  由约 0–2.6 km 扩大到约 1.0–4.2 km，送达率与时延基线需重新确认）。
+- 主机端 /api/truth 连续轨迹接口直接使用 product_scene.position，
+  固件重建前，UI 连续轨迹按新公式显示，与旧固件实收位置会出现
+  轨道半径差异（旧固件 250 m）——这是预期内的待重建状态，
+  界面上实收心跳点仍是验收依据。
+
+追加（2026-10-25 晚，导师纪要）：
+1. 载波校验放宽：scene_product.c low/high[13] 2400→(200,6000)，product_config.py 同步；UI 载波输入在 protocol>=18 时启用（旧固件禁用并锁定 2400）。
+2. 待做（需重建 + RTL）：路径数随场景 2→4 径（h(n)=Σpᵢδ(n−τᵢ)e^{jθᵢ} 一般化），涉及 PL 延迟线加深，须在 Vivado 中改 RTL 并仿真验证；FPGA 硬件端点 2→4（节点 4/8/12/16 空地网关），以 Slice 余量（现 76%）为准，重建时取层次化 utilization 复核。
+3. TDMA 维持 20×5ms=100ms（工程计算见 D:/FAS_NEW_HOPE_PROJECT/TDMA与FPGA端点工程计算_20261025.md）。

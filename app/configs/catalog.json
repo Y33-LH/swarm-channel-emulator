@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "defaults": {
+    "schema": 1,
+    "environment": 0,
+    "weather": 0,
+    "formation": 0,
+    "spacing_m": 300,
+    "altitude_m": 400,
+    "center_x_m": 5000,
+    "center_y_m": 5000,
+    "speed_mmps": 12000,
+    "heading_deg": 0,
+    "reference_snr_cdb": 3400,
+    "faults": 1,
+    "jitter_percent": 100,
+    "carrier_mhz": 2400,
+    "external_node": 0,
+    "reserved": 0
+  },
+  "environment": [
+    {
+      "id": 0,
+      "key": "demo",
+      "name": "三环境连续演示"
+    },
+    {
+      "id": 1,
+      "key": "open_field",
+      "name": "旷野"
+    },
+    {
+      "id": 2,
+      "key": "rural",
+      "name": "乡村"
+    },
+    {
+      "id": 3,
+      "key": "suburb",
+      "name": "郊区"
+    },
+    {
+      "id": 4,
+      "key": "city",
+      "name": "城市"
+    },
+    {
+      "id": 5,
+      "key": "mountain",
+      "name": "山地"
+    },
+    {
+      "id": 6,
+      "key": "hills",
+      "name": "丘陵"
+    },
+    {
+      "id": 7,
+      "key": "plateau",
+      "name": "高原"
+    }
+  ],
+  "weather": [
+    {
+      "id": 0,
+      "key": "clear",
+      "name": "晴天"
+    },
+    {
+      "id": 1,
+      "key": "fog",
+      "name": "雾"
+    },
+    {
+      "id": 2,
+      "key": "light_rain",
+      "name": "小雨"
+    },
+    {
+      "id": 3,
+      "key": "rain",
+      "name": "中雨"
+    },
+    {
+      "id": 4,
+      "key": "heavy_rain",
+      "name": "大雨"
+    },
+    {
+      "id": 5,
+      "key": "light_snow",
+      "name": "小雪"
+    },
+    {
+      "id": 6,
+      "key": "snow",
+      "name": "中雪"
+    },
+    {
+      "id": 7,
+      "key": "heavy_snow",
+      "name": "大雪"
+    }
+  ],
+  "formation": [
+    {
+      "id": 0,
+      "key": "legacy_x",
+      "name": "X形"
+    },
+    {
+      "id": 1,
+      "key": "line",
+      "name": "横列"
+    },
+    {
+      "id": 2,
+      "key": "column",
+      "name": "纵列"
+    },
+    {
+      "id": 3,
+      "key": "v",
+      "name": "V形"
+    },
+    {
+      "id": 4,
+      "key": "triangle",
+      "name": "三角形"
+    },
+    {
+      "id": 5,
+      "key": "trapezoid",
+      "name": "梯形"
+    },
+    {
+      "id": 6,
+      "key": "diamond",
+      "name": "菱形"
+    },
+    {
+      "id": 7,
+      "key": "grid",
+      "name": "方阵"
+    },
+    {
+      "id": 8,
+      "key": "circle",
+      "name": "环形"
+    }
+  ],
+  "channel_defaults": {
+    "schema": 1,
+    "mode": 0,
+    "fading": 0,
+    "sample_rate_khz": 8000,
+    "tap_count": 2,
+    "rician_k_cdb": 1500,
+    "scatter_millihz": 2000,
+    "loss_cdb": 1200,
+    "cfo_hz": 0,
+    "phase_cdeg": 0,
+    "delay_ns": 0,
+    "delay_scale_percent": 100,
+    "echo_decay_cdb": 300,
+    "reserved0": 0,
+    "reserved1": 0,
+    "reserved2": 0,
+    "tap0_power_cdb": 0,
+    "tap0_delay_ns": 0,
+    "tap0_phase_cdeg": 0,
+    "tap0_cfo_hz": 0,
+    "tap1_power_cdb": -300,
+    "tap1_delay_ns": 125,
+    "tap1_phase_cdeg": 0,
+    "tap1_cfo_hz": 0,
+    "tap2_power_cdb": -600,
+    "tap2_delay_ns": 250,
+    "tap2_phase_cdeg": 0,
+    "tap2_cfo_hz": 0,
+    "tap3_power_cdb": -900,
+    "tap3_delay_ns": 375,
+    "tap3_phase_cdeg": 0,
+    "tap3_cfo_hz": 0,
+    "tap4_power_cdb": -1200,
+    "tap4_delay_ns": 500,
+    "tap4_phase_cdeg": 0,
+    "tap4_cfo_hz": 0,
+    "tap5_power_cdb": -1500,
+    "tap5_delay_ns": 625,
+    "tap5_phase_cdeg": 0,
+    "tap5_cfo_hz": 0,
+    "tap6_power_cdb": -1800,
+    "tap6_delay_ns": 750,
+    "tap6_phase_cdeg": 0,
+    "tap6_cfo_hz": 0,
+    "tap7_power_cdb": -2100,
+    "tap7_delay_ns": 875,
+    "tap7_phase_cdeg": 0,
+    "tap7_cfo_hz": 0
+  },
+  "scope": "1–8 抽头数字基带实验；支持场景系数与自主系数。雨衰使用 P.838，其余地形/天气为公开的受控参数假设。",
+  "severe_weather": [
+    4,
+    6,
+    7
+  ],
+  "external_node_scope": "接口开发与单板注入；第二块板接入尚未验证"
+}

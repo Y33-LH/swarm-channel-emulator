@@ -1,0 +1,247 @@
+[
+  {
+    "name": "bzip2",
+    "version": "1.0.8",
+    "license": "bzip2-1.0.8",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/bzip2-1.0.8-h2bbff1b_6.conda",
+    "notices": "licenses/runtime/bzip2-1.0.8-h2bbff1b_6"
+  },
+  {
+    "name": "fmt",
+    "version": "12.1.0",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/fmt-12.1.0-ha349831_0.conda",
+    "notices": "licenses/runtime/fmt-12.1.0-ha349831_0"
+  },
+  {
+    "name": "krb5",
+    "version": "1.22.2",
+    "license": "MIT",
+    "origin": "https://conda.anaconda.org/conda-forge/win-64/krb5-1.22.2-h719d79b_1.conda",
+    "notices": "licenses/runtime/krb5-1.22.2-h719d79b_1"
+  },
+  {
+    "name": "libarchive",
+    "version": "3.8.8",
+    "license": "BSD-2-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libarchive-3.8.8-he4ea9ff_1.conda",
+    "notices": "licenses/runtime/libarchive-3.8.8-he4ea9ff_1"
+  },
+  {
+    "name": "libbrotlicommon",
+    "version": "1.2.0",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libbrotlicommon-1.2.0-h907acca_0.conda",
+    "notices": "licenses/runtime/libbrotlicommon-1.2.0-h907acca_0"
+  },
+  {
+    "name": "libbrotlidec",
+    "version": "1.2.0",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libbrotlidec-1.2.0-h02c67a5_0.conda",
+    "notices": "licenses/runtime/libbrotlidec-1.2.0-h02c67a5_0"
+  },
+  {
+    "name": "libbrotlienc",
+    "version": "1.2.0",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libbrotlienc-1.2.0-h483e6b9_0.conda",
+    "notices": "licenses/runtime/libbrotlienc-1.2.0-h483e6b9_0"
+  },
+  {
+    "name": "libcurl",
+    "version": "8.21.0",
+    "license": "curl",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libcurl-8.21.0-h9440e04_0.conda",
+    "notices": "licenses/runtime/libcurl-8.21.0-h9440e04_0"
+  },
+  {
+    "name": "libexpat",
+    "version": "2.8.2",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libexpat-2.8.2-hd7fb8db_1.conda",
+    "notices": "licenses/runtime/libexpat-2.8.2-hd7fb8db_1"
+  },
+  {
+    "name": "libffi",
+    "version": "3.4.8",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libffi-3.4.8-h42d73b9_3.conda",
+    "notices": "licenses/runtime/libffi-3.4.8-h42d73b9_3"
+  },
+  {
+    "name": "libiconv",
+    "version": "1.18",
+    "license": "LGPL-2.1-only",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libiconv-1.18-hc89ec93_0.conda",
+    "notices": "licenses/runtime/libiconv-1.18-hc89ec93_0"
+  },
+  {
+    "name": "libkrb5",
+    "version": "1.22.2",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libkrb5-1.22.2-h3d06f0e_0.conda",
+    "notices": "licenses/runtime/libkrb5-1.22.2-h3d06f0e_0"
+  },
+  {
+    "name": "libmamba",
+    "version": "2.3.2",
+    "license": "BSD-3-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libmamba-2.3.2-hf4f7140_3.conda",
+    "notices": "licenses/runtime/libmamba-2.3.2-hf4f7140_3"
+  },
+  {
+    "name": "libmpdec",
+    "version": "4.0.1",
+    "license": "BSD-2-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libmpdec-4.0.1-h1c6eee0_0.conda",
+    "notices": "licenses/runtime/libmpdec-4.0.1-h1c6eee0_0"
+  },
+  {
+    "name": "libsodium",
+    "version": "1.0.22",
+    "license": "ISC",
+    "origin": "https://conda.anaconda.org/conda-forge/win-64/libsodium-1.0.22-h6a83c73_1.conda",
+    "notices": "licenses/runtime/libsodium-1.0.22-h6a83c73_1"
+  },
+  {
+    "name": "libsolv",
+    "version": "0.7.39",
+    "license": "BSD-3-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libsolv-0.7.39-h5d596b6_0.conda",
+    "notices": "licenses/runtime/libsolv-0.7.39-h5d596b6_0"
+  },
+  {
+    "name": "libssh2",
+    "version": "1.11.1",
+    "license": "BSD-3-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libssh2-1.11.1-h2addb87_0.conda",
+    "notices": "licenses/runtime/libssh2-1.11.1-h2addb87_0"
+  },
+  {
+    "name": "libxml2",
+    "version": "2.15.3",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libxml2-2.15.3-h63fadda_0.conda",
+    "notices": "licenses/runtime/libxml2-2.15.3-h63fadda_0"
+  },
+  {
+    "name": "libzlib",
+    "version": "1.3.2",
+    "license": "Zlib",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/libzlib-1.3.2-h1c6eee0_0.conda",
+    "notices": "licenses/runtime/libzlib-1.3.2-h1c6eee0_0"
+  },
+  {
+    "name": "lz4-c",
+    "version": "1.9.4",
+    "license": "BSD-2-Clause",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/lz4-c-1.9.4-h1c6eee0_5.conda",
+    "notices": "licenses/runtime/lz4-c-1.9.4-h1c6eee0_5"
+  },
+  {
+    "name": "openssl",
+    "version": "3.6.3",
+    "license": "Apache-2.0",
+    "origin": "https://conda.anaconda.org/conda-forge/win-64/openssl-3.6.3-hf411b9b_0.conda",
+    "notices": "licenses/runtime/openssl-3.6.3-hf411b9b_0"
+  },
+  {
+    "name": "pcre2",
+    "version": "10.46",
+    "license": "BSD-3-Clause WITH PCRE2-exception",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/pcre2-10.46-h5740b90_0.conda",
+    "notices": "licenses/runtime/pcre2-10.46-h5740b90_0"
+  },
+  {
+    "name": "python",
+    "version": "3.14.6",
+    "license": "PSF-2.0",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/python-3.14.6-hb107ab2_101_cp314.conda",
+    "notices": "licenses/runtime/python-3.14.6-hb107ab2_101_cp314"
+  },
+  {
+    "name": "pywin32",
+    "version": "312",
+    "license": "PSF-2.0",
+    "origin": "https://conda.anaconda.org/conda-forge/win-64/pywin32-312-py314hcaaf0b2_0.conda",
+    "notices": "licenses/runtime/pywin32-312-py314hcaaf0b2_0"
+  },
+  {
+    "name": "reproc",
+    "version": "14.2.7",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/reproc-14.2.7-h557c29b_0.conda",
+    "notices": "licenses/runtime/reproc-14.2.7-h557c29b_0"
+  },
+  {
+    "name": "reproc-cpp",
+    "version": "14.2.7",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/reproc-cpp-14.2.7-h557c29b_0.conda",
+    "notices": "licenses/runtime/reproc-cpp-14.2.7-h557c29b_0"
+  },
+  {
+    "name": "simdjson",
+    "version": "3.10.1",
+    "license": "Apache-2.0",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/simdjson-3.10.1-h214f63a_0.conda",
+    "notices": "licenses/runtime/simdjson-3.10.1-h214f63a_0"
+  },
+  {
+    "name": "sqlite",
+    "version": "3.53.2",
+    "license": "blessing",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/sqlite-3.53.2-hee5a0db_0.conda",
+    "notices": "licenses/runtime/sqlite-3.53.2-hee5a0db_0"
+  },
+  {
+    "name": "tk",
+    "version": "8.6.15",
+    "license": "TCL",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/tk-8.6.15-hf199647_0.conda",
+    "notices": "licenses/runtime/tk-8.6.15-hf199647_0"
+  },
+  {
+    "name": "ucrt",
+    "version": "10.0.22621.0",
+    "license": "LicenseRef-MicrosoftWindowsSDK10",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/ucrt-10.0.22621.0-haa95532_0.conda",
+    "notices": "licenses/runtime/ucrt-10.0.22621.0-haa95532_0"
+  },
+  {
+    "name": "vc14_runtime",
+    "version": "14.44.35208",
+    "license": "LicenseRef-MicrosoftVisualCpp2015-2022Runtime",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/vc14_runtime-14.44.35208-h4927774_12.conda",
+    "notices": "licenses/runtime/vc14_runtime-14.44.35208-h4927774_12"
+  },
+  {
+    "name": "xz",
+    "version": "5.8.2",
+    "license": "LGPL-2.1-or-later and GPL-2.0-or-later and 0BSD",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/xz-5.8.2-h53af0af_0.conda",
+    "notices": "licenses/runtime/xz-5.8.2-h53af0af_0"
+  },
+  {
+    "name": "yaml-cpp",
+    "version": "0.9.0",
+    "license": "MIT",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/yaml-cpp-0.9.0-h9081779_1.conda",
+    "notices": "licenses/runtime/yaml-cpp-0.9.0-h9081779_1"
+  },
+  {
+    "name": "zeromq",
+    "version": "4.3.5",
+    "license": "MPL-2.0",
+    "origin": "https://conda.anaconda.org/conda-forge/win-64/zeromq-4.3.5-h3a581c9_11.conda",
+    "notices": "licenses/runtime/zeromq-4.3.5-h3a581c9_11"
+  },
+  {
+    "name": "zstd",
+    "version": "1.5.7",
+    "license": "BSD-3-Clause AND GPL-2.0-or-later",
+    "origin": "https://repo.anaconda.com/pkgs/main/win-64/zstd-1.5.7-h56299aa_0.conda",
+    "notices": "licenses/runtime/zstd-1.5.7-h56299aa_0"
+  }
+]

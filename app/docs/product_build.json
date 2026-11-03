@@ -1,0 +1,26 @@
+{
+  "build": "D:\\digitalcircuit\\returned_20261031\\PROJECT_BUNDLE\\app\\results\\board_20261103_025326",
+  "sdk_workspace": "D:\\digitalcircuit\\returned_20261031\\PROJECT_BUNDLE\\app\\results\\sdk_sceneclock_direct",
+  "bit_sha256": "25e92430ba839aa7478c3d5391f100db7a3ea869fdb2ab6dbf272b9348403619",
+  "hdf_sha256": "3d4d45654b62ee68383584bf772da9513c1c20ac51dab3c26aa0d0ee02bd4bb3",
+  "wns_ns": 0.092,
+  "whs_ns": 0.045,
+  "rtl_verified": true,
+  "ps_init_identical": true,
+  "final_checkpoint": "D:\\digitalcircuit\\returned_20261031\\PROJECT_BUNDLE\\app\\results\\board_20261103_025326\\board\\board.runs\\impl_1\\system_wrapper_routed.dcp",
+  "build_scripts_sha256": {
+    "board_config.wildfire7020.tcl": "c4e82718056455bccef75887edbcf685e5ae8d2c1086d5641cc954c5d498a119",
+    "build_board.tcl": "f5f2652bcf770c517f1b8b7d44c3e312f3381fe8d79a6639a9cb19109d5662fc",
+    "build_verified_entry.tcl": "82f5027ca0babe7dc5249af66e16a6669fee9fb90e4373ee39cc0ea8b8d35ed8",
+    "check_core.tcl": "717e5eb0ee0160a16eb8dd255814bbc1adc3987a6c3259419539575ab29cd5b3",
+    "configure_sdk_memory.tcl": "a4abc4228baaea36567e777187990b64106b6ffe33e4f367dfae01184e2eed49",
+    "export_post_synth.tcl": "72ec7101977a3c47da819fd4d1b436c3ab1e0a8d88e7adefc81ae6eeb248e262",
+    "export_release_netlist.tcl": "869f5d28262ab63a2ab5cc2cee6cf5ee733f2e096efd47c26b35e036d3fc412b",
+    "finish_board.tcl": "99b72283059e3a4c3d5bc346d23e31d185b50ef72c0bd8d2dab004bb3a7853a8",
+    "probe.tcl": "5b5e4a9956387b0c0895ad2d8d8342fd5e41c74870dc6b435d0197ef9df7c557",
+    "resume_board.tcl": "c7658e92af59d0369880790e6b42e15ef8ee63ad5a8a63cc474fc8bf1290bf6b",
+    "sdk_options.tcl": "21b1467e1a134d1e4cd14c5c9f7b3ebd672b151cf5121a5574ce3157a0ae605d",
+    "timing_groups.tcl": "db458fd0c0a5bf0b6d6de198ea9a8f5520900bf9aa46ed215f56c8ae50e33cce",
+    "timing_other.tcl": "71fa791d6bddc5fb7488c7512fb907c50cec2dcc3667aeff7b7010b7c7ef5c58"
+  }
+}

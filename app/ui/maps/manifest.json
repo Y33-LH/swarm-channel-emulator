@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "source": "https://maps.eox.at/",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "attribution": "EOxCloudless by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)",
+  "attribution_url": "https://cloudless.eox.at/",
+  "map_only": true,
+  "note": "历史卫星影像，仅作场景背景；没有将地形遮挡、建筑或影像像素输入信道模型。不是实时航拍或实时气象。",
+  "local_extent_m": [
+    -3000,
+    0,
+    13000,
+    10000
+  ],
+  "crs": "WGS84 / local equirectangular approximation",
+  "areas": [
+    {
+      "environment": 1,
+      "name": "旷野",
+      "file": "env_1.jpg",
+      "center_wgs84": [
+        116.0,
+        43.0
+      ],
+      "bbox_wgs84": [
+        115.90173715694584,
+        42.95508444125045,
+        116.09826284305416,
+        43.04491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=115.90173716%2C42.95508444%2C116.09826284%2C43.04491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "f635d55ad068fcd81df8b7c2dfd059f7addd063d8c0e31c759259a89e7c267eb"
+    },
+    {
+      "environment": 2,
+      "name": "乡村",
+      "file": "env_2.jpg",
+      "center_wgs84": [
+        109.6,
+        34.5
+      ],
+      "bbox_wgs84": [
+        109.51279867696057,
+        34.45508444125045,
+        109.68720132303942,
+        34.54491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=109.51279868%2C34.45508444%2C109.68720132%2C34.54491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "e5e3fda42358887860bf5d859619a9f5d3eafd9568b27fa86e4d3e7daa4e61ee"
+    },
+    {
+      "environment": 3,
+      "name": "郊区",
+      "file": "env_3.jpg",
+      "center_wgs84": [
+        108.85,
+        34.1
+      ],
+      "bbox_wgs84": [
+        108.7632129737478,
+        34.05508444125045,
+        108.93678702625219,
+        34.14491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=108.76321297%2C34.05508444%2C108.93678703%2C34.14491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "0dd23c5993743e5987858e76523e5404d0c6fdeb5d3f1685ae56e966b39ac671"
+    },
+    {
+      "environment": 4,
+      "name": "城市",
+      "file": "env_4.jpg",
+      "center_wgs84": [
+        108.95,
+        34.26
+      ],
+      "bbox_wgs84": [
+        108.86304823672592,
+        34.21508444125045,
+        109.03695176327409,
+        34.30491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=108.86304824%2C34.21508444%2C109.03695176%2C34.30491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "47c8c6bd477106eb6b11eccec35d17e97b3aa4cc437ec649b6d07a9ece6288d6"
+    },
+    {
+      "environment": 5,
+      "name": "山地",
+      "file": "env_5.jpg",
+      "center_wgs84": [
+        108.77,
+        33.95
+      ],
+      "bbox_wgs84": [
+        108.6833662363385,
+        33.90508444125045,
+        108.85663376366149,
+        33.994915558749554
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=108.68336624%2C33.90508444%2C108.85663376%2C33.99491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "42a749b1963be950c2be33ebd0b044849fcc0e0fee0473e5992208a37e22fd4e"
+    },
+    {
+      "environment": 6,
+      "name": "丘陵",
+      "file": "env_6.jpg",
+      "center_wgs84": [
+        109.4,
+        36.4
+      ],
+      "bbox_wgs84": [
+        109.31071506050195,
+        36.35508444125045,
+        109.48928493949806,
+        36.44491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=109.31071506%2C36.35508444%2C109.48928494%2C36.44491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "ce35136e0b55e10b6a7957b535130461a7bc420e9b1136527eda8a7ba6169d97"
+    },
+    {
+      "environment": 7,
+      "name": "高原",
+      "file": "env_7.jpg",
+      "center_wgs84": [
+        100.3,
+        36.9
+      ],
+      "bbox_wgs84": [
+        100.21013345918722,
+        36.85508444125045,
+        100.38986654081278,
+        36.94491555874955
+      ],
+      "url": "https://tiles.maps.eox.at/wms?service=WMS&version=1.1.1&request=GetMap&layers=s2cloudless-2024&styles=&srs=EPSG%3A4326&bbox=100.21013346%2C36.85508444%2C100.38986654%2C36.94491556&width=1280&height=800&format=image%2Fjpeg",
+      "sha256": "14cb7b63b3fc958f2b105f757316102e407c1f76dfa1389d150d376cc3955b3d"
+    }
+  ]
+}

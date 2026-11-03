@@ -1,0 +1,586 @@
+/* ═══════════════════════════════════════════════════════════════
+   theme-v2.css —— 全站视觉重做（最后加载，覆盖旧主题）
+   设计参照：专业指控台深色风格 —— 深靛蓝底、青/蓝/紫/品红渐变 KPI、
+   统一卡片描边与圆角、明确的分区与层级。只改外观，不改数据与逻辑。
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+ --t-bg:#050b18;
+ --t-panel:#0b1526;
+ --t-line:#1e3a5f;
+ --t-line2:#2a4f7a;
+ --t-cyan:#3be0e6;
+ --t-blue:#4d9fff;
+ --t-purple:#9a6bff;
+ --t-pink:#ff5fa2;
+ --t-amber:#ffb02e;
+ --t-green:#2df5c6;
+ --t-red:#ff4d6a;
+ --t-text:#e8f2fb;
+ --t-muted:#8aa7c4;
+}
+body{
+ color:var(--t-text);
+ background:
+  radial-gradient(1100px 480px at 18% -8%, #12305e55 0, transparent 60%),
+  radial-gradient(900px 420px at 85% -6%, #2a1a5e44 0, transparent 60%),
+  radial-gradient(700px 500px at 55% 115%, #0b3a4a33 0, transparent 65%),
+  var(--t-bg);
+}
+/* ── 顶栏 ─────────────────────────────────────────────── */
+.topbar{background:rgba(6,13,30,.94);border-bottom:1px solid var(--t-line);box-shadow:0 6px 24px #0006}
+.brandmark{color:var(--t-cyan);filter:drop-shadow(0 0 12px #3be0e680)}
+.topbar h1{background:linear-gradient(90deg,#7ef2f5,#4d9fff);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:3px}
+.topbar .brand p{color:var(--t-muted)}
+nav .tab{border-radius:9px;padding:9px 18px;color:var(--t-muted);border:1px solid transparent;font-size:14px}
+nav .tab:hover:not(.active){color:var(--t-text);border-color:var(--t-line2);background:#0e1f3a}
+nav .tab.active{color:#eafcff;background:linear-gradient(120deg,#123c66,#0d5a6e);border-color:#2d7f8f;box-shadow:0 0 16px #3be0e62e,inset 0 0 12px #3be0e614}
+.topactions .badge{border-radius:20px;padding:4px 12px;font-size:11px}
+.topactions .badge.good{background:#0d3329;border:1px solid #1e6b52;color:#7df0c8}
+.topactions .badge.warning{background:#3a2a10;border:1px solid #7a5a1e;color:#ffcf8a}
+.topactions button{border-radius:8px}
+/* ── 运行坞 / 状态条 ─────────────────────────────────── */
+.run-dock{background:#08142799;border-bottom:1px solid var(--t-line);backdrop-filter:blur(6px)}
+.run-dock button{border-radius:8px}
+.run-tools #start{background:linear-gradient(120deg,#0e9fd8,#1756c7);border-color:#4db8ff;font-weight:700;box-shadow:0 4px 18px #0e9fd833}
+.run-tools #start:hover:not(:disabled){background:linear-gradient(120deg,#2ab5ea,#2668de)}
+.scopebar{background:#060f1f;color:#7f9db8;border-bottom:1px solid #142c49;font-size:10px}
+.sourcebar{background:#081426;color:#9fc3d8}
+.sourcebar.history{color:var(--t-amber)}
+.global-health{background:#07122299;border-bottom:1px solid #142c49}
+.global-timeline strong{color:#8ef2ec}
+.global-timeline progress,.timeline progress{height:6px;border-radius:4px;overflow:hidden}
+progress::-webkit-progress-bar{background:#10233c;border-radius:4px}
+progress::-webkit-progress-value{background:linear-gradient(90deg,var(--t-cyan),var(--t-blue));border-radius:4px}
+progress::-moz-progress-bar{background:linear-gradient(90deg,var(--t-cyan),var(--t-blue));border-radius:4px}
+/* ── 卡片与面板 ─────────────────────────────────────── */
+.panel,.cx-card,.lx-panel{
+ background:linear-gradient(165deg,rgba(19,33,62,.88),rgba(9,17,36,.94));
+ border:1px solid var(--t-line);border-radius:12px;
+ box-shadow:0 10px 30px #00000038;
+}
+.sectiontitle h2,.panel h2,.panel h3{color:#dcecfa}
+.sectiontitle h2::before{content:'';display:inline-block;width:4px;height:14px;margin-right:8px;vertical-align:-2px;background:linear-gradient(180deg,var(--t-cyan),var(--t-blue));border-radius:2px}
+.eyebrow{color:#5fc8e8;letter-spacing:2.5px}
+.tag{background:#12294a;border:1px solid #24456e;color:#8fc6e8;border-radius:12px;padding:1px 9px;font-size:10px}
+/* 模块用途说明行（module-notes.js 注入） */
+.panel-note{
+ margin:2px 0 10px;padding:6px 10px;font-size:11px;line-height:1.6;color:#86a8c6;
+ background:#0c1a3099;border-left:3px solid var(--t-cyan);border-radius:0 8px 8px 0;
+}
+.mapPanel>.panel-note{margin:0 16px 8px}
+/* ── KPI 指标卡（参照优秀设计：四色渐变 + 大数字） ────── */
+.kpis article{border:1px solid #ffffff14;border-radius:12px;position:relative;overflow:hidden}
+.kpis article::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#ffffff12,transparent 45%);pointer-events:none}
+.kpis article:nth-child(1){background:linear-gradient(135deg,#0b3d5c,#0a6b6b)}
+.kpis article:nth-child(2){background:linear-gradient(135deg,#143a78,#2436a8)}
+.kpis article:nth-child(3){background:linear-gradient(135deg,#3b1c78,#6a2bb0)}
+.kpis article:nth-child(4){background:linear-gradient(135deg,#631c40,#a8286b)}
+.kpis article span{color:#ffffffb8}
+.kpis article small{color:#ffffff80}
+.kpis article strong{color:#fff;text-shadow:0 2px 12px #0006;font-family:Consolas,monospace}
+.kpis article strong em{color:#ffffffa0}
+.value-changing{color:#fff!important;text-shadow:0 0 16px #7ef2f5cc}
+/* ── 按钮 ─────────────────────────────────────────── */
+button{background:#102242;border-color:#24456e;border-radius:8px}
+button:hover:not(:disabled){background:#173156;border-color:var(--t-cyan)}
+button.primary{background:linear-gradient(120deg,#0e9fd8,#1756c7);border-color:#4db8ff}
+button.primary:hover:not(:disabled){background:linear-gradient(120deg,#2ab5ea,#2668de)}
+button.danger{color:#ff8a97;border-color:#6e2436;background:#2a1018}
+button:disabled{opacity:.4}
+/* ── 表单 ─────────────────────────────────────────── */
+input,select,textarea{background:#0a1a30;border:1px solid #234268;color:var(--t-text);border-radius:7px;padding:7px 9px}
+input:focus,select:focus,textarea:focus{border-color:var(--t-cyan)}
+details>summary{color:#9cc3dc}
+/* ── 地图面板 ─────────────────────────────────────── */
+.mapwrap{border-radius:0 0 12px 12px;overflow:hidden}
+.mapPanel{border-radius:12px}
+.mapheading h2{color:#dcecfa}
+.mapstamp{background:#08142acc;border-left:2px solid var(--t-cyan);border-radius:0 8px 8px 0}
+.maplegend{background:#08142acc;border-radius:8px}
+.terrain-note{color:#6f92ac;font-size:10px}
+/* ── 图表卡 ───────────────────────────────────────── */
+.chart-card,.chartcard{background:#081426;border:1px solid #1b3a5e;border-radius:10px}
+.chart-heading h3,.charttitle h4{color:#bfe2f2}
+.chart-heading span,.charttitle span,.chartvalue{color:#5ff0ea}
+.chart-tabs button.selected{background:#0e3a44;color:#6ff0ea;box-shadow:inset 0 -2px #3be0e6}
+/* ── 表格 ─────────────────────────────────────────── */
+table{border-collapse:collapse;width:100%}
+thead th,table tr:first-child th{background:#122a4d;color:#9fd4e8;font-weight:600}
+td,th{border-bottom:1px solid #16294a;padding:6px 8px}
+tbody tr:hover{background:#0e2240}
+/* ── 事件流 / 建议 / AI ───────────────────────────── */
+.event{border-left:3px solid #2a4f7a;background:#0c1a30;border-radius:0 8px 8px 0;padding:6px 10px;margin-bottom:6px;font-size:11px}
+.event time{color:#5f8db0;font-family:Consolas,monospace;margin-right:8px}
+.adviceCard{border:1px solid #24456e;border-left-width:4px;border-radius:8px;background:#0c1a30;padding:10px 12px;margin-bottom:8px}
+.adviceCard h4{color:#dcecfa;margin:0 0 4px}
+.answer{background:#0c1a30;border:1px solid #24456e;border-radius:10px;padding:10px 12px}
+.question-examples button{font-size:11px;border-radius:14px;padding:4px 12px;background:#0e2440;border-color:#2a558a}
+/* ── 选项卡（场景 / 天气 / 编队） ───────────────────── */
+.option-card{background:#0c1c34;border:1px solid #24456e;border-radius:8px;color:#9db8d0}
+.option-card[aria-pressed=true]{background:linear-gradient(150deg,#0f4a55,#123c66);color:#7ef2f5;border-color:#3aa8b5;box-shadow:0 0 14px #3be0e622,inset 0 0 18px #3be0e612}
+.side-tabs button,.choice-tabs button{border-radius:8px;background:#0c1c34;border-color:#24456e}
+.side-tabs button.selected,.choice-tabs button.selected{background:linear-gradient(120deg,#0f4a55,#123c66);color:#7ef2f5;border-color:#3aa8b5;box-shadow:none}
+/* ── 实验模式栏 / 任务轨 ────────────────────────────── */
+.experiment-mode-bar{background:#08142799;border:1px solid var(--t-line);border-radius:10px}
+.experiment-mode-bar button{border-radius:8px}
+.experiment-mode-bar button[aria-pressed=true]{background:linear-gradient(120deg,#0f4a55,#123c66);color:#7ef2f5;border-color:#3aa8b5}
+.task-guide{background:linear-gradient(120deg,#0c1e38,#0a2c33);border:1px solid #1e4a5a;border-radius:10px}
+.task-state{background:#0e9fd8;color:#04222e;border-radius:10px;padding:2px 10px;font-weight:700}
+.task-trail{display:none!important} /* 与顶部导航重复，裁撤 */
+/* ── 叙事主线 ─────────────────────────────────────── */
+#missionStory{background:linear-gradient(120deg,#0c1e38f2,#0d2430f2);border:1px solid #1e4a5a;border-radius:12px}
+#storySteps button{border-radius:14px;font-size:11px;padding:4px 12px;background:#0c1c34;border-color:#24456e}
+#storySteps button.selected{background:linear-gradient(120deg,#0e9fd8,#1756c7);color:#fff;border-color:#4db8ff}
+#liveControl{background:#0c2438;border-radius:8px;border:1px solid #1e4a5a}
+/* ── 对话框 ───────────────────────────────────────── */
+dialog{background:#0a1626;border:1px solid #2a4f7a;border-radius:14px;color:var(--t-text);box-shadow:0 24px 80px #000a}
+dialog::backdrop{background:#02060fcf}
+/* ── toast ────────────────────────────────────────── */
+#toast{background:#0c1e38f5;border:1px solid #2a6f8f;border-radius:10px;box-shadow:0 10px 40px #000a}
+/* ── 资源条 ───────────────────────────────────────── */
+.resource .bar{background:#10233c;border-radius:4px;overflow:hidden}
+.resource .bar i{background:linear-gradient(90deg,var(--t-cyan),var(--t-blue));border-radius:4px}
+/* ── 滚动条 ───────────────────────────────────────── */
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:#1e3a5f;border-radius:6px;border:2px solid #050b18}
+::-webkit-scrollbar-track{background:transparent}
+/* ── 启动画面微调 ─────────────────────────────────── */
+.startup{background:radial-gradient(ellipse at center,#10305e,#050b18 70%)}
+
+/* ═══ v3：三页静态布局新增组件 ═══ */
+.tech-strip{display:flex;gap:0;flex-wrap:wrap;border:1px solid #1b3a5e;border-radius:10px;background:linear-gradient(90deg,#0a1d31,#0c2138);margin-bottom:16px;overflow:hidden}
+.tech-strip span{padding:11px 18px;font-size:12px;color:#8fb0c9;border-right:1px solid #16304c}
+.tech-strip b{color:#5ff0ea;font-family:Consolas,monospace}
+.applied-ticker{font:12px Consolas,monospace;color:#7fd6c8;background:#07141f;border:1px solid #17354a;border-radius:7px;padding:8px 12px;margin:10px 0;min-height:20px}
+.chartgrid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+.chartgrid6 .chartcard{display:flex;flex-direction:column}
+.chartgrid6 .plot{height:190px}
+.charttitle{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+.charttitle h4{margin:0;font-size:12.5px;color:#cfe6f5;font-weight:600}
+.charttitle span{font-size:11px;margin-left:auto}
+.expand-chart{background:transparent;border:1px solid #274b6b;border-radius:5px;color:#7fc7de;padding:1px 7px;font-size:12px;line-height:1.4;cursor:pointer}
+.chartcard p{font-size:11px;color:#6d8aa3;margin:6px 0 0}
+.chart-dialog{max-width:920px;width:calc(100% - 60px)}
+.chart-dialog .large-chart-area canvas{width:100%;height:520px;display:block;background:#06121d;border:1px solid #1c3448;border-radius:6px}
+.dialog-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.dialog-heading button{background:transparent;border:0;color:#9db8cf;font-size:14px;cursor:pointer}
+.metric-pairs{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:12px}
+.metric-pairs>div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed #1d3550;padding:5px 0}
+.metric-pairs span{color:#7f9db8}
+.metric-pairs b{font-family:Consolas,monospace;color:#dff1fb;font-weight:500}
+.tdma-slots{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;margin:8px 0}
+.tdma-slots span{text-align:center;font:10px Consolas,monospace;padding:5px 0;border-radius:4px}
+.tdma-slots .data-slot{background:#123c56;color:#6fd7e8;border:1px solid #1d5878}
+.tdma-slots .retry-slot{background:#3d2c14;color:#ffc56c;border:1px solid #6c5334}
+.risk-overview{border:1px solid #1b3a5e;border-radius:10px;background:#0a1a2b;padding:12px 16px;margin-top:14px}
+.section-caption{display:flex;justify-content:space-between;font-size:12px;color:#9db8cf;margin-bottom:8px}
+.section-caption b{color:#cfe6f5}
+#riskMap{width:100%;height:64px;display:block}
+.risk-key{display:flex;gap:16px;font-size:10.5px;margin-top:6px;color:#8aa7bd}
+.risk-key .ok{color:#70e2bb}.risk-key .warn{color:#ffc56c}.risk-key .bad{color:#ff7b87}.risk-key .unknown{color:#8199ab}
+.causal-lite{margin-top:16px}
+.causal-lite .causal-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr repeat(5,auto);gap:9px;align-items:end;margin:10px 0}
+.causal-lite .causal-row label{margin:0}
+.causal-lite .causal-row button{white-space:nowrap}
+.lab-parameters{display:grid;grid-template-columns:repeat(4,1fr);gap:9px 14px;margin:10px 0}
+#answer{white-space:pre-wrap}
+@media (max-width:1500px){.chartgrid6{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══ v4：仿专业平台三栏密度布局 ═══ */
+/* 全局密度：压缩留白 */
+main{padding:10px 16px}
+.panel{padding:12px 14px}
+.pageIntro{margin:4px 0 10px}
+.pageIntro p{margin:3px 0 0}
+
+/* ── 第 1 页：左参数轨 + 中央大图 + 右读回轨 ── */
+.p1-desk{display:grid;grid-template-columns:288px minmax(0,1fr) 300px;gap:12px;align-items:start;margin-bottom:12px}
+.param-rail{display:flex;flex-direction:column;gap:12px;min-width:0}
+.rail-block{margin:0}
+.rail-block h3{font-size:13px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.wide-select{width:100%;font-size:12.5px}
+.param-rows{display:flex;flex-direction:column}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 2px;border-bottom:1px dashed #1a3049;font-size:12px}
+.prow:last-child{border-bottom:0}
+.prow span{color:#82a0ba;white-space:nowrap}
+.prow b{font-family:Consolas,monospace;color:#63e6e2;font-weight:500;text-align:right;font-size:12.5px}
+.param-rail .applied-ticker{margin:8px 0 0;font-size:11px}
+.param-rail .metric-pairs{grid-template-columns:1fr}
+.param-rail .metric-pairs>div{padding:4px 2px}
+.param-rail .metric-pairs b{color:#63e6e2}
+
+/* 中央图表：大图、少留白 */
+.p1-center{min-width:0}
+.p1-center .hint{margin:8px 2px 4px}
+.chartgrid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chartgrid2 .chartcard{display:flex;flex-direction:column}
+.chartgrid2 .plot{height:240px}
+#evidence .nodegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 14px;margin-top:6px}
+
+/* ── 第 2 页：左状态列 + 中央大地图 + 右处置列 ── */
+.p2-desk{display:grid;grid-template-columns:330px minmax(0,1fr) 330px;gap:12px;align-items:start}
+.p2-left,.p2-right{display:flex;flex-direction:column;gap:12px;min-width:0}
+.p2-center{min-width:0;display:flex;flex-direction:column;gap:12px}
+/* 大数字状态卡：2×2 彩色 */
+.kpis-vertical{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpis-vertical article{padding:14px 14px 12px}
+.kpis-vertical article span{font-size:12px}
+.kpis-vertical article strong{font-size:30px;line-height:1.15;display:block;margin:2px 0}
+.kpis-vertical article small{font-size:10.5px}
+/* 地图撑大：mapwrap 高度交给画布决定（覆盖 style.css 的 335px 固定高+裁剪） */
+.mapPanel{margin:0}
+.mapwrap{position:relative;height:auto}
+#map{width:100%;height:660px;display:block}
+.mapheading{padding:10px 14px 8px}
+.timeline{padding:8px 14px 10px}
+/* 节点状态表 */
+.nodelist-panel h3{font-size:13px;margin:0 0 8px}
+.nodetable{width:100%;border-collapse:collapse;font-size:12px}
+.nodetable th{text-align:left;color:#7f9db8;font-weight:500;font-size:11px;padding:4px 6px;border-bottom:1px solid #1b3a5e}
+.nodetable td{padding:4px 6px;border-bottom:1px solid #14283d;font-family:Consolas,monospace;color:#cfe2f2}
+.nodetable tbody tr{cursor:pointer}
+.nodetable tbody tr:hover{background:#12263d}
+.nodetable tbody tr.sel{background:#15334f;box-shadow:inset 2px 0 0 #41d4cf}
+.st-ok{color:#70e2bb}.st-warn{color:#ffc56c}.st-bad{color:#ff7b87}.st-unknown{color:#8199ab}
+.media-panel{margin:0}
+/* 风险条紧凑 */
+.risk-overview{margin-top:0;padding:10px 12px}
+#riskMap{height:56px}
+
+@media (max-width:1600px){
+ .p1-desk{grid-template-columns:250px minmax(0,1fr) 260px}
+ .p2-desk{grid-template-columns:290px minmax(0,1fr) 290px}
+ #map{height:560px}
+ .chartgrid2 .plot{height:210px}
+}
+@media (max-width:1200px){
+ .p1-desk,.p2-desk{grid-template-columns:1fr}
+ .chartgrid2{grid-template-columns:1fr}
+}
+
+/* ═══ v5：演示导播条 + 聚光 + 演示启动按钮 ═══ */
+.demo-start{background:linear-gradient(135deg,#0e5b63,#0a7d70);border:1px solid #2df5c655;color:#a7f5e8;font-weight:600}
+.demo-start:hover{background:linear-gradient(135deg,#107079,#0e9484)}
+#demoBar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:900;display:flex;gap:14px;align-items:center;
+ max-width:min(1180px,calc(100% - 28px));padding:10px 16px;border-radius:12px;
+ background:rgba(6,18,29,.94);border:1px solid #2df5c644;box-shadow:0 8px 32px #000c,0 0 18px #2df5c622;
+ font-size:12.5px;color:#cfe6f5;backdrop-filter:blur(4px)}
+#demoBar .db-left{display:flex;align-items:center;gap:8px;white-space:nowrap}
+#demoBar .db-left b{color:#5ff0ea}
+#demoBar .db-live{width:9px;height:9px;border-radius:50%;background:#ff4d6a;box-shadow:0 0 8px #ff4d6a;animation:dbpulse 1.1s infinite}
+@keyframes dbpulse{50%{opacity:.35}}
+#dbClock{font-family:Consolas,monospace;color:#8fb0c9}
+#demoBar .db-mid{display:flex;flex-direction:column;gap:2px;min-width:0}
+#dbBeat{color:#eaf6ff;font-weight:600}
+#dbAct{color:#ffd28a;font-size:11.5px}
+#demoBar .db-right{display:flex;align-items:center;gap:10px;white-space:nowrap}
+#dbNext{color:#7f9db8;font-size:11px}
+#dbExit{background:transparent;border:1px solid #4a6b85;color:#9db8cf;border-radius:6px;padding:3px 10px;cursor:pointer}
+#dbExit:hover{border-color:#ff7b87;color:#ff7b87}
+.demo-spot{outline:2px solid #2df5c6 !important;outline-offset:3px;border-radius:10px;
+ box-shadow:0 0 24px #2df5c655 !important;transition:outline-color .3s;position:relative;z-index:5}
+
+/* v5：节点业务回放 + 业务报文（2026-10-25） */
+.replaybar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0}
+.replaybar select{min-width:120px}
+.replaybar input[type=range]{flex:1;min-width:140px}
+#nodeReplay{width:100%;height:260px;border-radius:8px;background:#040f19;display:block}
+.replay-sub{min-height:20px;font-size:13px;color:#e7f4ff;background:#0a2432;border-left:3px solid #2df5c6;padding:6px 10px;border-radius:0 6px 6px 0;margin:8px 0}
+#nodeAudio{width:100%;margin-top:4px}
+.bizlist .bizitem{border:1px solid #284855;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12px}
+.bizlist .bizitem.ok{border-color:#2df5c666}
+.bizlist .bizitem.warn{border-color:#ffb02e66}
+.bizlist .bizitem p{margin:2px 0;overflow-wrap:anywhere}
+.bizlist .bizitem small{color:#7f9db8}
+
+/* v6：场景图标分页直选 + 星座墙/眼图 + 干预面板 + 证据内联（2026-10-25） */
+.choice-tabs{display:flex;gap:6px;margin:6px 0}
+.choice-tabs button{flex:1;padding:6px 0;font-size:12px}
+.option-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0}
+.option-grid .option-card{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px 5px;font-size:10.5px;line-height:1.2;min-height:58px;cursor:pointer}
+.option-grid .option-card svg{width:40px;height:28px}
+.choice-pane .hint{margin:4px 0 0;font-size:11px}
+#iqWall.tall{height:340px}
+.exportview{margin-top:10px;max-height:520px;overflow:auto;border:1px solid #1b3a5e;border-radius:8px;padding:8px;background:#071222}
+.evidence-frame{width:100%;height:460px;border:0;border-radius:6px;background:#fff}
+.hashcell{font-family:Consolas,monospace;font-size:10px;color:#7f9db8;overflow-wrap:anywhere}
+.iv-row{display:grid;grid-template-columns:1.6fr 1fr 1fr auto auto;gap:8px;align-items:end;margin:8px 0}
+.iv-row label{margin:0;font-size:11px;color:#7f9db8}
+.iv-row input,.iv-row select{width:100%}
+
+/* v6.1：顶栏常驻连接区（串口/检查连接/上电后加载固件），1-3 页均可见 */
+.hdr-conn{display:inline-flex;align-items:center;gap:6px;margin-right:12px;padding-right:12px;border-right:1px solid #1b3a5e}
+.hdr-conn .hdr-lab{font-size:11px;color:#7f9db8;margin:0}
+.hdr-conn select{background:#0a2432;color:#e7f4ff;border:1px solid #284855;border-radius:6px;padding:5px 6px;font-size:12px;width:74px}
+.hdr-conn .iconbutton.accent{border-color:#2df5c6;color:#2df5c6}
+.hdr-conn .iconbutton.accent:hover{background:#2df5c622}
+@media (max-width:1500px){.hdr-conn .hdr-lab{display:none}}
+
+/* v7：信道设置输入（第 1 页左栏，真实可调） */
+.rail-fieldset{border:0;margin:0;padding:0;min-width:0}
+.rail-input{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#7f9db8;margin:7px 0}
+.rail-input input{width:96px;text-align:right;background:#0a2432;color:#e7f4ff;border:1px solid #284855;border-radius:6px;padding:5px 8px;font-size:13px}
+.rail-input input:disabled{opacity:.45}
+
+/* v8：导师纪要整改——四图一排/字号统一≤五号/迷你图/蜜蜂logo/免翻页密度（2026-10-25） */
+/* 2026-10-30 修订：170px 被用户判定为"压缩过度看不清"，恢复到可读高度 230px，说明文字恢复显示 */
+.chartgrid2{grid-template-columns:repeat(4,1fr);gap:8px}
+.chartgrid2 .plot{height:230px}
+.chartgrid2 .plot.tall{height:230px}
+.chartgrid2 .chartcard p{font-size:10.5px;margin:4px 8px 6px;color:#6d8aa3}
+.charttitle{padding:4px 8px}
+.brandbees{width:58px;height:32px;flex:none}
+.minimap-block{display:flex;flex-direction:column;gap:4px}
+.minimap{width:100%;height:120px;border-radius:6px;background:#040f19;display:block}
+.txrx-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.txrx-row label{display:flex;align-items:center;gap:5px;font-size:13px;color:#7f9db8;margin:0}
+.txrx-row select{width:86px;background:#0a2432;color:#e7f4ff;border:1px solid #284855;border-radius:6px;padding:4px 6px;font-size:13px}
+.txrx-arrow{color:#2df5c6;font-weight:700}
+/* 字号统一：正文一律 13px（≤五号），标签/徽记 12px，仅标题与 KPI 大数字例外 */
+.param-rail,.param-rail b,.param-rail span,.prow,.metric-pairs,.rail-input,.nodetable,.nodetable th,.nodetable td,.eventlist,.bizlist,.hint,.check,.two label,.presetrow,.option-card{font-size:13px}
+.hint{font-size:12px}
+.tag{font-size:12px;padding:1px 8px}
+.eyebrow{font-size:12px}
+.rail-block h3{font-size:13.5px}
+.rail-block{padding:8px 10px}
+.param-rows>div,.prow{padding:2px 0}
+.metric-pairs{gap:4px 12px}
+/* 免翻页 → 可读优先：不再把主区锁死在视口高度内（矮视口会把图压没）；1080p 仍一屏，矮屏允许页面滚动 */
+.p1-desk{min-height:560px}
+.p1-center{display:flex;flex-direction:column}
+.param-rail{overflow-y:auto;max-height:100%;scrollbar-width:thin}
+@media (max-width:1500px){.chartgrid2{grid-template-columns:repeat(2,1fr)}.chartgrid2 .plot{height:210px}}
+
+/* ═══ v9：免翻页重排——图表撑满中央、业务/干预入右栏、左栏键值行与右栏同款紧凑（2026-10-25 深夜） ═══ */
+/* ① 左右栏键值行统一：与右栏 prow 完全同款的紧凑样式（左栏大字问题根因：param-rows>div 缺 flex 布局） */
+.param-rows>div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:2px 0;border-bottom:1px dashed #1a3049;font-size:12px;line-height:1.45}
+.param-rows>div:last-child{border-bottom:0}
+.param-rows>div span{color:#82a0ba;white-space:nowrap;flex:none}
+.param-rows>div b{font-family:Consolas,monospace;color:#63e6e2;font-weight:500;text-align:right;font-size:12px;white-space:normal}
+/* ② 第一页中央：图表固定可读高度，不再随视口挤压 */
+.p1-desk{min-height:520px}
+.p1-center{display:flex;flex-direction:column;gap:8px;min-height:0}
+.chartgrid2{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chartgrid2 .chartcard{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.chartgrid2 .plot,.chartgrid2 .plot.tall,#iqWall.tall{flex:none;height:230px;width:100%}
+.p1-center>.hint{flex:none;margin:0 2px;font-size:11px}
+.linktable-panel{flex:none;margin:0;padding:8px 10px}
+.linktable-panel .sectiontitle h3{font-size:13px;margin:0}
+.linktable-panel .tablewrap{max-height:150px;overflow:auto}
+.p1-tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.p1-tools .panel{margin:0}
+/* ③ 业务报文 + 链路干预（右栏，嵌入业务主线） */
+.biz-send-row{display:flex;gap:6px;margin:4px 0 6px}
+.biz-send-row input{flex:1;min-width:0;font-size:12px;padding:5px 8px}
+.biz-send-row button{white-space:nowrap;padding:5px 12px}
+#bizList,#ivList{max-height:104px;overflow:auto}
+#bizList .bizitem,#ivList .bizitem{padding:5px 8px;font-size:11px;margin:4px 0}
+.iv-compact{display:grid;grid-template-columns:1fr 58px 62px auto auto;gap:6px;align-items:end;margin-top:6px;padding-top:7px;border-top:1px dashed #1a3049}
+.iv-compact label{margin:0;font-size:11px;color:#7f9db8}
+.iv-compact input,.iv-compact select{width:100%;padding:4px 5px;font-size:12px}
+.iv-compact button{padding:4px 9px;font-size:12px;white-space:nowrap}
+/* 资源与验收提炼块 */
+#resources .resource{display:flex;align-items:center;gap:6px;font-size:11px;padding:1px 0}
+#resources .resource span:first-child{width:48px;color:#82a0ba}
+#resources .resource .bar{flex:1;height:5px}
+#resources .hint{font-size:10.5px;margin:3px 0 0}
+#acceptanceEvidence{font-size:11px;padding:6px 8px;margin-top:5px}
+#capacityResult{font-size:11px;margin-top:4px}
+.bounddetails{margin-top:5px}
+.bounddetails summary{font-size:11px;cursor:pointer}
+.boundlist{margin:4px 0 0;padding-left:16px;font-size:10.5px;color:#7f9db8;line-height:1.5}
+/* ④ 第二页：一屏看全——KPI 紧凑条、地图拉满、侧栏滚动兜底 */
+.p2-desk{height:calc(100vh - 162px);min-height:560px}
+.p2-left,.p2-right{overflow-y:auto;max-height:100%;scrollbar-width:thin;gap:10px}
+.p2-center{display:flex;flex-direction:column;height:100%;min-height:0}
+.mapPanel{flex:1;display:flex;flex-direction:column;min-height:0}
+.mapwrap{flex:1;min-height:0;height:auto}
+#map{width:100%;height:100%;display:block}
+.kpis-vertical{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.kpis-vertical article{padding:5px 7px 4px;border-radius:8px}
+.kpis-vertical article span{font-size:10px}
+.kpis-vertical article strong{font-size:15px;line-height:1.25;display:block;margin:1px 0;font-family:Consolas,monospace}
+.kpis-vertical article small{display:none}
+.p2-right .panel>h3,.eventsPanel h3{font-size:13px;margin:0 0 8px}
+.nodelist-panel{margin-top:8px}
+.nodelist-panel h3{font-size:12.5px;margin:0 0 6px}
+.nodelist-panel .tablewrap{max-height:112px;overflow:auto}
+.eventlist{max-height:150px;overflow:auto}
+.advicePanel #advice{max-height:170px;overflow:auto}
+/* 节点业务回放缩小进左栏 */
+.media-panel h3{font-size:13px;margin:0 0 6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.media-panel .replaybar{gap:6px;font-size:12px;margin:4px 0}
+.media-panel .replaybar select{min-width:86px;padding:4px 5px;font-size:12px}
+.media-panel .replaybar button{padding:4px 10px;font-size:12px}
+#nodeReplay{height:132px}
+.replay-sub{font-size:11.5px;padding:4px 8px;min-height:0;margin:5px 0}
+#nodeAudio{height:26px;margin-top:2px}
+#replaySource{display:none}
+/* 迷你图：两张并排 */
+.minimap-block{display:flex;flex-direction:row;gap:8px}
+.minimap-block>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.minimap{height:96px}
+/* 场景图标卡更紧凑 */
+.option-grid{gap:5px}
+.option-grid .option-card{min-height:46px;padding:4px 2px 3px;font-size:10px}
+.option-grid .option-card svg{width:32px;height:22px}
+.choice-pane .hint{font-size:10.5px}
+
+/* ═══ v9.1：修第一页中央空白根因——p1-desk 旧规则 align-items:start 使中栏不随视口拉伸；
+   并把「发送文本单帧实测」「接收范围/纠错对照/模型带宽」两块前置进中央列填满 ═══ */
+.p1-desk{align-items:stretch}
+.p1-center{height:auto}
+.param-rail{align-self:stretch;max-height:none;overflow-y:auto}
+.chartgrid2 .plot,.chartgrid2 .plot.tall,#iqWall.tall{flex:none;height:230px;width:100%}
+.p1-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;flex:none}
+/* 不再锁 232px：内容自然展开，页面整体滚动，消除"面板被压扁而下面留白" */
+.p1-tools .panel{margin:0;overflow:auto}
+.p1-tools details>summary{padding:6px 10px;font-size:12px;line-height:1.4}
+#phyLab p.hint,#phyLab .check{font-size:11px;margin:3px 0}
+#phyLab .two,#phyLab .three{gap:6px;margin:4px 0}
+#phyLab label{font-size:11px}
+#phyLab input,#phyLab select{padding:3px 6px;font-size:12px}
+#phyLab .lab-parameters{display:grid;grid-template-columns:repeat(4,1fr);gap:4px 8px}
+#phyLab .resultbox{font-size:11px;max-height:56px;overflow:auto;padding:5px 8px}
+#rxStudy p{font-size:11px;margin:3px 0}
+
+/* ═══ v10：一屏容下的根治——不再用 calc(100vh - 猜测像素) 硬编码头部高度。
+   顶栏/范围条/来源条/健康条/态势播报条的高度会随内容与断行变化（动态插入的 alertCenter 尤其如此），
+   任何固定像素扣除都会在某些窗口尺寸下溢出。改为 flex 链：body 撑满视口，main 吃掉剩余，
+   第 1/2 页内部栏自己滚；头部无论多高，主区永远恰好填满剩余空间，绝不溢出。 ═══ */
+body{display:flex;flex-direction:column;min-height:100vh}
+main{flex:1 1 0;min-height:0;display:flex;flex-direction:column}
+#evidence.active,#mission.active{display:flex;flex-direction:column;flex:1 1 0;min-height:0}
+#history.active{display:block}
+.p1-desk{flex:1 1 0;min-height:560px;height:auto;margin-bottom:0}
+.p2-desk{flex:1 1 0;min-height:560px;height:auto}
+/* 场景配置回执区与配置摘要（v10 新增元素） */
+.scene-echo{margin-top:6px;border-top:1px dashed #1a3049;padding-top:4px}
+.config-summary{font-size:11px;color:#63e6e2;font-family:Consolas,var(--font);margin:6px 0;line-height:1.5}
+.config-summary:empty{display:none}
+/* 固化图 canvas 化：与实时工作点叠加，高度给足 */
+#rxStudyCanvas{width:100%;height:320px;display:block;margin:4px auto;cursor:zoom-in;border-radius:8px;border:1px solid #1e3b55}
+
+/* ═══ v11：按实跑批评逐项整改 ═══
+   ①自主设置模式解锁几何参数 ②文字实测两块合一（消除右栏与中央重叠）
+   ③固化三图放大可点 ④逐链路明细默认收起 ⑤建议区给足空间
+   ⑥链路干预前后对比 ⑦地图正视铺满 ═══ */
+/* ① 自主设置模式：几何参数网格 */
+.fieldset-caption{font-size:10.5px;color:#63e6e2;margin:0 0 4px;letter-spacing:.02em}
+.rail-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px}
+.rail-input.wide{grid-column:1 / -1}
+#customGeometry{margin-top:6px;border:1px solid #2df5c644;border-radius:8px;padding:6px 8px}
+#customGeometry:not([hidden]){display:block}
+/* ② 文字实测两块 tab */
+.lab-tabs{display:flex;gap:6px;margin:4px 0 6px}
+.lab-tabs button{padding:4px 10px;font-size:11.5px;border-radius:7px;border:1px solid #24455e;background:#0d1f31;color:#8fb2cc;cursor:pointer}
+.lab-tabs button.selected{background:#0e4a52;border-color:#2df5c677;color:#a7f5e8;font-weight:600}
+#phyLab .biz-send-row{display:flex;gap:6px;margin:6px 0}
+#phyLab .biz-send-row input{flex:1;min-width:0;padding:4px 7px;font-size:12px}
+#phyLab .biz-send-row button{padding:4px 14px;font-size:12px;white-space:nowrap}
+#phyLab .bizlist{max-height:150px;overflow:auto}
+/* ③ 固化实验记录图：放大显示 + 可点 */
+.study-grid{margin:4px 0}
+.study-grid figure{margin:0}
+#rxStudy .study{max-height:300px;max-width:100%;cursor:zoom-in;border-radius:8px;border:1px solid #1e3b55}
+.study-grid figcaption{font-size:10.5px;color:#7f9db8;text-align:center;margin-top:3px}
+/* ④ 逐链路明细默认收起，标题行紧凑 */
+/* 逐链路明细：右栏最底部的参考项，默认收起、窄栏紧凑排布 */
+#linkTableBox{margin:4px 0 0;padding:5px 8px}
+#linkTableBox>summary{font-size:12px;cursor:pointer;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#linkTableBox>summary small{font-size:10.5px;color:#7f9db8;font-weight:400}
+#linkTableBox .tablewrap{max-height:260px;overflow:auto;margin-top:6px}
+table.linktable{width:100%;min-width:0;table-layout:fixed;font-size:9.5px}
+table.linktable th{color:#7f9db8;font-weight:500;font-size:9.5px;padding:2px 2px;border-bottom:1px solid #1b3a5e;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+table.linktable td{padding:2px 2px;border-bottom:1px solid #14283d;font-family:Consolas,monospace;color:#cfe2f2;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+table.linktable th:first-child,table.linktable td:first-child{width:52px;text-align:left;color:#9fc0d8}
+table.linktable td.chg{color:#7ff0d4;background:#12414a;border-radius:2px}
+/* ⑤ 建议区：吃掉右栏剩余空间，不再被挤没 */
+.p2-right .advicePanel{display:flex;flex-direction:column;flex:1 1 auto;min-height:150px}
+.p2-right .advicePanel #advice{flex:1 1 auto;max-height:none;overflow:auto;min-height:110px}
+.p2-right .assistantPanel{flex:none}
+.p2-right .eventsPanel{flex:none}
+.p2-right .eventsPanel .eventlist{max-height:110px}
+.p2-right .nodePanel{flex:none}
+/* ⑥ 链路干预影响对比 */
+.iv-compare{margin-top:7px;padding:6px 8px;border-radius:8px;background:#0c2033;border:1px solid #23445e;font-size:11.5px}
+.iv-compare table{width:100%;border-collapse:collapse;font-size:11px}
+.iv-compare th{text-align:left;color:#7f9db8;font-weight:500;padding:3px 4px;border-bottom:1px solid #1b3a5e}
+.iv-compare td{padding:3px 4px;border-bottom:1px solid #14283d;font-family:Consolas,monospace;color:#cfe2f2}
+.iv-compare .up{color:#ff8f9a}.iv-compare .down{color:#70e2bb}.iv-compare .flat{color:#8199ab}
+.iv-compare .verdict{margin-top:5px;font-weight:600;color:#ffc56c}
+/* ⑦ 地图：正视铺满中央，节点运动可辨 */
+.mapPanel{flex:1 1 auto;min-height:0}
+.mapwrap{flex:1 1 auto;min-height:320px}
+#map{width:100%;height:100%;display:block}
+.mapheading,.timeline{flex:none}
+@media (max-width:1600px){ #map{height:100%} }
+/* 建议卡：多个可执行的处置动作（不再只有「查询状态」） */
+.advice-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.advice-actions button{font-size:11px;padding:4px 8px;flex:1 1 auto;min-width:0;text-align:left}
+/* 报文去向路径 */
+.bizpath{font-size:11.5px;color:#8fd8d0;margin:3px 0;font-family:Consolas,monospace}
+/* 单帧实测的「这意味着什么」 */
+.labwhy{margin-top:6px;padding:5px 7px;border-left:2px solid #2df5c6;background:#0c2231;font-size:11px;line-height:1.55;border-radius:0 6px 6px 0}
+/* 干预对比 */
+.iv-cmp-head{font-size:11.5px;color:#63e6e2;margin-bottom:4px}
+/* 播报卡处置按钮 */
+.ac-actions{display:flex;flex-wrap:wrap;gap:5px}
+.ac-actions button{font-size:11px;padding:3px 8px}
+/* ⑧ 地图只留必要边框：清除上下方说明/图章/图例等冗余信息（元素保留供 JS 写数，仅不显示） */
+.mapPanel>.panel-note,.mapPanel .mapstamp,.mapPanel .maplegend,.terrain-note,#mapCaption{display:none!important}
+/* 去掉说明行后地图面板上下留白收紧 */
+.mapPanel .mapwrap{margin-top:0}
+
+/* ═══ v13：底部面板精简后——八图纵向撑满中央可视高度，不留空带；矮视口允许页面滚动 ═══ */
+.p1-desk{height:calc(100vh - 140px);min-height:620px;align-items:stretch}
+.p1-center{flex:1;overflow:hidden}
+.chartgrid2{flex:1;min-height:0;grid-template-rows:1fr 1fr}
+.chartgrid2 .plot,.chartgrid2 .plot.tall,#iqWall.tall{flex:1;min-height:0;height:auto;width:100%}
+@media (max-width:1500px){.chartgrid2{grid-template-rows:repeat(4,1fr)}}
+
+/* ═══ v14：干预过程可见 + 回落可量化（生命周期卡 / 轨迹图 / 操作员处置）
+   ═══ v15：能力边界声明 iv-scope（这是故障注入实验，不是自主修复） ═══ */
+.iv-scope{margin-top:5px !important;padding:5px 7px !important;border-left:3px solid #ffb02e;border-radius:0 6px 6px 0;background:#241d0d !important;color:#d9c8a4 !important;line-height:1.5 !important}
+.iv-scope b{color:#ffc56c}
+.iv-lifecycle{margin-top:8px;border:1px solid #23445e;border-radius:8px;padding:7px 9px;background:#0c2033;font-size:11.5px}
+.iv-lifecycle.info{border-left:3px solid #4aa8d8}
+.iv-lifecycle.warn{border-left:3px solid #ffb02e}
+.iv-lifecycle.alert{border-left:3px solid #ff4d6a}
+.iv-lifecycle.good{border-left:3px solid #57d6a8}
+.iv-lifecycle.ok{border-left:3px solid #2df5c6;background:linear-gradient(120deg,#0d2f28,#0c2033)}
+.iv-head{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:5px}
+.iv-head b{font-size:12px;color:#dceaf5}
+.iv-steps{display:flex;flex-wrap:wrap;align-items:center;gap:2px;margin-bottom:5px;font-size:9.5px}
+.iv-step{padding:1px 4px;border-radius:3px;background:#12314a;color:#6f93ab;white-space:nowrap}
+.iv-step.done{background:#123a34;color:#57d6a8}
+.iv-step.now{background:#1d4a68;color:#8fe8ff;box-shadow:0 0 0 1px #2f7fa8 inset}
+.iv-arrow{color:#37536b;font-style:normal;font-size:9px}
+.iv-lifecycle em{display:inline-block;min-width:34px;font-style:normal;font-size:9.5px;color:#6f93ab;margin-right:5px;vertical-align:top}
+.iv-now,.iv-next,.iv-eta{line-height:1.55;color:#a9c2d4;margin-bottom:3px}
+.iv-next{color:#9fd0c8}
+.iv-eta{color:#ffc56c}
+.iv-reading{margin-top:4px;padding-top:4px;border-top:1px dashed #1a3049;font-size:10.5px;color:#8fb0c8;font-family:Consolas,monospace}
+.iv-reading b{color:#cfe2f2}
+.iv-trace{display:block;width:100%;height:74px;margin-top:6px;border-radius:6px;background:#08182a;border:1px solid #1b3a5e}
+.iv-heal{margin-top:5px;font-size:11px;color:#a9c2d4;line-height:1.55}
+.iv-heal.ok{padding:5px 7px;border-radius:6px;background:#0d2f28;border:1px solid #256b54;color:#b8f8e6}
+.iv-heal.good{padding:5px 7px;border-radius:6px;background:#0c2033;border:1px solid #23445e;color:#9fd0c8}
+.iv-heal b{color:#eaf6ff}
+.iv-heal small{display:block;margin-top:3px;font-size:10px;color:#6f93ab}
+.iv-fix{margin-top:7px}
+.iv-fix.show{padding:6px 8px;border-radius:8px;background:#0c2033;border:1px solid #23445e}
+.iv-fix-title{font-size:11.5px;font-weight:600;color:#9fd0c8;margin-bottom:5px}
+.iv-fix-title small{font-weight:400;color:#6f93ab}
+.iv-fixitem{display:grid;grid-template-columns:38px 1fr;gap:6px;padding:5px 0;border-top:1px dashed #1a3049}
+.iv-fixitem:first-of-type{border-top:none}
+.iv-fixtag{font-size:9.5px;color:#7ff0d4;background:#0e2c33;border:1px solid #235a58;border-radius:4px;padding:2px 3px;text-align:center;line-height:1.3}
+.iv-fixitem b{font-size:11.5px;color:#dceaf5}
+.iv-fixitem p{font-size:10.5px;color:#a9c2d4;line-height:1.5;margin:2px 0}
+.iv-fixitem small{font-size:9.5px;color:#6f93ab}
+.iv-fixbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.iv-fixbtns button{font-size:10.5px;padding:3px 7px;border-radius:5px}
+#ivFixUndo{background:linear-gradient(120deg,#1779ce,#1756c7);border-color:#449efa;font-weight:600}
+.iv-compare .verdict.ok{color:#7ff0d4}
+.iv-compare tr.iv-baserow td{color:#8fb0c8;font-style:italic}
+.iv-compare tr.iv-baserow{border-top:1px solid #1b3a5e}

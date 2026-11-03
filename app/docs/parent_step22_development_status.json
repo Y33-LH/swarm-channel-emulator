@@ -1,0 +1,16 @@
+{
+  "schema": 2,
+  "updated": "2026-10-20",
+  "state": "scoped_link_workflow_candidate",
+  "baseline": "../step21_workbench",
+  "candidate_pl_version": "000d0003",
+  "firmware_changed": false,
+  "scope": "Independent addressed single-hop experiment with verified readback, same-frame observation, payload verification, saved deterministic reproduction",
+  "qualification": "See results/link_qualification_*/acceptance.json and results/link_ui/acceptance.json; match release SHA256",
+  "remaining": [
+    "Live NET per-link overrides and shared cross-page network observations",
+    "Network action outcome explanations and product-wide usability improvements"
+  ],
+  "parent": "docs/parent_development_status.json",
+  "parent_note": "Historical status retained for provenance only; not acceptance of this UI revision or closure of user-reported issues"
+}

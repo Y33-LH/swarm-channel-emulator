@@ -1,0 +1,40 @@
+{
+  "resources": {
+    "LUT": {
+      "used": 34846.0,
+      "available": 53200.0
+    },
+    "FF": {
+      "used": 11878.0,
+      "available": 106400.0
+    },
+    "DSP48": {
+      "used": 62.0,
+      "available": 220.0
+    },
+    "BRAM36": {
+      "used": 45.0,
+      "available": 140.0
+    },
+    "Slice": {
+      "used": 10126.0,
+      "available": 13300.0
+    },
+    "WNS_ns": 0.377,
+    "WHS_ns": 0.061,
+    "pl_hz": 62500000,
+    "ARM_ELF_text_bytes": 107656,
+    "ARM_ELF_data_bytes": 2604,
+    "ARM_ELF_bss_bytes": 653072,
+    "arm_runtime": {
+      "stack_peak_bound": 4328,
+      "stack_reserved": 8192,
+      "heap_committed_peak": 0,
+      "heap_reserved": 8192,
+      "guard_ok": true,
+      "measured_runs": 7
+    }
+  },
+  "source_build": "D:\\digitalcircuit\\swarm_minimal\\step18_release\\results\\board_20261012_162246\\board",
+  "version": "000b0001"
+}

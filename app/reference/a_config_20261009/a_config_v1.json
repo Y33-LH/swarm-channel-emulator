@@ -1,0 +1,770 @@
+{
+  "schema": "swarm_A_config_v1_proposal",
+  "status": "configuration_only_not_rtl_or_hardware_implemented",
+  "date": "2026-10-09",
+  "scope": "civilian_teaching_and_baseband_communication_testing",
+  "common": {
+    "volume_m": [
+      10000,
+      10000,
+      1000
+    ],
+    "ground_id": 0,
+    "uav_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "relay_ids": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "ground_xyz_m": [
+      5000,
+      5000,
+      0
+    ],
+    "data_routes": [
+      [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      [
+        5,
+        6,
+        7,
+        8,
+        0
+      ],
+      [
+        9,
+        10,
+        11,
+        12,
+        0
+      ],
+      [
+        13,
+        14,
+        15,
+        16,
+        0
+      ]
+    ],
+    "channel_classes": [
+      "air_air",
+      "air_ground"
+    ],
+    "physical_processing_core_target": 1,
+    "directed_context_count": 32,
+    "paths_per_context": 2,
+    "simulation_duration_s": 900,
+    "round_ns": 100000000,
+    "scene_update_period_ns": 100000000,
+    "master_time_type": "uint64_nanoseconds",
+    "coordinate_frame": "local_ENU_east_north_up",
+    "position_wire_unit": "millimeter_int32",
+    "velocity_wire_unit": "millimeter_per_second_int32",
+    "master_seed": 20261009
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "base_xyz_m": [
+        1000,
+        1000,
+        400
+      ],
+      "group": 0,
+      "oscillator_offset_hz": -113
+    },
+    {
+      "id": 2,
+      "base_xyz_m": [
+        2000,
+        2000,
+        400
+      ],
+      "group": 0,
+      "oscillator_offset_hz": 24
+    },
+    {
+      "id": 3,
+      "base_xyz_m": [
+        3000,
+        3000,
+        400
+      ],
+      "group": 0,
+      "oscillator_offset_hz": 161
+    },
+    {
+      "id": 4,
+      "base_xyz_m": [
+        4000,
+        4000,
+        400
+      ],
+      "group": 0,
+      "oscillator_offset_hz": -203
+    },
+    {
+      "id": 5,
+      "base_xyz_m": [
+        1000,
+        9000,
+        400
+      ],
+      "group": 1,
+      "oscillator_offset_hz": -66
+    },
+    {
+      "id": 6,
+      "base_xyz_m": [
+        2000,
+        8000,
+        400
+      ],
+      "group": 1,
+      "oscillator_offset_hz": 71
+    },
+    {
+      "id": 7,
+      "base_xyz_m": [
+        3000,
+        7000,
+        400
+      ],
+      "group": 1,
+      "oscillator_offset_hz": 208
+    },
+    {
+      "id": 8,
+      "base_xyz_m": [
+        4000,
+        6000,
+        400
+      ],
+      "group": 1,
+      "oscillator_offset_hz": -156
+    },
+    {
+      "id": 9,
+      "base_xyz_m": [
+        9000,
+        9000,
+        400
+      ],
+      "group": 2,
+      "oscillator_offset_hz": -19
+    },
+    {
+      "id": 10,
+      "base_xyz_m": [
+        8000,
+        8000,
+        400
+      ],
+      "group": 2,
+      "oscillator_offset_hz": 118
+    },
+    {
+      "id": 11,
+      "base_xyz_m": [
+        7000,
+        7000,
+        400
+      ],
+      "group": 2,
+      "oscillator_offset_hz": -246
+    },
+    {
+      "id": 12,
+      "base_xyz_m": [
+        6000,
+        6000,
+        400
+      ],
+      "group": 2,
+      "oscillator_offset_hz": -109
+    },
+    {
+      "id": 13,
+      "base_xyz_m": [
+        9000,
+        1000,
+        400
+      ],
+      "group": 3,
+      "oscillator_offset_hz": 28
+    },
+    {
+      "id": 14,
+      "base_xyz_m": [
+        8000,
+        2000,
+        400
+      ],
+      "group": 3,
+      "oscillator_offset_hz": 165
+    },
+    {
+      "id": 15,
+      "base_xyz_m": [
+        7000,
+        3000,
+        400
+      ],
+      "group": 3,
+      "oscillator_offset_hz": -199
+    },
+    {
+      "id": 16,
+      "base_xyz_m": [
+        6000,
+        4000,
+        400
+      ],
+      "group": 3,
+      "oscillator_offset_hz": -62
+    }
+  ],
+  "ground_oscillator_offset_hz": 0,
+  "links": [
+    {
+      "link_id": 0,
+      "tx": 1,
+      "rx": 2,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 16
+    },
+    {
+      "link_id": 1,
+      "tx": 2,
+      "rx": 3,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 17
+    },
+    {
+      "link_id": 2,
+      "tx": 3,
+      "rx": 4,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 18
+    },
+    {
+      "link_id": 3,
+      "tx": 4,
+      "rx": 0,
+      "channel_class": "air_ground",
+      "purpose": "data",
+      "paired_link_id": 19
+    },
+    {
+      "link_id": 4,
+      "tx": 5,
+      "rx": 6,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 20
+    },
+    {
+      "link_id": 5,
+      "tx": 6,
+      "rx": 7,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 21
+    },
+    {
+      "link_id": 6,
+      "tx": 7,
+      "rx": 8,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 22
+    },
+    {
+      "link_id": 7,
+      "tx": 8,
+      "rx": 0,
+      "channel_class": "air_ground",
+      "purpose": "data",
+      "paired_link_id": 23
+    },
+    {
+      "link_id": 8,
+      "tx": 9,
+      "rx": 10,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 24
+    },
+    {
+      "link_id": 9,
+      "tx": 10,
+      "rx": 11,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 25
+    },
+    {
+      "link_id": 10,
+      "tx": 11,
+      "rx": 12,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 26
+    },
+    {
+      "link_id": 11,
+      "tx": 12,
+      "rx": 0,
+      "channel_class": "air_ground",
+      "purpose": "data",
+      "paired_link_id": 27
+    },
+    {
+      "link_id": 12,
+      "tx": 13,
+      "rx": 14,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 28
+    },
+    {
+      "link_id": 13,
+      "tx": 14,
+      "rx": 15,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 29
+    },
+    {
+      "link_id": 14,
+      "tx": 15,
+      "rx": 16,
+      "channel_class": "air_air",
+      "purpose": "data",
+      "paired_link_id": 30
+    },
+    {
+      "link_id": 15,
+      "tx": 16,
+      "rx": 0,
+      "channel_class": "air_ground",
+      "purpose": "data",
+      "paired_link_id": 31
+    },
+    {
+      "link_id": 16,
+      "tx": 2,
+      "rx": 1,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 0
+    },
+    {
+      "link_id": 17,
+      "tx": 3,
+      "rx": 2,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 1
+    },
+    {
+      "link_id": 18,
+      "tx": 4,
+      "rx": 3,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 2
+    },
+    {
+      "link_id": 19,
+      "tx": 0,
+      "rx": 4,
+      "channel_class": "air_ground",
+      "purpose": "ack",
+      "paired_link_id": 3
+    },
+    {
+      "link_id": 20,
+      "tx": 6,
+      "rx": 5,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 4
+    },
+    {
+      "link_id": 21,
+      "tx": 7,
+      "rx": 6,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 5
+    },
+    {
+      "link_id": 22,
+      "tx": 8,
+      "rx": 7,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 6
+    },
+    {
+      "link_id": 23,
+      "tx": 0,
+      "rx": 8,
+      "channel_class": "air_ground",
+      "purpose": "ack",
+      "paired_link_id": 7
+    },
+    {
+      "link_id": 24,
+      "tx": 10,
+      "rx": 9,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 8
+    },
+    {
+      "link_id": 25,
+      "tx": 11,
+      "rx": 10,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 9
+    },
+    {
+      "link_id": 26,
+      "tx": 12,
+      "rx": 11,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 10
+    },
+    {
+      "link_id": 27,
+      "tx": 0,
+      "rx": 12,
+      "channel_class": "air_ground",
+      "purpose": "ack",
+      "paired_link_id": 11
+    },
+    {
+      "link_id": 28,
+      "tx": 14,
+      "rx": 13,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 12
+    },
+    {
+      "link_id": 29,
+      "tx": 15,
+      "rx": 14,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 13
+    },
+    {
+      "link_id": 30,
+      "tx": 16,
+      "rx": 15,
+      "channel_class": "air_air",
+      "purpose": "ack",
+      "paired_link_id": 14
+    },
+    {
+      "link_id": 31,
+      "tx": 0,
+      "rx": 16,
+      "channel_class": "air_ground",
+      "purpose": "ack",
+      "paired_link_id": 15
+    }
+  ],
+  "trajectory": {
+    "kind": "analytic_group_orbit_translation_plus_small_relative_motion",
+    "group_orbit_radius_m": 400,
+    "group_orbit_period_s": 180,
+    "group_phase_deg": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "relative_x_amplitude_m": 40,
+    "relative_x_period_s": 120,
+    "node_phase_rule": "2*pi*(node_id-1)/16",
+    "height_amplitude_m": 30,
+    "height_period_s": 120,
+    "initial_offsets_zero": true,
+    "speed_design_limit_mps": 20,
+    "note": "Preset trajectories for testing; no flight controller or autonomous formation algorithm."
+  },
+  "numeric_candidates": {
+    "sample_rate_hz": 8000000,
+    "symbol_rate_hz": 2000000,
+    "samples_per_symbol": 4,
+    "pl_clock_hz_existing": 50000000,
+    "virtual_carrier_hz": 2400000000,
+    "max_geometric_delay_us": 64,
+    "max_excess_delay_us": 4,
+    "history_complex_samples_per_context": 1024,
+    "iq_bits_per_component": 16,
+    "iq_fractional_bits": 14,
+    "path_coefficient_bits": 18,
+    "path_coefficient_fractional_bits": 16,
+    "accumulator_bits_min_candidate": 40,
+    "phase_bits": 32,
+    "fractional_delay_bits": 8,
+    "fractional_delay_candidate": "4-tap interpolation; interpolation response and fixed delay require separate verification",
+    "sample_word_layout": "low16 I, high16 Q, signed two_complement",
+    "boundary_rounding_candidate": "nearest_even_then_saturate",
+    "saturation_counter_required": true,
+    "binding": "A/B joint interface and synthesis verification required; not existing 00060001 format"
+  },
+  "signal_power": {
+    "definition": "P0 is the measured/calculated mean complex sample power at the channel input for a declared transmit waveform; freeze with B. Not signal power measured after fading.",
+    "reference_distance_m": 1000,
+    "near_distance_policy": "gain_uses_max(distance,reference_distance); actual propagation delay always uses actual distance",
+    "common_amplitude_gain": "10**(-(10*eta*log10(max(d,d_ref)/d_ref)+excess_loss_db+fault_loss_db)/20)",
+    "tap_power_normalization": "q0=1/sqrt(1+r*r), q1=r/sqrt(1+r*r), r=10**(echo_relative_power_db/20); do not renormalize each faded frame",
+    "fading_envelope": "F_p(t)=1-depth_p*(1-cos(2*pi*t/T_p+theta_p))/2; nonnegative deterministic envelope, not Rayleigh/Jakes",
+    "phase_rule": "geometric carrier phase OR integrated geometric Doppler, never both; include node oscillator difference separately"
+  },
+  "noise": {
+    "scene_mode": "fixed_reference_noise_floor",
+    "reference_complex_sample_snr_db": 24,
+    "formula_sigma_per_I_or_Q": "sqrt(P0/(2*10**(24/10)))*10**((noise_excess_db+fault_noise_excess_db)/20)",
+    "unit_test_mode": "manual_sigma_or_target_SNR_for_fixed_normalized_input",
+    "generator_candidate": "existing_4096_inverse_normal_LUT_plus_per_context_xorshift32_for_initial_regression",
+    "tail_note": "Existing finite LUT approximately +/-3.668 sigma; approximate Gaussian noise, not certified AWGN tails.",
+    "stream_rule": "Separate per-directed-context PRNG state; nonzero seeds; distinct deterministic I/Q draws. Test correlations; different seeds are not proof of statistical independence.",
+    "initial_seed_rule": "CRC32 of UTF-8 ASCII A1|master_seed|link_id|purpose; map zero to one. Record explicit resulting seeds.",
+    "random_state_reset": "Only explicit new-run reset; never reset on frame, channel switch or parameter snapshot."
+  },
+  "receiver_test_contract": {
+    "initial_total_cfo_test_hz": [
+      -1000,
+      1000
+    ],
+    "later_stress_test_total_cfo_hz": [
+      -5000,
+      5000
+    ],
+    "sample_snr_sweep_db": [
+      -5,
+      0,
+      5,
+      10,
+      15,
+      20,
+      25
+    ],
+    "fractional_offset_test_samples": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "ranges_are": "test_inputs_not_receiver_capacity_claim",
+    "A_exposes_truth_to": "evaluation_monitor_and_C_truth_view_only",
+    "receiver_input": "impaired_IQ_only_plus_declared_receive_window_config; no TX_SOP true_phase true_channel or original_payload shortcuts"
+  },
+  "environment_segments": [
+    {
+      "start_s": 0,
+      "end_s": 300,
+      "environment": "open_field"
+    },
+    {
+      "start_s": 300,
+      "end_s": 600,
+      "environment": "suburb"
+    },
+    {
+      "start_s": 600,
+      "end_s": 900,
+      "environment": "city"
+    }
+  ],
+  "profiles": [
+    {
+      "environment": "open_field",
+      "channel_class": "air_air",
+      "path_loss_exponent": 2.0,
+      "excess_loss_db": 0,
+      "echo_relative_power_db": -18,
+      "echo_excess_delay_us": 0.125,
+      "direct_fade_depth": 0.05,
+      "echo_fade_depth": 0.05,
+      "fade_period_s": 8,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 0,
+      "echo_extra_doppler_magnitude_hz": 1,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    },
+    {
+      "environment": "open_field",
+      "channel_class": "air_ground",
+      "path_loss_exponent": 2.2,
+      "excess_loss_db": 0,
+      "echo_relative_power_db": -15,
+      "echo_excess_delay_us": 0.25,
+      "direct_fade_depth": 0.1,
+      "echo_fade_depth": 0.1,
+      "fade_period_s": 6,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 1,
+      "echo_extra_doppler_magnitude_hz": 2,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    },
+    {
+      "environment": "suburb",
+      "channel_class": "air_air",
+      "path_loss_exponent": 2.2,
+      "excess_loss_db": 2,
+      "echo_relative_power_db": -12,
+      "echo_excess_delay_us": 0.25,
+      "direct_fade_depth": 0.1,
+      "echo_fade_depth": 0.1,
+      "fade_period_s": 6,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 1,
+      "echo_extra_doppler_magnitude_hz": 2,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    },
+    {
+      "environment": "suburb",
+      "channel_class": "air_ground",
+      "path_loss_exponent": 2.6,
+      "excess_loss_db": 4,
+      "echo_relative_power_db": -10,
+      "echo_excess_delay_us": 0.5,
+      "direct_fade_depth": 0.2,
+      "echo_fade_depth": 0.2,
+      "fade_period_s": 4,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 3,
+      "echo_extra_doppler_magnitude_hz": 4,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    },
+    {
+      "environment": "city",
+      "channel_class": "air_air",
+      "path_loss_exponent": 2.4,
+      "excess_loss_db": 4,
+      "echo_relative_power_db": -9,
+      "echo_excess_delay_us": 0.5,
+      "direct_fade_depth": 0.2,
+      "echo_fade_depth": 0.2,
+      "fade_period_s": 4,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 2,
+      "echo_extra_doppler_magnitude_hz": 5,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    },
+    {
+      "environment": "city",
+      "channel_class": "air_ground",
+      "path_loss_exponent": 3.0,
+      "excess_loss_db": 6,
+      "echo_relative_power_db": -6,
+      "echo_excess_delay_us": 1,
+      "direct_fade_depth": 0.35,
+      "echo_fade_depth": 0.35,
+      "fade_period_s": 3,
+      "echo_fade_period_multiplier": 0.8,
+      "noise_excess_db": 5,
+      "echo_extra_doppler_magnitude_hz": 8,
+      "model": "controlled_two_tap_not_statistical_channel_standard"
+    }
+  ],
+  "faults": [
+    {
+      "id": "node2_outage",
+      "start_s": 330,
+      "end_s": 370,
+      "node_id": 2,
+      "type": "node_unavailable",
+      "owner": "ARM_node_model",
+      "effect": "No TX/RX at this node; no invented receive errors for packets never emitted; C timeout uses actual missing messages."
+    },
+    {
+      "id": "relay12_degradation",
+      "start_s": 660,
+      "end_s": 700,
+      "node_id": 12,
+      "type": "radio_path_degradation",
+      "owner": "A_channel",
+      "affected_links": "directed links with tx=12 or rx=12, both data and ACK",
+      "extra_loss_db": 12,
+      "extra_noise_db": 6,
+      "effect": "Modify signal/noise, keep receiver running; outcome from actual frames, do not prescribe packet loss rate."
+    }
+  ],
+  "activation_order": [
+    "identity",
+    "fixed_loss_and_noise",
+    "two_tap_static",
+    "static_geometry_delay",
+    "sample_phase_rotation",
+    "slow_fading",
+    "per_link_context_and_time",
+    "full_preset_trajectory_and_faults"
+  ],
+  "resource_note": "32*1024*4 = 131072 bytes raw IQ history. Simple mapping nominal 32 RAMB36 (32/140 ~=22.9%) before port replication/implementation; not current utilization or total design usage.",
+  "references": [
+    {
+      "name": "Mentor notes",
+      "path": "D:\\digitalcircuit\\无人机编队组网笔记.docx",
+      "role": "concepts and application context; user-confirmed scope has priority"
+    },
+    {
+      "name": "OpenAirLink official repository",
+      "url": "https://github.com/N3Martix/OpenAirLink",
+      "role": "TDL/FIR, coefficient control and reproducibility; X310-specific platform not directly portable"
+    },
+    {
+      "name": "OpenAirLink paper",
+      "url": "https://arxiv.org/html/2404.09660v1"
+    },
+    {
+      "name": "MathWorks AWGN definitions",
+      "url": "https://www.mathworks.com/help/comm/ug/awgn-channel.html"
+    },
+    {
+      "name": "MathWorks fading channels",
+      "url": "https://www.mathworks.com/help/comm/ug/fading-channels.html"
+    },
+    {
+      "name": "Fractional delay design",
+      "url": "https://www.mathworks.com/help/dsp/ug/design-of-fractional-delay-fir-filters.html"
+    }
+  ],
+  "wechat_full_text": "Five supplied URLs retried on 2026-10-09; not accessible; no claim of full-text review."
+}

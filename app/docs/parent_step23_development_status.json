@@ -1,0 +1,25 @@
+{
+  "schema": 3,
+  "updated": "2026-10-21T00:53:49.941302",
+  "state": "SCOPED_NETWORK_INTERVENTION_QUALIFICATION",
+  "baseline": "../step22_link_experiment",
+  "candidate_pl_version": "000d0003",
+  "arm_build": "20261021-edge1",
+  "firmware_changed": true,
+  "fpga_changed": false,
+  "scope": "One real directed edge: user change -> applied readback -> same-frame reception -> received business impact -> restoration -> deterministic recomputation",
+  "evidence": [
+    "results/intervention_qualification_20261021_002643/acceptance.json",
+    "results/intervention_edges_20261021_004211/acceptance.json",
+    "results/intervention_abort/acceptance.json",
+    "results/intervention_ui/acceptance.json"
+  ],
+  "final_acceptance": "Use results/intervention_release_acceptance.json with matching release SHA256; no older whole-product acceptance is inherited",
+  "remaining": [
+    "Apply the experiment/observation identity to remaining network actions and cross-page workflows",
+    "Improve action-specific recommendations and distinguish advisory text from executed control",
+    "Qualify full final-product stability and performance for the final artifact hash",
+    "Complete novice-user review, formal report, video and submission material"
+  ],
+  "parent": "docs/parent_step22_development_status.json"
+}

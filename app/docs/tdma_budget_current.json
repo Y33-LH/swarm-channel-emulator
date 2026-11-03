@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-01T06:51:46.828696",
+  "cycle_ms": 100,
+  "slots": 20,
+  "slot_ms": 5,
+  "nominal_full_fec_data_samples": 21176,
+  "physical_pl_hz": 62500000,
+  "model_sample_rate_hz": 8000000,
+  "guard_ms": 0.05,
+  "measured": [
+    {
+      "source": "results\\current_network_stability_20261101_061052\\run_1\\snapshots.jsonl",
+      "sha256": "ecf07d920b601367046ac88b898a87ed850a7ad672632899a513e7be8b5c122c",
+      "model_ms": 4.5,
+      "pl_ms": 2.314496,
+      "arm_ms": 10.142,
+      "slot_us": 5000,
+      "slots": 20,
+      "cycle_us": 100000,
+      "max_model_samples": 36000,
+      "max_pl_cycles": 144656,
+      "max_arm_transaction_us": 10142,
+      "pl_service_overruns": 0,
+      "arm_service_overruns": 30158,
+      "model_slot_overruns": 0
+    },
+    {
+      "source": "results\\current_network_stability_20261101_061052\\run_2\\snapshots.jsonl",
+      "sha256": "8ed72f0a454ddd43a48332c8045ea89642e0acb839c77ab71d24b9966f353edb",
+      "model_ms": 4.5,
+      "pl_ms": 2.314496,
+      "arm_ms": 10.148,
+      "slot_us": 5000,
+      "slots": 20,
+      "cycle_us": 100000,
+      "max_model_samples": 36000,
+      "max_pl_cycles": 144656,
+      "max_arm_transaction_us": 10148,
+      "pl_service_overruns": 0,
+      "arm_service_overruns": 30148,
+      "model_slot_overruns": 0
+    },
+    {
+      "source": "results\\current_network_stability_20261101_061052\\run_3\\snapshots.jsonl",
+      "sha256": "d333043bc381cc910e7ff4be2f8cab71ac60e8f9bb20e2184cf54a241c55ad56",
+      "model_ms": 4.5,
+      "pl_ms": 2.314496,
+      "arm_ms": 10.147,
+      "slot_us": 5000,
+      "slots": 20,
+      "cycle_us": 100000,
+      "max_model_samples": 36000,
+      "max_pl_cycles": 144656,
+      "max_arm_transaction_us": 10147,
+      "pl_service_overruns": 0,
+      "arm_service_overruns": 30175,
+      "model_slot_overruns": 0
+    }
+  ],
+  "interpretation": "TDMA is a model-time scheduler. Waveform and PL-service budgets passed these finite runs. ARM service overrun counts are nonzero, so strict wall-clock real-time execution is not qualified. User deferred elapsed-time performance, not correctness or these counters.",
+  "sources": [
+    "sw/network.c",
+    "docs/current_system_contract.txt"
+  ]
+}

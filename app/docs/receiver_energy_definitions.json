@@ -1,0 +1,17 @@
+{
+  "scope": "Clarification of receiver_study.py case-specific definitions; measured UART records remain unmodified",
+  "sample_amplitude": 8192,
+  "samples_per_symbol": 4,
+  "preamble_symbols": 542,
+  "protected_information_bits_including_crc": 784,
+  "application_payload_bits": 512,
+  "full_coded_body_symbols": 4752,
+  "raw_body_symbols": 784,
+  "definitions": {
+    "equal_complex_sample_snr": "sigma = A / sqrt(2*10^(sample_snr_db/10)); coded frame carries more total energy",
+    "equal_information_ebn0": "sigma^2 = A^2*4 / (2*rate*10^(ebn0_db/10)); rate=784/4752 or 1; excludes preamble energy",
+    "equal_total_frame_energy_per_payload_bit": "sigma^2 = A^2*4*(542+body_symbols) / (2*512*10^(payload_ebn0_db/10)); includes transmitted preamble and frame body"
+  },
+  "qualification": "The legacy top-level energy_definition in receiver_study describes its first two families. Each payload_energy row uses the third formula. The separate current paired headroom study includes 200 predeclared paired seeds at 16 dB total-frame-energy per payload bit, gain 0.5, raw 156/200 versus full 200/200, no clipping. This supports a benefit at that one operating point, not a general coding-gain curve. Raw measurements remain unmodified.",
+  "paired_headroom_source": "results/fair_payload_energy_20261101_064030/acceptance.json"
+}

@@ -1,0 +1,48 @@
+历史接口说明：以下版本号、端口、采样策略和能力描述仅对应原发布版本。当前开发版以 docs/current_system_contract.txt、tools/firmware_contract.py 与 release.json 为准。
+
+Product contract 2 / single-board mixed endpoints / 2026-10-18
+Authoritative d3 additions and acceptance gates: docs/delivery_contract.txt.
+
+FPGA release: 000d0003. ARM protocol: 17 (extended from 16).
+Host UART: 230400 baud, 8N1. 460800/921600 did not respond with this adapter.
+Existing MMIO map, byte buffers and 96-byte DATA/12-byte ACK unchanged.
+PL clock 62,500,000 Hz. Model sampling 8,000,000 Hz; DBPSK 2,000,000 sym/s.
+Model clock and elapsed computer/ARM clock must be displayed separately.
+Source: FPGA_RX / ARM_SCENE_TRUTH / GROUND_RECEIVED / HARDWARE_REPLAY.
+One shared PL core; two channel classes; no parallel-core claim.
+
+SCENECFG <128 lowercase hexadecimal characters>
+16 little-endian signed 32-bit fields in configs/default.json and tools/product_config.py order.
+Changes are atomic and allowed only when NET is stopped; no partial changes on rejection.
+Return ok, error_code (1 malformed,2 range,3 geometry,4 busy), config_id FNV-1a.
+Host also records SHA-256 of the full 64-byte config; FNV is a readback check, not security.
+SCENEINFO returns exact applied fields and config_id.
+Network configuration is immutable per run; live changes require a defined command.
+
+IDs: ground=0; UAV=1..16; relay=4,8,12,16; external endpoint replaces one of the 16.
+Links 0..15 uplink DATA, 16..31 reverse direction ACK or downlink DATA.
+Positions: wire mm signed32; UI m; time in model ns/ms as explicitly named.
+Model box 10,000m x 10,000m x 1,000m; altitude above local origin, not GPS elevation.
+Weather/environment presets are experimental assumptions with bounded correlated variations.
+PL hardware nodes 9/13 generate their own frames, receive decoded commands and ACK, and own independent queues and protocol state. Other 14 UAVs are ARM virtual nodes. EXTINJECT is a separate future external-device protocol test; it is not the PL endpoint implementation.
+
+Reproducibility: freeze config, seed, firmware/PL hashes, original RX logs, metric definitions.
+Delivery success, delivery within deadline, capture failure, CRC failure, ACK loss,
+queue rejection, expiration and remaining backlog must not be combined or hidden.
+
+Current accepted fallback is ../step19_product; it remains unmodified.
+Do not copy its acceptance status onto the development build. New evidence belongs to this directory.
+
+Telemetry: NETFAST keeps all counters and node positions, omitting only applied-link
+register trace arrays. NETSTEP and NETSTATUS include those traces. Both commands
+process every 0.1-second model round. The default host collects counters every
+20 model seconds and register traces at first/last and 100-second boundaries.
+UI geometry between received samples must be labeled interpolation/model truth.
+
+CMDSTATUS row: id,target,opcode,value,status,ground_received_ms,expiry_ms,
+ground_reported_heartbeat_period_ms,ground_reported_media_paused,ground_reported_media_rate.
+Status 1=queued,2=executed+result received,3=rejected+result received,
+4=expired+result received,5=no result confirmed by the bounded timeout.
+CMDTRACE is diagnostic (not a ground success receipt): model_ms,id,type,node,dest,
+PN_captured,CRC_passed,upper_layer_accepted(2=duplicate),ACK_received,retry_index.
+GACKDROP is a test-only single ACK suppression, applied in PL, absent from the user UI.

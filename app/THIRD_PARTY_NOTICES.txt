@@ -1,0 +1,35 @@
+Third-party and provenance notes
+
+AMD Vivado/SDK 2018.3 generated IP, BSP, startup code and board initialization
+remain subject to their supplied AMD/Xilinx notices and licenses. The toolchain
+installers and commercial tool binaries are not part of this source project.
+
+pySerial is vendored in tools/python_deps/serial. Preserve its accompanying BSD
+license notice. Python, NumPy and OpenCV remain external runtime dependencies;
+their licenses and notices apply to their distributions.
+
+The optional local model is outside this source directory at
+D:/digitalcircuit/local_assistant. Its provenance.json records exact upstream
+URLs and SHA-256. Qwen3-0.6B-GGUF is supplied under its upstream Apache-2.0 license;
+llama.cpp is supplied under its upstream MIT license. Preserve downloaded notices.
+This source tree does not relicense those components or the model weights.
+
+OpenAirLink and the mentor's supplied GNSS/channel-simulator links informed the
+architecture study. The packaged implementation is not the OpenAirLink USRP/RFNoC
+distribution. Any later direct incorporation of such code requires preserving
+the exact upstream license and attribution; do not label GPL code as MIT.
+
+The UI includes offline EOX Sentinel-2 cloudless 2024 satellite backgrounds.
+Source: https://maps.eox.at/ and https://www.eox.at/2025/03/sentinel-2-cloudless-2024/
+Copyright EOX IT Services GmbH; contains modified Copernicus Sentinel data 2024.
+These imagery assets are under CC BY-NC-SA 4.0, with attribution retained on-map.
+License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+ui/maps/manifest.json records extents, download URLs, and exact SHA-256 hashes.
+Imagery is a visual background; buildings/terrain are not ray-traced or physical
+channel inputs. Local model coordinates are shown separately. Noncommercial
+competition/education use does not grant commercial rights in these assets.
+The schematic view remains available. The user-supplied downloader was not run.
+
+Formal public-source licensing and publication should apply only to material the
+team can license and must retain vendor/third-party exceptions above. Preparing
+this folder is not equivalent to publishing it to GitHub/Gitee.

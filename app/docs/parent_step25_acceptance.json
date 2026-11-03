@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "accepted": true,
+  "full_product_accepted": false,
+  "checked_at": "2026-10-21T13:31:56.984764",
+  "manifest_sha256": "ae10e08732cf3c4a86962169414d2365868d8c9efaf4a5a1c41115678c45944c",
+  "files_verified": 354,
+  "runtime_files_verified": 352,
+  "driver_only_changes_allowed": [
+    "tests/workflow_context_ui.cjs",
+    "tests/workflow_ui.cjs"
+  ],
+  "version_note": "Each phase retains its actual manifest. Only the two external browser test drivers may differ; every shipped application, firmware, configuration, Python acceptance helper and documentation file is hash-identical.",
+  "scope": "User-authorized items 1 and 2: live/history evidence questions and confirmed actions; complete experiments, parameter comparison, offline maps and weather scope",
+  "fpga_changed": false,
+  "firmware_changed": false,
+  "image_hashes": {
+    "bit": "94544174f8bf3ad538dcadcc862f577ef17de04a4634f0975ceade7a4100deec",
+    "elf": "40a3df579124fa800403603bdfc9cc444bd22f5dd253d6e2d52a9ffaf28e7da0",
+    "init": "411af429f71655e65ef1992cfa0c35ce9977f1db41fe2f8ee8790b1cb5d1b922"
+  },
+  "unit_tests": 30,
+  "mode_switch": {
+    "pass": true,
+    "delayed_response_did_not_restore_old_experiment": true,
+    "after": {
+      "context": null,
+      "record_id": "network_20261021_100403_8f1c0d"
+    },
+    "release_sha256": "ae10e08732cf3c4a86962169414d2365868d8c9efaf4a5a1c41115678c45944c"
+  },
+  "evidence": {
+    "causal": {
+      "file": "results/workflow_ui/causal.json",
+      "sha256": "a4799c7ccdd77536a6fffb342b53cac07b88133a718701586e91862a7d266fbc"
+    },
+    "comparison": {
+      "file": "results/workflow_ui/comparison.json",
+      "sha256": "e914092f5411abf5fdaf0956bcf396696958d8c9bb01ddcab88cd70641660587"
+    },
+    "height": {
+      "file": "results/workflow_ui/height.json",
+      "sha256": "295d670b07e5671615588f70ec9e31e0aa0fd2bfbc18b69c764144bac7a0ca62"
+    },
+    "full": {
+      "file": "results/workflow_ui/full.json",
+      "sha256": "e402e298be6b2063aea579e061be899b86a7ea233a7b18277e908926a55e9d10"
+    }
+  },
+  "records": [
+    "causal_20261021_095426_a6288a",
+    "causal_20261021_095558_72a378",
+    "causal_20261021_100045_7725cb",
+    "causal_20261021_100203_ca66aa",
+    "network_20261021_100321_8f05ed",
+    "network_20261021_132918_b16e1e"
+  ],
+  "assistant": {
+    "local_model_used_jobs": 7,
+    "actions_executed_by_model": 0,
+    "immediate_seconds_range": [
+      0.051,
+      0.968
+    ],
+    "final_seconds_range": [
+      1.117,
+      2.642
+    ]
+  },
+  "reproduction": {
+    "exact_match": true,
+    "compared_snapshots": 120,
+    "original_snapshots": 120,
+    "current_snapshots": 120,
+    "mismatches": [],
+    "media_hashes_equal": true,
+    "exclusions": [
+      "wall_ms",
+      "absolute FPGA generation",
+      "hardware endpoint diagnostics"
+    ],
+    "original_id": "causal_20261021_095426_a6288a"
+  },
+  "comparison": {
+    "mode": "single_setting",
+    "changed_config": {
+      "weather": {
+        "left": 0,
+        "right": 4
+      }
+    },
+    "left": {
+      "delivery": 1.0,
+      "timely_delivery": 1.0,
+      "p95_upper_ms": 440,
+      "max_ms": 437.679,
+      "mean_ms": 233.2164480454947,
+      "payload_bps": 3512.6666666666665,
+      "wall_seconds": 76.01421200006735,
+      "pending": 0,
+      "heartbeat_received": 1920,
+      "media_received_bytes": 21970,
+      "pre_ber": 0.0,
+      "evm_percent": 2.7369504614637306
+    },
+    "right": {
+      "delivery": 1.0,
+      "timely_delivery": 1.0,
+      "p95_upper_ms": 440,
+      "max_ms": 437.679,
+      "mean_ms": 233.21644815591875,
+      "payload_bps": 3512.6666666666665,
+      "wall_seconds": 76.08120449993294,
+      "pending": 0,
+      "heartbeat_received": 1920,
+      "media_received_bytes": 21970,
+      "pre_ber": 0.0,
+      "evm_percent": 2.7614027930699483
+    },
+    "composite_preset": true
+  },
+  "height": {
+    "node": 9,
+    "target_m": 450,
+    "received_z_m": 446.554,
+    "confirmed_commands": [
+      [
+        1,
+        9,
+        5,
+        450,
+        2,
+        20757,
+        30000,
+        1000,
+        0,
+        5
+      ]
+    ]
+  },
+  "complete_scene": {
+    "record": "network_20261021_132918_b16e1e",
+    "model_seconds": 900,
+    "wall_total_seconds": 118.48031340003945,
+    "delivered": 14708,
+    "generated": 14708,
+    "pending": 0,
+    "timely_delivered": 14410,
+    "late_delivered": 298,
+    "maximum_delay_seconds": 40.21767825,
+    "media_complete": true,
+    "fault_and_recovery_checked": true,
+    "stack_guard_ok": true,
+    "heap_failures": 0
+  },
+  "limitations": [
+    "Local model selects grounded facts; it is not autonomous flight control.",
+    "Controlled link tasks hold geometry fixed; height commands use an explicit whole-network experiment.",
+    "Weather is a composite equivalent preset, not measured meteorology or image-based terrain propagation.",
+    "One parameter comparison at one seed is not a statistical performance advantage.",
+    "Replay and recomputation exclude measured PC duration, absolute FPGA frame generation and endpoint diagnostics as declared.",
+    "This scoped acceptance is not final clean-source rebuild or three consecutive frozen whole-system runs."
+  ],
+  "remaining": [
+    "26th-day usability/layout refinement and novice review",
+    "Final clean-source rebuild and three consecutive frozen complete-system runs",
+    "Report, video, AI records and submission package"
+  ]
+}

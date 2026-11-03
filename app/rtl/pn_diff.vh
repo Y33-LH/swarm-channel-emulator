@@ -1,0 +1,1 @@
+localparam [125:0] PN_DIFF = 126'h00898bad833539ed0abe946e3f877964;

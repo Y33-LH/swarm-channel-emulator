@@ -1,0 +1,28 @@
+故障处置验收与操作 — 2026-11-02
+
+使用入口：http://127.0.0.1:18878/，原桌面快捷方式不变。先 Ctrl+F5 刷新。
+1. 检查连接（本机当前COM9），进入“态势与处置”，点顶部“下一步建议 / 处置”。
+2. 点“准备正常基线 · 60模型秒”，再点“开始实板实验”。基线关闭预设故障，保持20m/s与16倍场景扫描、大范围轨道和1050m间距。先等正常心跳建立。
+3. 每次选一种干预：媒体过载选节点5；心跳过慢可选节点2；上行衰减演示选节点5（链路4）。
+4. 观察态势播报和建议。媒体过载真实增加分片；心跳过慢真实改变周期；上行衰减保留原噪声、把幅度减至1%，并非直接设置丢包。
+5. 可以点“问AI：原因、处置与限制”。规则结论即时呈现，本地模型随后筛选证据；回答只对应提问时刻，不自动执行。
+6. 输入对应文字指令，点“检查指令”，核对目标后点“确认执行”：
+   媒体：节点 5 媒体速率 1
+   心跳：节点 2 心跳间隔 1000 毫秒
+   衰减：恢复链路 4
+7. 节点指令需等地面收到执行回执；实际恢复还需新心跳、积压回落及后续正常观测。恢复链路是实验控制参数调整，并不冒充发送给节点的远程维修命令。
+8. 结束后在“回放与对比”读取对应实验，原始快照、命令回执、UART记录与媒体接收文件都保存于app/results/<实验编号>。
+
+实测结果（干预到首次实测恢复含3秒人工阅读模拟等待；界面还要求连续3次正常观测）：
+{'kind': 'link', 'record': 'network_20261102_143659_4466b2', 'pass_check': True, 'wall_total_seconds': 97.91165080002975, 'intervention_seconds': [8.188126900000498], 'abnormal_snapshots': 4, 'samples': 60, 'arm_build': '20261102-recovery2', 'queue_drops': 0, 'retry_drops': 0}
+{'kind': 'congestion', 'record': 'network_20261102_143838_3ab0d8', 'pass_check': True, 'wall_total_seconds': 93.5220537999412, 'intervention_seconds': [24.226510499953292], 'abnormal_snapshots': 10, 'samples': 60, 'arm_build': '20261102-recovery2', 'queue_drops': 0, 'retry_drops': 0}
+{'kind': 'heartbeat', 'record': 'network_20261102_144013_65c1de', 'pass_check': True, 'wall_total_seconds': 98.3776570999762, 'intervention_seconds': [14.514516600058414], 'abnormal_snapshots': 5, 'samples': 60, 'arm_build': '20261102-recovery2', 'queue_drops': 0, 'retry_drops': 0}
+{'kind': 'baseline', 'record': 'network_20261102_144153_a2f4f3', 'pass_check': True, 'wall_total_seconds': 98.08276070002466, 'intervention_seconds': [], 'abnormal_snapshots': 0, 'samples': 60, 'arm_build': '20261102-recovery2', 'queue_drops': 0, 'retry_drops': 0}
+
+边界：
+标准基线这一次60快照均无异常，不承诺任意低SNR或严重衰落设置也正常。
+拥塞主要表现为普通业务积压，优先级保护正常心跳是正确行为，不伪造心跳失联。
+AI不能承诺降低高度必然改善，也不能切换尚未开放的运行时编码配置。
+40–50秒按单次选择一种干预来安排，实测恢复8–24秒，余量留给阅读与操作。人为长时间等待和任意参数不作耗时保证。
+自动重组网、绕路、真实飞行或损毁节点修复不在本次实现中。
+三种干预之外的历史测试结论没有被新测试替代。

@@ -1,0 +1,29 @@
+/* Optional 1080p recording layout. The regular layout stays scrollable on laptops. */
+@media (min-width:1600px) and (min-height:950px){
+ body.presentation header{height:62px}
+ body.presentation nav{height:45px}
+ body.presentation .toolbar{padding:8px 24px}
+ body.presentation .notice{min-height:28px;padding-block:6px}
+ body.presentation main{padding-top:10px;padding-bottom:10px}
+ body.presentation .kpis{margin-bottom:12px}
+ body.presentation .kpis article{padding-block:9px}
+ body.presentation .kpis strong{font-size:28px;margin:4px 0}
+ body.presentation .overview-grid .panel{padding:12px}
+ body.presentation .map-wrap{height:356px}
+ body.presentation .node-panel .panel-title{margin-bottom:8px}
+ body.presentation .node-panel .node-hero{padding-bottom:10px;margin-bottom:6px}
+ body.presentation .node-hero>span:first-child{width:45px;height:45px;line-height:45px;font-size:26px}
+ body.presentation .node-panel .details>div{padding:5px 0;font-size:11px}
+ body.presentation .node-panel .section-title{margin:10px 0 6px}
+ body.presentation .node-panel .node-grid button{padding:5px 0}
+ body.presentation .node-panel .muted{font-size:10px;line-height:1.5;margin:7px 0}
+ body.presentation .node-panel .boundary{padding:6px 9px;margin-top:7px;line-height:1.5}
+ body.presentation .lower-grid{margin-top:10px}
+ body.presentation .lower-grid .panel{padding:12px}
+ body.presentation .lower-grid .panel-title{margin-bottom:8px}
+ body.presentation .trend{height:74px}
+ body.presentation .lower-grid .event-list{max-height:95px}
+ body.presentation .lower-grid .event-row{padding:5px 0;font-size:12px}
+ body.presentation .app-footer{padding:9px 25px}
+ body.presentation .logs{margin-bottom:8px}
+}

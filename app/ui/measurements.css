@@ -1,0 +1,3 @@
+#measurements.active{display:grid;grid-template-columns:1fr;gap:18px}#measurements .chart-pair canvas{width:100%;height:245px}#capacityChart{width:100%;height:210px}#capacityTable{overflow:auto}#capacityStatus{font-size:18px;color:var(--cyan);margin:12px 0}.phy-panel .parameter-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.phy-panel .param b{overflow-wrap:anywhere}.pipeline{flex-wrap:wrap}nav .tab{min-width:150px}@media(min-width:1500px){#measurements.active{grid-template-columns:1fr 1fr}#measureSource{grid-column:1/-1}}@media(max-width:900px){.phy-panel .parameter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+body[data-page="measurements"] .kpis{display:none}

@@ -1,0 +1,9 @@
+{
+  "id": "full_phy_release_20261012",
+  "reference_complex_sample_snr_db": 34,
+  "echo_power_offset_db": -6,
+  "base_proposal": "a_config_20261009/a_config_v1.json",
+  "reason": "Inherited unchanged numerical channel overlay from the measured 2026-10-11 full-FEC baseline. This release changes receiver arithmetic, processing pipeline, queues and retry policy; reference SNR=34 dB and echo offset=-6 dB are not relaxed.",
+  "measured_probe": "../results/final_acceptance.json",
+  "not_final_receiver_profile": false
+}

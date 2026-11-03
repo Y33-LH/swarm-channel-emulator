@@ -1,0 +1,17 @@
+{
+  "schema": 3,
+  "updated": "2026-10-21T00:53:49.941302",
+  "scope": "One real directed edge: user change -> applied readback -> same-frame reception -> received business impact -> restoration -> deterministic recomputation",
+  "state": "SCOPED_NETWORK_INTERVENTION_QUALIFICATION",
+  "pl_version": "000d0003",
+  "firmware_protocol": 17,
+  "intervention_schema": 1,
+  "current_ledger": "docs/development_status.json",
+  "pending": [
+    "Apply the experiment/observation identity to remaining network actions and cross-page workflows",
+    "Improve action-specific recommendations and distinguish advisory text from executed control",
+    "Qualify full final-product stability and performance for the final artifact hash",
+    "Complete novice-user review, formal report, video and submission material"
+  ],
+  "node_architecture": "2 PL hardware endpoints + 14 ARM virtual nodes + ground"
+}
